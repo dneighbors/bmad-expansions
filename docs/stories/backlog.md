@@ -51,18 +51,23 @@
 11. (E1) Rename pack directories to final names (medical, marketing, blog)
     - As a maintainer, I want canonical pack names without "-team" suffixes.
     - Acceptance: Directories renamed; existing metadata updated accordingly.
+    - **Status:** ✅ DONE
 
 12. (E2) Scaffold `medical` pack via BMB create-module
-    - As an author, I want `medical` scaffolded using the official workflow.
-    - Acceptance: Module scaffold created; installer config validated.
+    - As an author, I want `medical` pack for healthcare SaaS teams with 9 agents and 8 workflows.
+    - Acceptance: 9 agents created, 8 workflows created, README updated, priority workflows tested.
+    - **Status:** 🔄 IN PROGRESS (Discovery complete, assigned to developer)
+    - **Details:** See `docs/stories/story-12-medical-pack.md` and `docs/discovery/medical-pack-discovery.md`
 
 13. (E2) Scaffold `marketing` pack via BMB create-module
     - As an author, I want `marketing` scaffolded using the official workflow.
     - Acceptance: Module scaffold created; installer config validated.
+    - **Status:** ⏳ PENDING (Awaiting discovery session)
 
 14. (E2) Scaffold `blog` pack via BMB create-module
     - As an author, I want `blog` scaffolded using the official workflow.
     - Acceptance: Module scaffold created; installer config validated.
+    - **Status:** ⏳ PENDING (Awaiting discovery session)
 
 15. (E3) Create sync script to copy packs into BMAD-METHOD
     - As a maintainer, I want `scripts/sync-packs.sh` to rsync packs and manage .gitignore noise.

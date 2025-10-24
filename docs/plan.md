@@ -14,6 +14,8 @@
 ### Deliverables
 - `docs/epics/*` — Epics describing major capability areas.
 - `docs/stories/backlog.md` — Initial, prioritized backlog mapped to epics.
+- `docs/sprints/*` — Sprint plans with prioritized stories and assignments.
+- `docs/discovery/*` — Discovery sessions documenting pack requirements.
 - Authoring and install guidance aligned with `EXPANSIONS-SETUP.md`.
 
 ### Milestones
@@ -42,8 +44,22 @@
 - Updates to a pack propagate via sync and re-install with zero manual file edits.
 - Cursor artifacts regenerate consistently after updates.
 
+### Current Status (2025-10-24)
+
+**Sprint 01 Active:**
+- Story 11 (E1): ✅ Pack directories renamed
+- Story 12 (E2): 🔄 Medical pack discovery complete, assigned to developer
+- Story 13-15: ⏳ Pending
+
+**Completed Artifacts:**
+- 4 Epics defined
+- 15 Stories in backlog
+- Sprint 01 plan created
+- Medical pack discovery session complete (9 agents, 8 workflows scoped)
+
 ### Next Steps
-- Execute epics and stories in `docs/epics` and `docs/stories`.
-- Implement optional helper script to rsync packs into BMAD-METHOD.
+- Developer implements Story 12 (medical pack)
+- Run discovery sessions for Stories 13-14 (marketing, blog packs)
+- Implement Story 15 (sync script) after packs are built
 
 
