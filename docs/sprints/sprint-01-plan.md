@@ -21,10 +21,11 @@
 
 **Story 12** (E2) — Scaffold `medical` pack via BMB create-module  
 **Priority:** P0  
-**Assigned:** Developer  
-**Acceptance:** Module scaffold created with at least 1 agent and 1 workflow; installer config validated.  
+**Assigned:** Developer (READY FOR DEV)  
+**Acceptance:** 9 agents + 8 workflows created; README updated; priority workflows tested.  
 **Story Points:** 5  
-**Notes:** This creates the first real expansion pack with actual content.
+**Notes:** Full discovery complete. See `docs/stories/story-12-medical-pack.md` and `docs/discovery/medical-pack-discovery.md`.  
+**Status:** ✅ DISCOVERY COMPLETE — Ready for implementation
 
 **Story 13** (E2) — Scaffold `marketing` pack via BMB create-module  
 **Priority:** P0  
