@@ -1,6 +1,7 @@
 # Story 15: Create sync script to copy packs into BMAD-METHOD
 
 **Epic:** E3 — Discovery and Sync Bridge  
+**Epic Reference:** [docs/epics/03-discovery-and-sync-bridge.md](../epics/03-discovery-and-sync-bridge.md)  
 **Priority:** P0 (Critical Path)  
 **Story Points:** 3  
 **Assigned:** Developer (TBD)

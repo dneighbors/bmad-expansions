@@ -1,6 +1,7 @@
 # Story 12: Scaffold Medical Pack via BMB
 
 **Epic:** E2 — Authoring with BMAD Builder (BMB)  
+**Epic Reference:** [docs/epics/02-authoring-with-bmb.md](../epics/02-authoring-with-bmb.md)  
 **Priority:** P0 (Critical Path)  
 **Story Points:** 5  
 **Assigned:** Developer  
