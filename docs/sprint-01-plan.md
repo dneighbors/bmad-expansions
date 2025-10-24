@@ -19,17 +19,33 @@
 **Assigned:** N/A  
 **Acceptance:** Directories renamed; existing metadata updated accordingly.
 
+**Story 12** (E2) — Scaffold `medical` pack via BMB create-module  
+**Priority:** P0  
+**Assigned:** Developer  
+**Acceptance:** Module scaffold created with at least 1 agent and 1 workflow; installer config validated.  
+**Story Points:** 5  
+**Notes:** This creates the first real expansion pack with actual content.
+
+**Story 13** (E2) — Scaffold `marketing` pack via BMB create-module  
+**Priority:** P0  
+**Assigned:** Developer  
+**Acceptance:** Module scaffold created with at least 1 agent and 1 workflow; installer config validated.  
+**Story Points:** 5  
+**Notes:** Second expansion pack with content.
+
+**Story 14** (E2) — Scaffold `blog` pack via BMB create-module  
+**Priority:** P0  
+**Assigned:** Developer  
+**Acceptance:** Module scaffold created with at least 1 agent and 1 workflow; installer config validated.  
+**Story Points:** 5  
+**Notes:** Third expansion pack with content.
+
 **Story 15** (E3) — Create sync script to copy packs into BMAD-METHOD  
 **Priority:** P0  
 **Assigned:** Developer  
 **Acceptance:** Script syncs to `../BMAD-METHOD/src/modules/`; adds ignore entries safely; idempotent.  
 **Story Points:** 3  
-**Notes:** This unblocks all pack testing and installation workflows.
-
-**Story 6** (E3) — Add rsync script for syncing packs into BMAD-METHOD  
-**Priority:** P0  
-**Status:** ✅ DONE (duplicate of Story 15; consolidate)  
-**Assigned:** N/A
+**Notes:** Enables deployment after packs are created.
 
 ---
 
@@ -89,15 +105,16 @@
 **Story 10** (E4) — Add verification checklist for installs/updates  
 **Rationale:** Defer until install flow is validated end-to-end.
 
-**Story 12-14** (E2) — Scaffold packs via BMB create-module  
-**Rationale:** Packs already scaffolded manually; BMB workflows can be applied to future packs.
+**Story 6** (E3) — Add rsync script for syncing packs into BMAD-METHOD  
+**Rationale:** Duplicate of Story 15; consolidated.
 
 ---
 
 ## Sprint Capacity
 
-**Total Story Points:** 14 (P0: 3, P1: 7, P2: 6)  
-**Developer Capacity:** ~10-12 points (assuming 1 developer, full-time)
+**Total Story Points:** 29 (P0: 18, P1: 7, P2: 6)  
+**Developer Capacity:** ~20-25 points (assuming 1 developer, full-time)  
+**Notes:** P0 work is front-loaded; may need to reduce P1/P2 scope if capacity constrained.
 
 ---
 
