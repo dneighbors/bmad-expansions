@@ -1,0 +1,8 @@
+code: marketing
+name: "Marketing Pack"
+description: "Agents and workflows for marketing planning and content."
+version: "0.1.0"
+default_selected: false
+dependencies:
+  - bmm
+  - bmb

@@ -48,4 +48,24 @@
     - As a QA, I need a checklist to confirm expected outputs in targets.
     - Acceptance: Checklist covers modules copied, agents compiled, Cursor artifacts generated.
 
+11. (E1) Rename pack directories to final names (medical, marketing, blog)
+    - As a maintainer, I want canonical pack names without "-team" suffixes.
+    - Acceptance: Directories renamed; existing metadata updated accordingly.
+
+12. (E2) Scaffold `medical` pack via BMB create-module
+    - As an author, I want `medical` scaffolded using the official workflow.
+    - Acceptance: Module scaffold created; installer config validated.
+
+13. (E2) Scaffold `marketing` pack via BMB create-module
+    - As an author, I want `marketing` scaffolded using the official workflow.
+    - Acceptance: Module scaffold created; installer config validated.
+
+14. (E2) Scaffold `blog` pack via BMB create-module
+    - As an author, I want `blog` scaffolded using the official workflow.
+    - Acceptance: Module scaffold created; installer config validated.
+
+15. (E3) Create sync script to copy packs into BMAD-METHOD
+    - As a maintainer, I want `scripts/sync-packs.sh` to rsync packs and manage .gitignore noise.
+    - Acceptance: Script syncs to `../BMAD-METHOD/src/modules/`; adds ignore entries safely.
+
 

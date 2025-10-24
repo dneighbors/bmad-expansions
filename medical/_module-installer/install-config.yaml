@@ -1,0 +1,10 @@
+code: medical
+name: "Medical Pack"
+description: "Agents and workflows for medical content creation and review."
+version: "0.1.0"
+default_selected: false
+dependencies:
+  - bmm
+  - bmb
+
+

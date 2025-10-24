@@ -1,0 +1,8 @@
+code: blog
+name: "Blog Pack"
+description: "Agents and workflows for blog authoring and publishing."
+version: "0.1.0"
+default_selected: false
+dependencies:
+  - bmm
+  - bmb
