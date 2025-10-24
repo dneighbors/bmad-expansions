@@ -1,0 +1,72 @@
+---
+description: BMAD Method - Master Index
+globs: 
+alwaysApply: true
+---
+
+# BMAD Method - Cursor Rules Index
+
+This is the master index for all BMAD agents and tasks available in your project.
+
+## Installation Complete!
+
+BMAD rules have been installed to: `.cursor/rules/bmad/`
+
+**Note:** BMAD does not modify your `.cursorrules` file. You manage that separately.
+
+## How to Use
+
+- Reference specific agents: @bmad/{module}/agents/{agent-name}
+- Reference specific tasks: @bmad/{module}/tasks/{task-name}
+- Reference entire modules: @bmad/{module}
+- Reference this index: @bmad/index
+
+## Available Modules
+
+### CORE
+
+**Agents:**
+- @bmad/core/agents/bmad-master - bmad-master
+
+### BMB
+
+**Agents:**
+- @bmad/bmb/agents/bmad-builder - bmad-builder
+
+### BMM
+
+**Agents:**
+- @bmad/bmm/agents/analyst - analyst
+- @bmad/bmm/agents/architect - architect
+- @bmad/bmm/agents/dev - dev
+- @bmad/bmm/agents/game-architect - game-architect
+- @bmad/bmm/agents/game-designer - game-designer
+- @bmad/bmm/agents/game-dev - game-dev
+- @bmad/bmm/agents/pm - pm
+- @bmad/bmm/agents/sm - sm
+- @bmad/bmm/agents/tea - tea
+- @bmad/bmm/agents/ux-designer - ux-designer
+
+### CIS
+
+**Agents:**
+- @bmad/cis/agents/README - README
+- @bmad/cis/agents/brainstorming-coach - brainstorming-coach
+- @bmad/cis/agents/creative-problem-solver - creative-problem-solver
+- @bmad/cis/agents/design-thinking-coach - design-thinking-coach
+- @bmad/cis/agents/innovation-strategist - innovation-strategist
+- @bmad/cis/agents/storyteller - storyteller
+
+
+## Quick Reference
+
+- All BMAD rules are Manual type - reference them explicitly when needed
+- Agents provide persona-based assistance with specific expertise
+- Tasks are reusable workflows for common operations
+- Each agent includes an activation block for proper initialization
+
+## Configuration
+
+BMAD rules are configured as Manual rules (alwaysApply: false) to give you control
+over when they're included in your context. Reference them explicitly when you need
+specific agent expertise or task workflows.
