@@ -1,0 +1,9 @@
+# General
+.DS_Store
+.idea/
+.vscode/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
