@@ -44,22 +44,12 @@
 - Updates to a pack propagate via sync and re-install with zero manual file edits.
 - Cursor artifacts regenerate consistently after updates.
 
-### Current Status (2025-10-24)
+---
 
-**Sprint 01 Active:**
-- Story 11 (E1): ✅ Pack directories renamed
-- Story 12 (E2): 🔄 Medical pack discovery complete, assigned to developer
-- Story 13-15: ⏳ Pending
+## Status Tracking
 
-**Completed Artifacts:**
-- 4 Epics defined
-- 15 Stories in backlog
-- Sprint 01 plan created
-- Medical pack discovery session complete (9 agents, 8 workflows scoped)
-
-### Next Steps
-- Developer implements Story 12 (medical pack)
-- Run discovery sessions for Stories 13-14 (marketing, blog packs)
-- Implement Story 15 (sync script) after packs are built
+For current sprint progress, story status, and operational tracking, see:
+- **Workflow Status:** `docs/workflow-status.md`
+- **Sprint Plans:** `docs/sprints/sprint-*.md`
 
 
