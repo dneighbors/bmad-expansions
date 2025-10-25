@@ -1,0 +1,18 @@
+name: series-planning
+description: "Plan multi-part content series"
+author: "Blog Pack Team"
+
+config_source: "{project-root}/bmad/bmm/config.yaml"
+output_folder: "{config_source}:output_folder"
+date: system-generated
+
+installed_path: "{project-root}/blog/workflows/series-planning"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: false
+
+dependencies:
+  - marketing  # Blog pack requires marketing pack agents
+
+team:
+  - derek-neighbors-author\n  - sarah-editorial-content-strategist (marketing pack)

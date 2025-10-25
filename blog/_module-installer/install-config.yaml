@@ -1,8 +1,9 @@
 code: blog
 name: "Blog Pack"
-description: "Agents and workflows for blog authoring and publishing."
+description: "Blog author as agent — embody YOUR brand voice, content operations, and workflows (2 agents + 15 workflows + marketing pack)"
 version: "0.1.0"
 default_selected: false
 dependencies:
   - bmm
   - bmb
+  - marketing

@@ -1,0 +1,18 @@
+name: daily-content-system
+description: "Master workflow for daily blog post creation"
+author: "Blog Pack Team"
+
+config_source: "{project-root}/bmad/bmm/config.yaml"
+output_folder: "{config_source}:output_folder"
+date: system-generated
+
+installed_path: "{project-root}/blog/workflows/daily-content-system"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: false
+
+dependencies:
+  - marketing  # Blog pack requires marketing pack agents
+
+team:
+  - derek-neighbors-author\n  - orion-blog-orchestrator\n  - emma-words-copywriter (marketing pack)\n  - olivia-search-seo (marketing pack)\n  - james-edit-content-editor (marketing pack)

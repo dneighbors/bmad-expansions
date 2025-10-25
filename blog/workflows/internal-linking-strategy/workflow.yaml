@@ -1,0 +1,18 @@
+name: internal-linking-strategy
+description: "Add strategic internal links to post"
+author: "Blog Pack Team"
+
+config_source: "{project-root}/bmad/bmm/config.yaml"
+output_folder: "{config_source}:output_folder"
+date: system-generated
+
+installed_path: "{project-root}/blog/workflows/internal-linking-strategy"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: false
+
+dependencies:
+  - marketing  # Blog pack requires marketing pack agents
+
+team:
+  - olivia-search-seo (marketing pack)
