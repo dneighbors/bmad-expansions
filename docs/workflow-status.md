@@ -134,7 +134,7 @@
 |------|----------|--------|-----------|--------|-----------|--------|
 | **medical** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ COMPLETE (commit 5f95ddf) |
 | **marketing** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ COMPLETE (commit 1faca00) |
-| **blog** | ✅ | ⏳ | ⏳ | ⏳ | ✅ | Ready for Dev (2 agents, 15 workflows) |
+| **blog** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ COMPLETE (commit 210549c) |
 
 ---
 
@@ -162,8 +162,8 @@
 ## 📈 Velocity Tracking
 
 **Sprint 01 Target:** 43 story points (P0)  
-**Completed:** 20 points (Stories 12, 13)  
-**Remaining:** 23 points (Stories 14-15: 20 + 3)
+**Completed:** 40 points (Stories 12, 13, 14)  
+**Remaining:** 3 points (Story 15: sync script)
 
 **Estimated Sprint Capacity:** 40-50 points (1 developer, 996 mode, BMB-accelerated)
 

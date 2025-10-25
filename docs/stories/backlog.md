@@ -68,7 +68,7 @@
 14. (E2) Scaffold `blog` pack via BMB create-module
     - As an author, I want blog pack with author-as-agent pattern, 2 agents + 15 workflows, Derek's system ported.
     - Acceptance: 2 agents (Orion + Derek) created, 15 workflows created, content-ops ported, README updated, priority workflows tested.
-    - **Status:** ✅ READY FOR DEV (Discovery complete, assigned to developer, 20 points)
+    - **Status:** ✅ DONE (20 points, commit 210549c)
     - **Details:** See `docs/stories/story-14-blog-pack.md` and `docs/discovery/blog-pack-discovery.md`
 
 15. (E3) Create sync script to copy packs into BMAD-METHOD
