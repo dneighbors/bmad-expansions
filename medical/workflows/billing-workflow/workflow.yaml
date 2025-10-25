@@ -1,0 +1,18 @@
+name: billing-workflow
+description: "Design clinical documentation and medical billing workflows with coding templates"
+author: "Medical Pack Team"
+
+config_source: "{project-root}/bmad/bmm/config.yaml"
+output_folder: "{config_source}:output_folder"
+installed_path: "{project-root}/medical/workflows/billing-workflow"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: false
+output_file: "{output_folder}/billing-workflow-{date}.md"
+
+variables:
+  clinical_workflow: ""
+  
+team:
+  - rachel-johnson
+

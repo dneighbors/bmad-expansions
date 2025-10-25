@@ -1,0 +1,19 @@
+name: ehr-integration-plan
+description: "Design EHR integration architecture, data mapping, and FHIR resource specifications"
+author: "Medical Pack Team"
+
+config_source: "{project-root}/bmad/bmm/config.yaml"
+output_folder: "{config_source}:output_folder"
+installed_path: "{project-root}/medical/workflows/ehr-integration-plan"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: false
+output_file: "{output_folder}/ehr-integration-plan-{date}.md"
+
+variables:
+  ehr_system: "" # Epic, Cerner, Allscripts, etc.
+  integration_type: "" # FHIR API, HL7 interface, custom
+  
+team:
+  - marcus-thompson
+
