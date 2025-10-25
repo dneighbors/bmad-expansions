@@ -56,7 +56,7 @@
 12. (E2) Scaffold `medical` pack via BMB create-module
     - As an author, I want `medical` pack for healthcare SaaS teams with 9 agents and 8 workflows.
     - Acceptance: 9 agents created, 8 workflows created, README updated, priority workflows tested.
-    - **Status:** ✅ READY FOR DEV (Discovery complete, assigned to developer, 5 points)
+    - **Status:** ✅ DONE (5 points, commit 5f95ddf)
     - **Details:** See `docs/stories/story-12-medical-pack.md` and `docs/discovery/medical-pack-discovery.md`
 
 13. (E2) Scaffold `marketing` pack via BMB create-module
