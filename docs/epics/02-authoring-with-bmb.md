@@ -25,11 +25,19 @@ Authors need a reliable, consistent way to create agents, workflows, and module 
 - Discovery: `docs/discovery/medical-pack-discovery.md`
 - Story detail: `docs/stories/story-12-medical-pack.md`
 
-**Story 13 — Marketing Pack (PENDING)**
-- Status: Awaiting discovery session
+**Story 13 — Marketing Pack (READY FOR DEV)**
+- Status: Discovery complete; ready for developer
+- Scope: 31 agents, 15 workflows
+- Story Points: 15
+- Discovery: `docs/discovery/marketing-pack-discovery.md`
+- Story detail: `docs/stories/story-13-marketing-pack.md`
 
-**Story 14 — Blog Pack (PENDING)**
-- Status: Awaiting discovery session
+**Story 14 — Blog Pack (READY FOR DEV)**
+- Status: Discovery complete; ready for developer
+- Scope: 2 agents (Orion + Derek), 15 workflows
+- Story Points: 20
+- Discovery: `docs/discovery/blog-pack-discovery.md`
+- Story detail: `docs/stories/story-14-blog-pack.md`
 
 ### References
 - See `EXPANSIONS-SETUP.md` sections: Authoring with BMAD, Default custom locations, Notes.

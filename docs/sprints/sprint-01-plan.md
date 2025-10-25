@@ -29,17 +29,19 @@
 
 **Story 13** (E2) — Scaffold `marketing` pack via BMB create-module  
 **Priority:** P0  
-**Assigned:** Developer  
-**Acceptance:** Module scaffold created with at least 1 agent and 1 workflow; installer config validated.  
-**Story Points:** 5  
-**Notes:** Second expansion pack with content.
+**Assigned:** Developer (READY FOR DEV)  
+**Acceptance:** 31 agents + 15 workflows created; README updated; priority workflows tested.  
+**Story Points:** 15  
+**Notes:** Full discovery complete. Complete AI marketing department for small teams. See `docs/stories/story-13-marketing-pack.md` and `docs/discovery/marketing-pack-discovery.md`.  
+**Status:** ✅ DISCOVERY COMPLETE — Ready for implementation
 
 **Story 14** (E2) — Scaffold `blog` pack via BMB create-module  
 **Priority:** P0  
-**Assigned:** Developer  
-**Acceptance:** Module scaffold created with at least 1 agent and 1 workflow; installer config validated.  
-**Story Points:** 5  
-**Notes:** Third expansion pack with content.
+**Assigned:** Developer (READY FOR DEV)  
+**Acceptance:** 2 agents + 15 workflows; port Derek's content-ops system; README updated; priority workflows tested.  
+**Story Points:** 20  
+**Notes:** Full discovery complete. Workflow-heavy content operations with blog author as agent pattern. See `docs/stories/story-14-blog-pack.md` and `docs/discovery/blog-pack-discovery.md`.  
+**Status:** ✅ DISCOVERY COMPLETE — Ready for implementation
 
 **Story 15** (E3) — Create sync script to copy packs into BMAD-METHOD  
 **Priority:** P0  
@@ -113,9 +115,9 @@
 
 ## Sprint Capacity
 
-**Total Story Points:** 29 (P0: 18, P1: 7, P2: 6)  
-**Developer Capacity:** ~20-25 points (assuming 1 developer, full-time)  
-**Notes:** P0 work is front-loaded; may need to reduce P1/P2 scope if capacity constrained.
+**Total Story Points:** 50 (P0: 43, P1: 7, P2: 6)  
+**Developer Capacity:** ~40-50 points with BMB workflows (1 developer, 996 mode)  
+**Notes:** Aggressive sprint. Medical: 5pts, Marketing: 15pts, Blog: 20pts, Sync: 3pts. BMB workflows accelerate agent/workflow creation.
 
 ---
 
@@ -140,9 +142,12 @@
 
 ## Next Actions
 
-1. Developer: Pick up Story 15 (sync script) — highest priority
-2. PM/SM: Monitor daily progress; adjust priorities if blockers arise
-3. Architect: Review sync script design before implementation
+1. **Developer:** Pick up Story 12 (medical pack) — 9 agents, 8 workflows
+2. **Developer:** Story 13 (marketing pack) — 31 agents, 15 workflows  
+3. **Developer:** Story 14 (blog pack) — 2 agents, 15 workflows, port Derek's system
+4. **Developer:** Story 15 (sync script) — deployment tooling
+5. **SM:** Monitor daily progress; update workflow-status.md
+6. **PM:** Available for discovery questions/clarifications
 
 ---
 

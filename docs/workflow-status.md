@@ -41,15 +41,21 @@
 - **Story Detail:** `docs/stories/story-12-medical-pack.md`
 - **Blockers:** None — ready for developer implementation
 
-### ⏳ Story 13 — Marketing Pack
-- **Status:** PENDING (Awaiting discovery session)
-- **Next Action:** Schedule discovery with Analyst, UX Designer, Brainstorming Coach
+### ✅ Story 13 — Marketing Pack
+- **Status:** DISCOVERY COMPLETE (Ready for developer)
+- **Scope:** 31 agents, 15 workflows
+- **Discovery:** `docs/discovery/marketing-pack-discovery.md`
 - **Story Detail:** `docs/stories/story-13-marketing-pack.md`
+- **Story Points:** 15
+- **Blockers:** None — ready for implementation
 
-### ⏳ Story 14 — Blog Pack
-- **Status:** PENDING (Awaiting discovery session)
-- **Next Action:** Schedule discovery with Analyst, UX Designer, Brainstorming Coach
+### ✅ Story 14 — Blog Pack
+- **Status:** DISCOVERY COMPLETE (Ready for developer)
+- **Scope:** 2 agents (Orion + Derek), 15 workflows, port content-ops system
+- **Discovery:** `docs/discovery/blog-pack-discovery.md`
 - **Story Detail:** `docs/stories/story-14-blog-pack.md`
+- **Story Points:** 20
+- **Blockers:** None — ready for implementation
 
 ### ⏳ Story 15 — Sync Script
 - **Status:** PENDING (Blocked by Stories 12-14)
@@ -86,15 +92,27 @@
 
 ### Immediate (This Week)
 
-1. **Developer** implements Story 12 (Medical Pack)
+1. **Developer** implements Story 12 (Medical Pack) — 5 points
    - Create 9 agent YAML files via BMB `*create-agent`
    - Create 8 workflow folders via BMB `*create-workflow`
    - Update `medical/README.md`
    - Test `*clinical-review` and `*marketing-collab` workflows
 
-2. **PM** schedules discovery sessions for Stories 13-14
-   - Marketing pack discovery
-   - Blog pack discovery
+2. **Developer** implements Story 13 (Marketing Pack) — 15 points
+   - Create 31 agent YAML files via BMB `*create-agent`
+   - Create 15 workflow folders via BMB `*create-workflow`
+   - Update `marketing/README.md`
+   - Test `*marketing-strategy`, `*social-campaign`, `*ppc-campaign`
+
+3. **Developer** implements Story 14 (Blog Pack) — 20 points
+   - Create 2 agent YAML files (Orion + Derek)
+   - Create 15 workflow folders
+   - Port Derek's content-ops system from `/derekneighbors.com/`
+   - Test `*daily-content-system`, `*social-media-generation`, `*cover-image-prompt`
+
+4. **Developer** implements Story 15 (Sync Script) — 3 points
+   - Create `scripts/sync-packs.sh`
+   - Test with all 3 packs
 
 ### Short Term (Next Week)
 
@@ -114,9 +132,9 @@
 
 | Pack | Scaffold | Agents | Workflows | README | Discovery | Status |
 |------|----------|--------|-----------|--------|-----------|--------|
-| **medical** | ✅ | ⏳ | ⏳ | ⏳ | ✅ | In Progress |
-| **marketing** | ✅ | ⏳ | ⏳ | ⏳ | ⏳ | Pending Discovery |
-| **blog** | ✅ | ⏳ | ⏳ | ⏳ | ⏳ | Pending Discovery |
+| **medical** | ✅ | ⏳ | ⏳ | ⏳ | ✅ | Ready for Dev (9 agents, 8 workflows) |
+| **marketing** | ✅ | ⏳ | ⏳ | ⏳ | ✅ | Ready for Dev (31 agents, 15 workflows) |
+| **blog** | ✅ | ⏳ | ⏳ | ⏳ | ✅ | Ready for Dev (2 agents, 15 workflows) |
 
 ---
 
