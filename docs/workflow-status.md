@@ -161,11 +161,11 @@
 
 ## 📈 Velocity Tracking
 
-**Sprint 01 Target:** 18 story points (P0)  
-**Completed:** 1 point (Story 11)  
-**Remaining:** 17 points (Stories 12-15)
+**Sprint 01 Target:** 43 story points (P0)  
+**Completed:** 0 points (Story 11 was 0 points - rename only)  
+**Remaining:** 43 points (Stories 12-15: 5 + 15 + 20 + 3)
 
-**Estimated Sprint Capacity:** 20-25 points (1 full-time developer)
+**Estimated Sprint Capacity:** 40-50 points (1 developer, 996 mode, BMB-accelerated)
 
 ---
 
