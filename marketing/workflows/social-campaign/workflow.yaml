@@ -1,0 +1,21 @@
+name: social-campaign
+description: "Plan multi-platform social campaign"
+author: "Marketing Pack Team"
+
+config_source: "{project-root}/bmad/bmm/config.yaml"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/marketing/workflows/social-campaign"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: false
+output_file: "{output_folder}/social-campaign-{date}.md"
+
+variables:
+  brief: ""
+  
+team:
+  - alex-social-strategist\n  - zoe-tiktok-specialist\n  - tyler-x-specialist\n  - jessica-youtube-specialist\n  - david-facebook-specialist\n  - sophia-instagram-specialist\n  - michael-linkedin-specialist

@@ -1,0 +1,21 @@
+name: content-calendar
+description: "Plan editorial calendar"
+author: "Marketing Pack Team"
+
+config_source: "{project-root}/bmad/bmm/config.yaml"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/marketing/workflows/content-calendar"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: false
+output_file: "{output_folder}/content-calendar-{date}.md"
+
+variables:
+  brief: ""
+  
+team:
+  - sarah-editorial-content-strategist\n  - olivia-search-seo\n  - emma-words-copywriter

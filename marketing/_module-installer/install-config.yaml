@@ -1,6 +1,6 @@
 code: marketing
 name: "Marketing Pack"
-description: "Agents and workflows for marketing planning and content."
+description: "Complete AI marketing department — 31 specialists (CMO, content, SEO, ads, social, growth, PR) + 15 workflows"
 version: "0.1.0"
 default_selected: false
 dependencies:

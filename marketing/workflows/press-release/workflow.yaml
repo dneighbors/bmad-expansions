@@ -1,0 +1,21 @@
+name: press-release
+description: "Write press release and media kit"
+author: "Marketing Pack Team"
+
+config_source: "{project-root}/bmad/bmm/config.yaml"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/marketing/workflows/press-release"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: false
+output_file: "{output_folder}/press-release-{date}.md"
+
+variables:
+  brief: ""
+  
+team:
+  - amanda-press-pr

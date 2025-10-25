@@ -1,0 +1,21 @@
+name: marketing-strategy
+description: "Develop annual/quarterly marketing strategy"
+author: "Marketing Pack Team"
+
+config_source: "{project-root}/bmad/bmm/config.yaml"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/marketing/workflows/marketing-strategy"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: false
+output_file: "{output_folder}/marketing-strategy-{date}.md"
+
+variables:
+  brief: ""
+  
+team:
+  - victoria-chen-cmo\n  - marcus-brand-strategist\n  - sarah-editorial-content-strategist\n  - priya-analytics-expert
