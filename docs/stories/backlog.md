@@ -62,7 +62,7 @@
 13. (E2) Scaffold `marketing` pack via BMB create-module
     - As an author, I want complete marketing department with 31 agents and 15 workflows for small teams.
     - Acceptance: 31 agents created, 15 workflows created, README updated, priority workflows tested.
-    - **Status:** ✅ READY FOR DEV (Discovery complete, assigned to developer, 15 points)
+    - **Status:** ✅ DONE (15 points, commit 1faca00)
     - **Details:** See `docs/stories/story-13-marketing-pack.md` and `docs/discovery/marketing-pack-discovery.md`
 
 14. (E2) Scaffold `blog` pack via BMB create-module

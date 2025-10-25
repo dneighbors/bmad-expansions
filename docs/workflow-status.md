@@ -133,7 +133,7 @@
 | Pack | Scaffold | Agents | Workflows | README | Discovery | Status |
 |------|----------|--------|-----------|--------|-----------|--------|
 | **medical** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ COMPLETE (commit 5f95ddf) |
-| **marketing** | ✅ | ⏳ | ⏳ | ⏳ | ✅ | Ready for Dev (31 agents, 15 workflows) |
+| **marketing** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ COMPLETE (commit 1faca00) |
 | **blog** | ✅ | ⏳ | ⏳ | ⏳ | ✅ | Ready for Dev (2 agents, 15 workflows) |
 
 ---
@@ -162,8 +162,8 @@
 ## 📈 Velocity Tracking
 
 **Sprint 01 Target:** 43 story points (P0)  
-**Completed:** 5 points (Story 12)  
-**Remaining:** 38 points (Stories 13-15: 15 + 20 + 3)
+**Completed:** 20 points (Stories 12, 13)  
+**Remaining:** 23 points (Stories 14-15: 20 + 3)
 
 **Estimated Sprint Capacity:** 40-50 points (1 developer, 996 mode, BMB-accelerated)
 
