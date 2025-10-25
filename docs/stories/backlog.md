@@ -74,5 +74,7 @@
 15. (E3) Create sync script to copy packs into BMAD-METHOD
     - As a maintainer, I want `scripts/sync-packs.sh` to rsync packs and manage .gitignore noise.
     - Acceptance: Script syncs to `../BMAD-METHOD/src/modules/`; adds ignore entries safely.
+    - **Status:** ✅ DONE (3 points, commit c79eabd)
+    - **Details:** See `docs/stories/story-15-sync-script.md`
 
 
