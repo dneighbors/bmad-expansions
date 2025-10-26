@@ -1,0 +1,124 @@
+# Marketing Pack Module Configuration
+# This file defines installation questions and module configuration values
+
+code: marketing-bmad
+name: "Marketing Pack (BMB Generated)"
+default_selected: false
+description: "Complete AI marketing department for small teams - 31 specialists - Created using BMB workflows"
+version: "1.0.0"
+author: "Derek Neighbors"
+
+prompt:
+  - "Thank you for choosing Marketing Pack!"
+  - "Your complete AI marketing department with 31 specialists across strategy, content, performance, social media, PR, and analytics."
+  - "Perfect for small teams and startups that need enterprise-level marketing expertise."
+
+# Core config values are automatically inherited:
+## user_name
+## communication_language
+## document_output_language
+## output_folder
+
+# ============================================================================
+# CONFIGURATION FIELDS
+# ============================================================================
+
+# Marketing output location
+marketing_output_path:
+  prompt: "Where should marketing pack save strategies, campaigns, and content?"
+  default: "output/marketing"
+  result: "{project-root}/{value}"
+
+# Company industry/vertical
+company_industry:
+  prompt: "What industry are you in?"
+  default: "saas"
+  result: "{value}"
+  single-select:
+    - value: "saas"
+      label: "SaaS / Software"
+    - value: "ecommerce"
+      label: "E-Commerce / Retail"
+    - value: "healthcare"
+      label: "Healthcare / MedTech"
+    - value: "fintech"
+      label: "FinTech / Financial Services"
+    - value: "education"
+      label: "Education / EdTech"
+    - value: "professional-services"
+      label: "Professional Services"
+    - value: "other"
+      label: "Other"
+
+# Primary marketing focus
+marketing_focus:
+  prompt: "What's your primary marketing focus?"
+  default: "demand-gen"
+  result: "{value}"
+  multi-select:
+    - value: "brand-awareness"
+      label: "Brand Awareness"
+    - value: "demand-gen"
+      label: "Demand Generation / Lead Gen"
+    - value: "content-marketing"
+      label: "Content Marketing"
+    - value: "social-media"
+      label: "Social Media Growth"
+    - value: "performance-marketing"
+      label: "Performance Marketing / Paid Ads"
+    - value: "product-marketing"
+      label: "Product Marketing"
+    - value: "community"
+      label: "Community Building"
+
+# Target audience
+target_audience:
+  prompt: "Who is your primary target audience?"
+  default: "b2b"
+  result: "{value}"
+  single-select:
+    - value: "b2b"
+      label: "B2B (Business to Business)"
+    - value: "b2c"
+      label: "B2C (Business to Consumer)"
+    - value: "b2b2c"
+      label: "B2B2C (Hybrid)"
+    - value: "d2c"
+      label: "D2C (Direct to Consumer)"
+
+# Marketing maturity level
+marketing_maturity:
+  prompt: "What's your current marketing maturity level?"
+  default: "growing"
+  result: "{value}"
+  single-select:
+    - value: "startup"
+      label: "Startup - Building from scratch"
+    - value: "growing"
+      label: "Growing - Have basics, need to scale"
+    - value: "established"
+      label: "Established - Optimizing and scaling"
+    - value: "enterprise"
+      label: "Enterprise - Complex, multi-channel"
+
+# Marketing disclaimer mode
+include_marketing_disclaimers:
+  prompt: "Include marketing best practice disclaimers?"
+  default: "true"
+  result: "{value}"
+  single-select:
+    - value: "true"
+      label: "Yes - Include disclaimers about review and compliance"
+    - value: "false"
+      label: "No - Skip disclaimers"
+
+# Data paths (static)
+marketing_data_path:
+  result: "{project-root}/bmad/marketing-bmad/data"
+
+templates_path:
+  result: "{project-root}/bmad/marketing-bmad/templates"
+
+brand_assets_path:
+  result: "{project-root}/bmad/marketing-bmad/data/brand-assets"
+

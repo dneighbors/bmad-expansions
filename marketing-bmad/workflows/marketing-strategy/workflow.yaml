@@ -1,0 +1,144 @@
+# Marketing Strategy Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: marketing-strategy
+description: "Develop comprehensive annual or quarterly marketing strategy with goals, channels, budget, and execution roadmap"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing-bmad/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
+marketing_focus: "{config_source}:marketing_focus"
+marketing_maturity: "{config_source}:marketing_maturity"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing-bmad/workflows/marketing-strategy"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: "{installed_path}/template.md"
+
+# Output configuration
+output_file: "{output_folder}/marketing-strategy-{date}.md"
+
+# Input variables
+variables:
+  strategy_timeframe:
+    prompt: "Strategy timeframe?"
+    type: "single-select"
+    default: "quarterly"
+    options:
+      - "quarterly"
+      - "annual"
+      - "campaign-specific"
+  
+  company_stage:
+    prompt: "Company stage?"
+    type: "single-select"
+    options:
+      - "Pre-Product (Building)"
+      - "Product-Market Fit (Validating)"
+      - "Growth (Scaling)"
+      - "Scale (Optimizing)"
+      - "Mature (Defending)"
+  
+  current_challenges:
+    prompt: "What are your biggest marketing challenges?"
+    type: "multi-select"
+    options:
+      - "Limited budget"
+      - "Small team"
+      - "Unclear messaging"
+      - "Low brand awareness"
+      - "Lead generation"
+      - "Customer acquisition cost too high"
+      - "Long sales cycles"
+      - "Attribution / measurement"
+      - "Content production"
+      - "Channel selection"
+  
+  business_goals:
+    prompt: "Primary business goals for this period?"
+    type: "text"
+    required: true
+  
+  budget_range:
+    prompt: "Marketing budget range?"
+    type: "single-select"
+    options:
+      - "< $25K"
+      - "$25K - $100K"
+      - "$100K - $500K"
+      - "$500K - $1M"
+      - "$1M+"
+  
+  existing_assets:
+    prompt: "What marketing assets do you already have?"
+    type: "multi-select"
+    options:
+      - "Website"
+      - "Blog"
+      - "Email list"
+      - "Social media presence"
+      - "Brand guidelines"
+      - "Content library"
+      - "CRM/Marketing automation"
+      - "Starting from scratch"
+
+# Team composition
+team:
+  - agent: "victoria-chen-cmo"
+    role: "Strategic Lead - Overall Strategy & Prioritization"
+    required: true
+  
+  - agent: "marcus-brand-strategist"
+    role: "Brand Positioning & Messaging"
+    required: true
+  
+  - agent: "sarah-editorial-content-strategist"
+    role: "Content Strategy & Editorial Planning"
+    required_if: "marketing_focus contains 'content-marketing'"
+  
+  - agent: "alex-social-strategist"
+    role: "Social Media Strategy"
+    required_if: "marketing_focus contains 'social-media'"
+  
+  - agent: "priya-analytics-expert"
+    role: "Analytics & Measurement Planning"
+    required: true
+  
+  - agent: "daniel-insights-analyst"
+    role: "Customer Insights & Segmentation"
+    required: true
+  
+  - agent: "rachel-ads-ppc"
+    role: "Paid Advertising Strategy"
+    required_if: "marketing_focus contains 'performance-marketing' or budget_range != '< $25K'"
+  
+  - agent: "samantha-demand-gen"
+    role: "Demand Generation & Pipeline Strategy"
+    required_if: "target_audience == 'b2b' or marketing_focus contains 'demand-gen'"
+  
+  - agent: "natalie-product-marketing"
+    role: "Product Marketing & GTM Strategy"
+    required_if: "company_stage contains 'Product-Market Fit' or marketing_focus contains 'product-marketing'"
+
+# Dependencies
+dependencies:
+  - bmad/core
+  - bmad/bmm
+
+# Workflow metadata
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-26"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+  estimated_duration: "60-90 minutes"
+  complexity: "high"
+
