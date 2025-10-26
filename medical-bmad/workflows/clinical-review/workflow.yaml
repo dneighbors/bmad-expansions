@@ -1,0 +1,111 @@
+# Clinical Review Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: clinical-review
+description: "Multi-specialist clinical review of product features, specifications, or content for medical accuracy, patient safety, and compliance"
+author: "Medical Pack Team"
+workflow_type: "document"  # Produces a report document
+
+# Configuration loading
+config_source: "{project-root}/bmad/medical-bmad/config.yaml"
+output_folder: "{config_source}:clinical_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+hipaa_mode: "{config_source}:hipaa_compliance_mode"
+validation_level: "{config_source}:clinical_validation_level"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/medical-bmad/workflows/clinical-review"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: "{installed_path}/template.md"
+
+# Output configuration
+output_file: "{output_folder}/clinical-review-{date}.md"
+
+# Input variables (collected at runtime)
+variables:
+  artifact_type:
+    prompt: "What are you reviewing?"
+    type: "single-select"
+    options:
+      - "Feature Specification"
+      - "User Story"
+      - "Design Mockup"
+      - "Patient-Facing Content"
+      - "Clinical Workflow"
+      - "Marketing Material"
+      - "Other"
+  
+  artifact_description:
+    prompt: "Describe what needs clinical review"
+    type: "text"
+    required: true
+  
+  artifact_file:
+    prompt: "Path to artifact file (optional)"
+    type: "file_path"
+    required: false
+  
+  review_focus:
+    prompt: "Specific areas of concern?"
+    type: "multi-select"
+    options:
+      - "Medical Accuracy"
+      - "Patient Safety"
+      - "Clinical Workflow"
+      - "HIPAA Compliance"
+      - "Medication Safety"
+      - "Emergency Procedures"
+      - "All Areas"
+  
+  urgency:
+    prompt: "Review urgency?"
+    type: "single-select"
+    default: "standard"
+    options:
+      - "urgent"
+      - "standard"
+      - "thorough"
+
+# Team composition (multi-agent collaboration)
+team:
+  - agent: "dr-michael-johnson"
+    role: "Lead Reviewer - Clinical Strategy & Outcomes"
+    required: true
+  
+  - agent: "nurse-brittany-hinsley"
+    role: "Patient Care & Workflow Perspective"
+    required: true
+  
+  - agent: "ashley-rutledge"
+    role: "Emergency Care & Critical Scenarios"
+    required_if: "review_focus contains 'Emergency Procedures'"
+  
+  - agent: "dr-alex-kim"
+    role: "Medication Safety Review"
+    required_if: "review_focus contains 'Medication Safety' or artifact_type contains 'drug'"
+  
+  - agent: "lisa-chang"
+    role: "HIPAA & Privacy Compliance"
+    required_if: "hipaa_mode == 'enabled' or review_focus contains 'HIPAA'"
+  
+  - agent: "marcus-thompson"
+    role: "EHR Integration & Data Standards"
+    required_if: "artifact_type contains 'EHR' or artifact_type contains 'integration'"
+
+# Dependencies
+dependencies:
+  - bmad/core  # Core BMAD functionality
+  - bmad/bmm   # For workflow execution patterns
+
+# Workflow metadata
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-26"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+  estimated_duration: "20-45 minutes"
+  complexity: "medium"
+

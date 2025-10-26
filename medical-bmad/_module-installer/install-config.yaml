@@ -1,0 +1,94 @@
+# Medical Pack Module Configuration
+# This file defines installation questions and module configuration values
+
+code: medical-bmad
+name: "Medical Pack (BMB Generated)"
+default_selected: false
+description: "Healthcare domain expertise for SaaS product teams - Created using BMB workflows"
+version: "1.0.0"
+author: "Derek Neighbors"
+
+prompt:
+  - "Thank you for choosing Medical Pack!"
+  - "Provides clinical review, HIPAA compliance, and healthcare domain expertise."
+  - "Includes 9 medical professionals: Medical Director, Nurse, Paramedic, Pharmacist, Medical Writer, Medical Educator, Privacy Officer, EHR Specialist, and Billing Expert."
+
+# Core config values are automatically inherited:
+## user_name
+## communication_language
+## document_output_language
+## output_folder
+
+# ============================================================================
+# CONFIGURATION FIELDS
+# ============================================================================
+
+# Output location for clinical reviews and medical content
+clinical_output_path:
+  prompt: "Where should medical pack save clinical reviews and reports?"
+  default: "output/medical"
+  result: "{project-root}/{value}"
+
+# HIPAA compliance mode
+hipaa_compliance_mode:
+  prompt: "Enable HIPAA compliance checks in all workflows?"
+  default: "enabled"
+  result: "{value}"
+  single-select:
+    - value: "enabled"
+      label: "Enabled - Include HIPAA validation in all workflows"
+    - value: "advisory"
+      label: "Advisory - Show HIPAA guidance but don't enforce"
+    - value: "disabled"
+      label: "Disabled - Skip HIPAA checks (not recommended)"
+
+# Medical disclaimer mode
+include_medical_disclaimers:
+  prompt: "Automatically include medical disclaimers in outputs?"
+  default: "true"
+  result: "{value}"
+  single-select:
+    - value: "true"
+      label: "Yes - Add disclaimers to all medical content"
+    - value: "false"
+      label: "No - I'll add disclaimers manually"
+
+# Clinical validation level
+clinical_validation_level:
+  prompt: "How thorough should clinical validations be?"
+  default: "standard"
+  result: "{value}"
+  single-select:
+    - value: "quick"
+      label: "Quick - Basic safety checks only"
+    - value: "standard"
+      label: "Standard - Comprehensive clinical review"
+    - value: "rigorous"
+      label: "Rigorous - Deep clinical validation with multiple specialists"
+
+# EHR system type (for integration workflows)
+ehr_system:
+  prompt: "What EHR system do you primarily integrate with?"
+  default: "none"
+  result: "{value}"
+  single-select:
+    - value: "epic"
+      label: "Epic"
+    - value: "cerner"
+      label: "Cerner/Oracle Health"
+    - value: "meditech"
+      label: "Meditech"
+    - value: "allscripts"
+      label: "Allscripts"
+    - value: "custom"
+      label: "Custom/Proprietary EHR"
+    - value: "none"
+      label: "No EHR integration needed"
+
+# Data paths (static)
+medical_data_path:
+  result: "{project-root}/bmad/medical-bmad/data"
+
+templates_path:
+  result: "{project-root}/bmad/medical-bmad/templates"
+
