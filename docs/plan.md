@@ -19,16 +19,30 @@
 - Authoring and install guidance aligned with `EXPANSIONS-SETUP.md`.
 
 ### Milestones
-1. Repository Structure Baseline
-   - Create epic and stories for multi-pack layout and installer metadata.
-2. Authoring Enablement
-   - Create epic and stories for using BMB builder workflows to author agents/workflows/modules.
-3. Discovery and Sync Bridge
-   - Create epic and stories for rsync/subtree flows into BMAD-METHOD `src/modules/`.
-4. Installation into Target Projects
-   - Create epic and stories for installing into target projects (e.g., Cursor) and regenerating artifacts on updates.
-5. Governance & Best Practices
-   - Document best practices and acceptance criteria; define verification checks.
+
+1. ✅ **Repository Structure Baseline** — PARTIAL COMPLETE
+   - Epic and stories created for multi-pack layout and installer metadata
+   - Story 11 complete (pack directories renamed)
+   - Story 2 pending (installer config template)
+
+2. ✅ **Authoring Enablement** — PRIMARY COMPLETE
+   - Epic and stories created for BMB builder workflows
+   - 3 production packs delivered: medical (9 agents, 8 workflows), marketing (31 agents, 15 workflows), blog (2 agents, 15 workflows)
+   - Documentation stories (3-5) pending for Sprint 02
+
+3. ✅ **Discovery and Sync Bridge** — COMPLETE
+   - Epic and stories created for sync flows
+   - Sync script delivered (`scripts/sync-packs.sh`)
+   - Git subtree documentation deferred (rsync sufficient)
+
+4. ⏳ **Installation into Target Projects** — PENDING
+   - Epic and stories created
+   - Pending: Documentation (Stories 8-9) and validation testing
+   - Target for Sprint 02
+
+5. ⏳ **Governance & Best Practices** — PENDING
+   - Verification checklist (Story 10) deferred until validation complete
+   - Target for Sprint 02+
 
 ### Assumptions & Constraints
 - BMAD v6-alpha installer discovers modules only under `src/modules/` of the BMAD repo.
@@ -40,16 +54,36 @@
 - Inconsistent pack metadata can break installation; mitigate with templates and validation.
 
 ### Success Metrics
-- New pack scaffold can be created and installed into a target project in < 10 minutes.
-- Updates to a pack propagate via sync and re-install with zero manual file edits.
-- Cursor artifacts regenerate consistently after updates.
+
+**Target Metrics:**
+- New pack scaffold can be created and installed into a target project in < 10 minutes
+- Updates to a pack propagate via sync and re-install with zero manual file edits
+- Cursor artifacts regenerate consistently after updates
+
+**Sprint 01 Results:**
+- ✅ 3 production packs created with 42 agents and 31 workflows total
+- ✅ Sync script ready for deployment testing
+- ⏳ End-to-end validation pending (Sprint 02)
 
 ---
 
 ## Status Tracking
 
 For current sprint progress, story status, and operational tracking, see:
-- **Workflow Status:** `docs/workflow-status.md`
-- **Sprint Plans:** `docs/sprints/sprint-*.md`
+- **Workflow Status:** `docs/workflow-status.md` (updated 2025-10-26)
+- **Sprint 01 Plan:** `docs/sprints/sprint-01-plan.md` (✅ COMPLETE — 43/43 points delivered)
+- **Epics:** `docs/epics/*.md` (all updated with story progress)
+- **Backlog:** `docs/stories/backlog.md`
+
+### Current Status (2025-10-26)
+
+**Sprint 01:** ✅ COMPLETE  
+**Phase:** Ready for Sprint 02 (Documentation & Validation)  
+**Completed:** 5 stories, 43 story points  
+**Key Deliverables:**
+- Medical pack (9 agents, 8 workflows)
+- Marketing pack (31 agents, 15 workflows)
+- Blog pack (2 agents, 15 workflows)
+- Sync script (`scripts/sync-packs.sh`)
 
 
