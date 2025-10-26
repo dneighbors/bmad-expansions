@@ -1,0 +1,121 @@
+# Blog Pack Module Configuration
+# Author-as-Agent pattern for content creators
+
+code: blog-bmad
+name: "Blog Pack (BMB Generated)"
+default_selected: false
+description: "Blog content operations with author-as-agent pattern - Created using BMB workflows"
+version: "1.0.0"
+author: "Derek Neighbors"
+
+prompt:
+  - "Thank you for choosing Blog Pack!"
+  - "Content operations system with author-as-agent pattern."
+  - "Includes Orion orchestrator + Derek Neighbors (customizable author agent) + 15 content workflows."
+  - "Designed for prolific content creators who want to maintain their unique voice while scaling production."
+
+# Core config values automatically inherited
+
+# ============================================================================
+# CONFIGURATION FIELDS
+# ============================================================================
+
+# Blog output location
+blog_output_path:
+  prompt: "Where should blog pack save drafts and content?"
+  default: "output/blog"
+  result: "{project-root}/{value}"
+
+# Author configuration
+author_name:
+  prompt: "Blog author name (for author-as-agent persona)?"
+  default: "{user_name}"
+  result: "{value}"
+
+author_brand_voice:
+  prompt: "What's your brand voice/style?"
+  default: "practical"
+  result: "{value}"
+  single-select:
+    - value: "practical"
+      label: "Practical - Direct, actionable, no-nonsense"
+    - value: "conversational"
+      label: "Conversational - Friendly, accessible, storytelling"
+    - value: "authoritative"
+      label: "Authoritative - Expert, data-driven, formal"
+    - value: "provocative"
+      label: "Provocative - Bold, opinionated, thought-provoking"
+    - value: "educational"
+      label: "Educational - Teaching-focused, step-by-step"
+
+# Content focus
+content_focus:
+  prompt: "Primary content focus areas?"
+  type: "multi-select"
+  default: ["long-form"]
+  result: "{value}"
+  options:
+    - value: "long-form"
+      label: "Long-form blog posts (1500+ words)"
+    - value: "quick-takes"
+      label: "Quick takes / short posts (300-500 words)"
+    - value: "technical"
+      label: "Technical tutorials / how-tos"
+    - value: "thought-leadership"
+      label: "Thought leadership / opinion pieces"
+    - value: "case-studies"
+      label: "Case studies / success stories"
+    - value: "series"
+      label: "Multi-part series"
+
+# Publishing cadence
+publishing_cadence:
+  prompt: "Target publishing frequency?"
+  default: "weekly"
+  result: "{value}"
+  single-select:
+    - value: "daily"
+      label: "Daily (high-volume content machine)"
+    - value: "3x-week"
+      label: "3x per week"
+    - value: "weekly"
+      label: "Weekly"
+    - value: "bi-weekly"
+      label: "Bi-weekly"
+    - value: "monthly"
+      label: "Monthly (deep-dive only)"
+
+# SEO priority level
+seo_priority:
+  prompt: "How important is SEO optimization?"
+  default: "balanced"
+  result: "{value}"
+  single-select:
+    - value: "high"
+      label: "High - SEO-first, keyword-driven"
+    - value: "balanced"
+      label: "Balanced - SEO-aware but voice-first"
+    - value: "low"
+      label: "Low - Voice and message over SEO"
+
+# Social media integration
+social_automation:
+  prompt: "Auto-generate social media content from posts?"
+  default: "true"
+  result: "{value}"
+  single-select:
+    - value: "true"
+      label: "Yes - Generate social content automatically"
+    - value: "false"
+      label: "No - I'll handle social separately"
+
+# Data paths (static)
+blog_data_path:
+  result: "{project-root}/bmad/blog-bmad/data"
+
+content_bank_path:
+  result: "{project-root}/bmad/blog-bmad/data/content-bank"
+
+brand_voice_guide:
+  result: "{project-root}/bmad/blog-bmad/data/brand-voice.md"
+

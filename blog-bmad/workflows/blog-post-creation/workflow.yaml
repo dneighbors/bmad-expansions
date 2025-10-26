@@ -1,0 +1,130 @@
+# Blog Post Creation Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: blog-post-creation
+description: "Create single blog post from concept to publish-ready draft with SEO optimization and social preview"
+author: "Blog Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/blog-bmad/config.yaml"
+output_folder: "{config_source}:blog_output_path"
+user_name: "{config_source}:user_name"
+author_name: "{config_source}:author_name"
+author_brand_voice: "{config_source}:author_brand_voice"
+content_focus: "{config_source}:content_focus"
+seo_priority: "{config_source}:seo_priority"
+social_automation: "{config_source}:social_automation"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/blog-bmad/workflows/blog-post-creation"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+template: "{installed_path}/template.md"
+
+# Output configuration
+output_file: "{output_folder}/blog-post-{date}.md"
+
+# Input variables
+variables:
+  post_topic:
+    prompt: "Blog post topic or working title?"
+    type: "text"
+    required: true
+  
+  target_length:
+    prompt: "Target word count?"
+    type: "single-select"
+    default: "long-form"
+    options:
+      - value: "quick"
+        label: "Quick Take (300-500 words)"
+      - value: "standard"
+        label: "Standard Post (800-1200 words)"
+      - value: "long-form"
+        label: "Long-Form (1500-2500 words)"
+      - value: "deep-dive"
+        label: "Deep Dive (3000+ words)"
+  
+  target_audience:
+    prompt: "Who is this post for?"
+    type: "text"
+    required: true
+  
+  key_takeaways:
+    prompt: "What should readers learn/do after reading?"
+    type: "text"
+    required: true
+  
+  content_type:
+    prompt: "Post type/format?"
+    type: "single-select"
+    options:
+      - "How-To / Tutorial"
+      - "Opinion / Thought Leadership"
+      - "Case Study / Story"
+      - "List / Roundup"
+      - "Deep Analysis"
+      - "News / Commentary"
+  
+  seo_keywords:
+    prompt: "Primary SEO keywords (optional)?"
+    type: "text"
+    required: false
+  
+  include_social_preview:
+    prompt: "Generate social media preview?"
+    type: "single-select"
+    default: "{social_automation}"
+    options:
+      - "yes"
+      - "no"
+
+# Team composition
+team:
+  - agent: "derek-neighbors-author"
+    role: "Content Creator - Write draft in brand voice"
+    required: true
+  
+  - agent: "emma-words-copywriter"
+    module: "marketing"
+    role: "Copywriting Support - Headlines, hooks, CTAs"
+    required_if: "target_length == 'long-form' or target_length == 'deep-dive'"
+  
+  - agent: "olivia-search-seo"
+    module: "marketing"
+    role: "SEO Optimization"
+    required_if: "seo_priority == 'high' or seo_priority == 'balanced'"
+  
+  - agent: "james-edit-content-editor"
+    module: "marketing"
+    role: "Editorial Review & Polish"
+    required: true
+  
+  - agent: "alex-social-strategist"
+    module: "marketing"
+    role: "Social Media Preview Generation"
+    required_if: "include_social_preview == 'yes'"
+  
+  - agent: "maya-visuals-designer"
+    module: "marketing"
+    role: "Cover Image Concept (if requested separately)"
+    required: false
+
+# Dependencies
+dependencies:
+  - bmad/core
+  - bmad/bmm
+  - bmad/marketing  # Borrows marketing pack specialists
+
+# Workflow metadata
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-26"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+  estimated_duration: "30-60 minutes"
+  complexity: "medium"
+  pattern: "author-as-agent with specialist support"
+
