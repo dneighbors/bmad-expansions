@@ -7,7 +7,7 @@ author: "Blog Pack Team"
 workflow_type: "document"
 
 # Configuration loading
-config_source: "{project-root}/bmad/blog-bmad/config.yaml"
+config_source: "{project-root}/bmad/blog/config.yaml"
 output_folder: "{config_source}:blog_output_path"
 user_name: "{config_source}:user_name"
 author_name: "{config_source}:author_name"
@@ -18,7 +18,7 @@ social_automation: "{config_source}:social_automation"
 date: system-generated
 
 # Workflow paths
-installed_path: "{project-root}/blog-bmad/workflows/blog-post-creation"
+installed_path: "{project-root}/blog/workflows/blog-post-creation"
 instructions: "{installed_path}/instructions.md"
 validation: "{installed_path}/checklist.md"
 template: "{installed_path}/template.md"

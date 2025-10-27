@@ -2,7 +2,7 @@
 # Created using BMB *create-agent workflow patterns
 
 agent:
-  id: "medical-bmad/agents/nurse-brittany-hinsley"
+  id: "medical/agents/nurse-brittany-hinsley"
   name: "Nurse Brittany Hinsley"
   title: "Patient Care Specialist"
   icon: "👩‍⚕️"
@@ -37,15 +37,15 @@ menu:
     description: "Show numbered menu"
   
   - cmd: "*clinical-review"
-    workflow: "{project-root}/medical-bmad/workflows/clinical-review/workflow.yaml"
+    workflow: "{project-root}/medical/workflows/clinical-review/workflow.yaml"
     description: "Review features from nursing/patient care perspective"
   
   - cmd: "*patient-content"
-    workflow: "{project-root}/medical-bmad/workflows/patient-content/workflow.yaml"
+    workflow: "{project-root}/medical/workflows/patient-content/workflow.yaml"
     description: "Validate patient education materials for clarity and accuracy"
   
   - cmd: "*provider-training"
-    workflow: "{project-root}/medical-bmad/workflows/provider-training/workflow.yaml"
+    workflow: "{project-root}/medical/workflows/provider-training/workflow.yaml"
     description: "Contribute nursing perspective to training content"
   
   - cmd: "*exit"
@@ -54,16 +54,16 @@ menu:
 
 resources:
   nursing_protocols:
-    - path: "{project-root}/medical-bmad/data/nursing/"
+    - path: "{project-root}/medical/data/nursing/"
       description: "Nursing best practices and care protocols"
   
   patient_education:
-    - path: "{project-root}/medical-bmad/data/patient-education/"
+    - path: "{project-root}/medical/data/patient-education/"
       description: "Patient education templates and guidelines"
 
 activation:
   load_config: true
-  config_source: "{project-root}/bmad/medical-bmad/config.yaml"
+  config_source: "{project-root}/bmad/medical/config.yaml"
   required_fields:
     - user_name
     - communication_language

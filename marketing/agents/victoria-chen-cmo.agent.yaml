@@ -2,7 +2,7 @@
 # Created using BMB *create-agent workflow patterns
 
 agent:
-  id: "marketing-bmad/agents/victoria-chen-cmo"
+  id: "marketing/agents/victoria-chen-cmo"
   name: "Victoria Chen"
   title: "Chief Marketing Officer"
   icon: "👩‍💼"
@@ -40,19 +40,19 @@ menu:
     description: "Show numbered menu"
   
   - cmd: "*marketing-strategy"
-    workflow: "{project-root}/marketing-bmad/workflows/marketing-strategy/workflow.yaml"
+    workflow: "{project-root}/marketing/workflows/marketing-strategy/workflow.yaml"
     description: "Develop annual/quarterly marketing strategy"
   
   - cmd: "*competitive-analysis"
-    workflow: "{project-root}/marketing-bmad/workflows/competitive-analysis/workflow.yaml"
+    workflow: "{project-root}/marketing/workflows/competitive-analysis/workflow.yaml"
     description: "Analyze market and competitors"
   
   - cmd: "*marketing-plan"
-    workflow: "{project-root}/marketing-bmad/workflows/marketing-plan/workflow.yaml"
+    workflow: "{project-root}/marketing/workflows/marketing-plan/workflow.yaml"
     description: "Create comprehensive marketing plan"
   
   - cmd: "*budget-allocation"
-    workflow: "{project-root}/marketing-bmad/workflows/budget-allocation/workflow.yaml"
+    workflow: "{project-root}/marketing/workflows/budget-allocation/workflow.yaml"
     description: "Optimize marketing budget across channels"
   
   - cmd: "*exit"
@@ -61,20 +61,20 @@ menu:
 
 resources:
   marketing_frameworks:
-    - path: "{project-root}/marketing-bmad/data/frameworks/"
+    - path: "{project-root}/marketing/data/frameworks/"
       description: "Marketing strategy frameworks (AARRR, Growth Loops, etc.)"
   
   industry_benchmarks:
-    - path: "{project-root}/marketing-bmad/data/benchmarks/"
+    - path: "{project-root}/marketing/data/benchmarks/"
       description: "Industry benchmarks and best practices"
   
   channel_guides:
-    - path: "{project-root}/marketing-bmad/data/channels/"
+    - path: "{project-root}/marketing/data/channels/"
       description: "Channel-specific playbooks and guides"
 
 activation:
   load_config: true
-  config_source: "{project-root}/bmad/marketing-bmad/config.yaml"
+  config_source: "{project-root}/bmad/marketing/config.yaml"
   required_fields:
     - user_name
     - communication_language

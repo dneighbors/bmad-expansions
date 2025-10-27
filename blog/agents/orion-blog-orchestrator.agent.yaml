@@ -2,7 +2,7 @@
 # Created using BMB *create-agent workflow patterns
 
 agent:
-  id: "blog-bmad/agents/orion-blog-orchestrator"
+  id: "blog/agents/orion-blog-orchestrator"
   name: "Orion"
   title: "Blog Orchestrator"
   icon: "🎯"
@@ -37,27 +37,27 @@ menu:
     description: "Show numbered menu"
   
   - cmd: "*daily-content-system"
-    workflow: "{project-root}/blog-bmad/workflows/daily-content-system/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/daily-content-system/workflow.yaml"
     description: "Execute full daily blog post creation system"
   
   - cmd: "*blog-post-creation"
-    workflow: "{project-root}/blog-bmad/workflows/blog-post-creation/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/blog-post-creation/workflow.yaml"
     description: "Create single blog post from concept to publish-ready"
   
   - cmd: "*content-calendar-planning"
-    workflow: "{project-root}/blog-bmad/workflows/content-calendar-planning/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/content-calendar-planning/workflow.yaml"
     description: "Plan 30-90 day content calendar"
   
   - cmd: "*social-media-generation"
-    workflow: "{project-root}/blog-bmad/workflows/social-media-generation/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/social-media-generation/workflow.yaml"
     description: "Generate all social content from published post"
   
   - cmd: "*content-repurposing"
-    workflow: "{project-root}/blog-bmad/workflows/content-repurposing/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/content-repurposing/workflow.yaml"
     description: "Repurpose blog post into multi-platform content"
   
   - cmd: "*content-performance-report"
-    workflow: "{project-root}/blog-bmad/workflows/content-performance-report/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/content-performance-report/workflow.yaml"
     description: "Analyze blog and social performance metrics"
   
   - cmd: "*exit"
@@ -66,20 +66,20 @@ menu:
 
 resources:
   editorial_standards:
-    - path: "{project-root}/blog-bmad/data/editorial-standards.md"
+    - path: "{project-root}/blog/data/editorial-standards.md"
       description: "Editorial guidelines and quality checklist"
   
   seo_checklist:
-    - path: "{project-root}/blog-bmad/data/seo-checklist.md"
+    - path: "{project-root}/blog/data/seo-checklist.md"
       description: "SEO optimization requirements"
   
   social_templates:
-    - path: "{project-root}/blog-bmad/templates/social/"
+    - path: "{project-root}/blog/templates/social/"
       description: "Social media post templates by platform"
 
 activation:
   load_config: true
-  config_source: "{project-root}/bmad/blog-bmad/config.yaml"
+  config_source: "{project-root}/bmad/blog/config.yaml"
   required_fields:
     - user_name
     - communication_language

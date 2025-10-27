@@ -3,7 +3,7 @@
 # Created using BMB *create-agent workflow patterns
 
 agent:
-  id: "medical-bmad/agents/dr-michael-johnson"
+  id: "medical/agents/dr-michael-johnson"
   name: "Dr. Michael Johnson"
   title: "Medical Director"
   icon: "🏥"
@@ -38,23 +38,23 @@ menu:
     description: "Show numbered menu"
   
   - cmd: "*clinical-review"
-    workflow: "{project-root}/medical-bmad/workflows/clinical-review/workflow.yaml"
+    workflow: "{project-root}/medical/workflows/clinical-review/workflow.yaml"
     description: "Multi-specialist clinical review of features, specs, or content"
   
   - cmd: "*patient-content"
-    workflow: "{project-root}/medical-bmad/workflows/patient-content/workflow.yaml"
+    workflow: "{project-root}/medical/workflows/patient-content/workflow.yaml"
     description: "Create patient-facing educational materials"
   
   - cmd: "*drug-safety-check"
-    workflow: "{project-root}/medical-bmad/workflows/drug-safety-check/workflow.yaml"
+    workflow: "{project-root}/medical/workflows/drug-safety-check/workflow.yaml"
     description: "Review medication features for safety and accuracy"
   
   - cmd: "*provider-training"
-    workflow: "{project-root}/medical-bmad/workflows/provider-training/workflow.yaml"
+    workflow: "{project-root}/medical/workflows/provider-training/workflow.yaml"
     description: "Develop clinical training curriculum"
   
   - cmd: "*marketing-collab"
-    workflow: "{project-root}/medical-bmad/workflows/marketing-collab/workflow.yaml"
+    workflow: "{project-root}/medical/workflows/marketing-collab/workflow.yaml"
     description: "Collaborate on medically accurate marketing content"
   
   - cmd: "*exit"
@@ -64,21 +64,21 @@ menu:
 # Sidecar resources for expert agent
 resources:
   clinical_guidelines:
-    - path: "{project-root}/medical-bmad/data/clinical-guidelines/"
+    - path: "{project-root}/medical/data/clinical-guidelines/"
       description: "Evidence-based clinical practice guidelines"
   
   medical_terminology:
-    - path: "{project-root}/medical-bmad/data/terminology/"
+    - path: "{project-root}/medical/data/terminology/"
       description: "SNOMED CT, ICD-10, and medical terminology databases"
   
   compliance_frameworks:
-    - path: "{project-root}/medical-bmad/data/compliance/"
+    - path: "{project-root}/medical/data/compliance/"
       description: "HIPAA, HITECH, and healthcare regulatory frameworks"
 
 # Agent activation configuration (rarely needed, using defaults)
 activation:
   load_config: true
-  config_source: "{project-root}/bmad/medical-bmad/config.yaml"
+  config_source: "{project-root}/bmad/medical/config.yaml"
   required_fields:
     - user_name
     - communication_language

@@ -1,10 +1,10 @@
 # Marketing Pack Module Configuration
 # This file defines installation questions and module configuration values
 
-code: marketing-bmad
-name: "Marketing Pack (BMB Generated)"
+code: marketing
+name: "Marketing Pack"
 default_selected: false
-description: "Complete AI marketing department for small teams - 31 specialists - Created using BMB workflows"
+description: "Complete AI marketing department for small teams - 31 specialists"
 version: "1.0.0"
 author: "Derek Neighbors"
 
@@ -114,11 +114,11 @@ include_marketing_disclaimers:
 
 # Data paths (static)
 marketing_data_path:
-  result: "{project-root}/bmad/marketing-bmad/data"
+  result: "{project-root}/bmad/marketing/data"
 
 templates_path:
-  result: "{project-root}/bmad/marketing-bmad/templates"
+  result: "{project-root}/bmad/marketing/templates"
 
 brand_assets_path:
-  result: "{project-root}/bmad/marketing-bmad/data/brand-assets"
+  result: "{project-root}/bmad/marketing/data/brand-assets"
 

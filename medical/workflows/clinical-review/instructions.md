@@ -1,7 +1,7 @@
 # Clinical Review Workflow - Execution Instructions
 
 <critical>The workflow execution engine is governed by: {project-root}/bmad/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: {project-root}/medical-bmad/workflows/clinical-review/workflow.yaml</critical>
+<critical>You MUST have already loaded and processed: {project-root}/medical/workflows/clinical-review/workflow.yaml</critical>
 <critical>Communicate in {communication_language} throughout the review process</critical>
 
 <workflow>

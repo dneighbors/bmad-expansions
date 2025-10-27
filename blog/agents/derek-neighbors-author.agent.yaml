@@ -2,7 +2,7 @@
 # Created using BMB *create-agent workflow patterns
 
 agent:
-  id: "blog-bmad/agents/derek-neighbors-author"
+  id: "blog/agents/derek-neighbors-author"
   name: "{author_name}"  # Configured during install
   title: "Blog Author"
   icon: "✍️"
@@ -39,31 +39,31 @@ menu:
     description: "Show numbered menu"
   
   - cmd: "*blog-post-creation"
-    workflow: "{project-root}/blog-bmad/workflows/blog-post-creation/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/blog-post-creation/workflow.yaml"
     description: "Write new blog post"
   
   - cmd: "*idea-generation"
-    workflow: "{project-root}/blog-bmad/workflows/idea-generation/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/idea-generation/workflow.yaml"
     description: "Generate content ideas from Content Hub"
   
   - cmd: "*series-planning"
-    workflow: "{project-root}/blog-bmad/workflows/series-planning/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/series-planning/workflow.yaml"
     description: "Plan multi-part content series"
   
   - cmd: "*content-refresh"
-    workflow: "{project-root}/blog-bmad/workflows/content-refresh/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/content-refresh/workflow.yaml"
     description: "Update and optimize existing high-performing post"
   
   - cmd: "*content-review"
-    workflow: "{project-root}/blog-bmad/workflows/content-review/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/content-review/workflow.yaml"
     description: "Review draft against brand voice and standards"
   
   - cmd: "*linkedin-response-formula"
-    workflow: "{project-root}/blog-bmad/workflows/linkedin-response-formula/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/linkedin-response-formula/workflow.yaml"
     description: "Generate brand-aligned LinkedIn responses"
   
   - cmd: "*cover-image-prompt"
-    workflow: "{project-root}/blog-bmad/workflows/cover-image-prompt/workflow.yaml"
+    workflow: "{project-root}/blog/workflows/cover-image-prompt/workflow.yaml"
     description: "Generate visual prompt for blog cover image"
   
   - cmd: "*exit"
@@ -85,7 +85,7 @@ resources:
 
 activation:
   load_config: true
-  config_source: "{project-root}/bmad/blog-bmad/config.yaml"
+  config_source: "{project-root}/bmad/blog/config.yaml"
   required_fields:
     - user_name
     - communication_language

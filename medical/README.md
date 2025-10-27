@@ -42,7 +42,7 @@ The Medical Pack provides healthcare domain expertise for SaaS product teams bui
 ## Installation
 
 ```bash
-bmad install medical-bmad
+bmad install medical
 ```
 
 During installation, you'll be asked to configure:
@@ -191,7 +191,7 @@ The workflow will prompt you for:
 ## Module Structure
 
 ```
-medical-bmad/
+medical/
 ├── agents/                          # Agent definitions (.agent.yaml source)
 │   ├── dr-michael-johnson.agent.yaml
 │   ├── nurse-brittany-hinsley.agent.yaml
@@ -220,7 +220,7 @@ medical-bmad/
 
 ## Configuration
 
-After installation, configure in `bmad/medical-bmad/config.yaml`:
+After installation, configure in `bmad/medical/config.yaml`:
 
 ### Key Settings
 
@@ -313,7 +313,7 @@ Focus: > PHI handling, consent, encryption
 *create-agent
 
 # Follow prompts to create remaining 7 agents
-# Save to: medical-bmad/agents/{agent-name}.agent.yaml
+# Save to: medical/agents/{agent-name}.agent.yaml
 ```
 
 ### Create Additional Workflows
@@ -323,7 +323,7 @@ Focus: > PHI handling, consent, encryption
 *create-workflow
 
 # Follow prompts to create remaining 7 workflows
-# Save to: medical-bmad/workflows/{workflow-name}/
+# Save to: medical/workflows/{workflow-name}/
 ```
 
 ---

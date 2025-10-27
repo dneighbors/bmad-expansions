@@ -1,10 +1,10 @@
 # Blog Pack Module Configuration
 # Author-as-Agent pattern for content creators
 
-code: blog-bmad
-name: "Blog Pack (BMB Generated)"
+code: blog
+name: "Blog Pack"
 default_selected: false
-description: "Blog content operations with author-as-agent pattern - Created using BMB workflows"
+description: "Blog content operations with author-as-agent pattern"
 version: "1.0.0"
 author: "Derek Neighbors"
 
@@ -111,11 +111,11 @@ social_automation:
 
 # Data paths (static)
 blog_data_path:
-  result: "{project-root}/bmad/blog-bmad/data"
+  result: "{project-root}/bmad/blog/data"
 
 content_bank_path:
-  result: "{project-root}/bmad/blog-bmad/data/content-bank"
+  result: "{project-root}/bmad/blog/data/content-bank"
 
 brand_voice_guide:
-  result: "{project-root}/bmad/blog-bmad/data/brand-voice.md"
+  result: "{project-root}/bmad/blog/data/brand-voice.md"
 

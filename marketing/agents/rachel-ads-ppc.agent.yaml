@@ -2,7 +2,7 @@
 # Created using BMB *create-agent workflow patterns
 
 agent:
-  id: "marketing-bmad/agents/rachel-ads-ppc"
+  id: "marketing/agents/rachel-ads-ppc"
   name: "Rachel Cooper"
   title: "PPC Expert"
   icon: "💰"
@@ -39,19 +39,19 @@ menu:
     description: "Show numbered menu"
   
   - cmd: "*ppc-campaign"
-    workflow: "{project-root}/marketing-bmad/workflows/ppc-campaign/workflow.yaml"
+    workflow: "{project-root}/marketing/workflows/ppc-campaign/workflow.yaml"
     description: "Launch paid advertising campaign across platforms"
   
   - cmd: "*ad-audit"
-    workflow: "{project-root}/marketing-bmad/workflows/ad-audit/workflow.yaml"
+    workflow: "{project-root}/marketing/workflows/ad-audit/workflow.yaml"
     description: "Audit existing ad campaigns for optimization opportunities"
   
   - cmd: "*landing-page"
-    workflow: "{project-root}/marketing-bmad/workflows/landing-page/workflow.yaml"
+    workflow: "{project-root}/marketing/workflows/landing-page/workflow.yaml"
     description: "Design high-converting landing page (with CRO specialist)"
   
   - cmd: "*budget-plan"
-    workflow: "{project-root}/marketing-bmad/workflows/budget-plan/workflow.yaml"
+    workflow: "{project-root}/marketing/workflows/budget-plan/workflow.yaml"
     description: "Plan paid advertising budget and channel allocation"
   
   - cmd: "*exit"
@@ -60,20 +60,20 @@ menu:
 
 resources:
   platform_specs:
-    - path: "{project-root}/marketing-bmad/data/ad-platforms/"
+    - path: "{project-root}/marketing/data/ad-platforms/"
       description: "Platform specifications (image sizes, character limits, policies)"
   
   campaign_templates:
-    - path: "{project-root}/marketing-bmad/templates/ppc/"
+    - path: "{project-root}/marketing/templates/ppc/"
       description: "Campaign structure templates and checklists"
   
   benchmarks:
-    - path: "{project-root}/marketing-bmad/data/ppc-benchmarks/"
+    - path: "{project-root}/marketing/data/ppc-benchmarks/"
       description: "Industry benchmarks for CPC, CTR, CVR by platform and vertical"
 
 activation:
   load_config: true
-  config_source: "{project-root}/bmad/marketing-bmad/config.yaml"
+  config_source: "{project-root}/bmad/marketing/config.yaml"
   required_fields:
     - user_name
     - communication_language

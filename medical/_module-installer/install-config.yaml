@@ -1,10 +1,10 @@
 # Medical Pack Module Configuration
 # This file defines installation questions and module configuration values
 
-code: medical-bmad
-name: "Medical Pack (BMB Generated)"
+code: medical
+name: "Medical Pack"
 default_selected: false
-description: "Healthcare domain expertise for SaaS product teams - Created using BMB workflows"
+description: "Healthcare domain expertise for SaaS product teams"
 version: "1.0.0"
 author: "Derek Neighbors"
 
@@ -87,8 +87,8 @@ ehr_system:
 
 # Data paths (static)
 medical_data_path:
-  result: "{project-root}/bmad/medical-bmad/data"
+  result: "{project-root}/bmad/medical/data"
 
 templates_path:
-  result: "{project-root}/bmad/medical-bmad/templates"
+  result: "{project-root}/bmad/medical/templates"
 

@@ -18,7 +18,7 @@ Complete AI marketing department with 31 specialists across strategy, content, p
 ## Installation
 
 ```bash
-bmad install marketing-bmad
+bmad install marketing
 ```
 
 **Configuration Options:**
@@ -123,7 +123,7 @@ bmad install marketing-bmad
 ## Module Structure (BMB Standard)
 
 ```
-marketing-bmad/
+marketing/
 ├── agents/                          # .agent.yaml source files
 │   ├── victoria-chen-cmo.agent.yaml     ✅
 │   ├── rachel-ads-ppc.agent.yaml        ✅

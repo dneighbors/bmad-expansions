@@ -7,7 +7,7 @@ author: "Marketing Pack Team"
 workflow_type: "document"
 
 # Configuration loading
-config_source: "{project-root}/bmad/marketing-bmad/config.yaml"
+config_source: "{project-root}/bmad/marketing/config.yaml"
 output_folder: "{config_source}:marketing_output_path"
 user_name: "{config_source}:user_name"
 communication_language: "{config_source}:communication_language"
@@ -18,7 +18,7 @@ marketing_maturity: "{config_source}:marketing_maturity"
 date: system-generated
 
 # Workflow paths
-installed_path: "{project-root}/marketing-bmad/workflows/marketing-strategy"
+installed_path: "{project-root}/marketing/workflows/marketing-strategy"
 instructions: "{installed_path}/instructions.md"
 validation: "{installed_path}/checklist.md"
 template: "{installed_path}/template.md"

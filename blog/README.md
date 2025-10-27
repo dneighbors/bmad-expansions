@@ -32,7 +32,7 @@ Traditional content AI replaces the author. This pack **amplifies** the author.
 ## Installation
 
 ```bash
-bmad install blog-bmad
+bmad install blog
 ```
 
 **Configuration:**
@@ -122,7 +122,7 @@ Takeaways: Practical frameworks for authentic content at scale
 ## Module Structure (BMB Standard)
 
 ```
-blog-bmad/
+blog/
 ├── agents/
 │   ├── orion-blog-orchestrator.agent.yaml   ✅
 │   └── derek-neighbors-author.agent.yaml    ✅ (Customizable)
@@ -188,10 +188,10 @@ This sample demonstrates the author-as-agent pattern with proper BMB structure.
 
 ### Make It Your Own
 
-1. **Install:** `bmad install blog-bmad`
+1. **Install:** `bmad install blog`
 2. **Configure:** Enter your name, voice style, content focus
-3. **Brand Voice:** Edit `bmad/blog-bmad/data/brand-voice.md` with your unique voice guidelines
-4. **Content Bank:** Populate `bmad/blog-bmad/data/content-bank/` with ideas
+3. **Brand Voice:** Edit `bmad/blog/data/brand-voice.md` with your unique voice guidelines
+4. **Content Bank:** Populate `bmad/blog/data/content-bank/` with ideas
 5. **Test:** Create your first post with `@{your-name}-author *blog-post-creation`
 
 ---

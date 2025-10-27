@@ -77,4 +77,19 @@
     - **Status:** ✅ DONE (3 points, commit c79eabd)
     - **Details:** See `docs/stories/story-15-sync-script.md`
 
+16. (E2) Retrofit existing packs to BMB format and standards
+    - As a maintainer, I want to replace script-generated packs with proper BMB-generated versions to ensure BMAD Core compliance.
+    - Acceptance: Script-generated packs deleted, BMB versions renamed (remove -bmad suffix), all references updated, proper `.agent.yaml` format throughout.
+    - **Status:** 🔄 IN PROGRESS (8 points)
+    - **Details:** Replace medical/marketing/blog with medical-bmad/marketing-bmad/blog-bmad (properly formatted)
+    - **Epic:** E2 (Authoring with BMB)
+    - **Sprint:** Sprint 01 (retroactive cleanup)
+
+17. (E2) Establish and document BMB-first policy
+    - As a maintainer, I want documented policy requiring all future agents/workflows use BMB workflows to maintain quality standards.
+    - Acceptance: Policy document created, process documented, integrated into contribution guidelines, Sprint 02 stories reference policy.
+    - **Status:** ⏳ PENDING (2 points)
+    - **Details:** Create CONTRIBUTING.md with BMB-first requirements, update Sprint 02 planning
+    - **Epic:** E2 (Authoring with BMB)
+    - **Sprint:** Sprint 01 (policy establishment)
 
