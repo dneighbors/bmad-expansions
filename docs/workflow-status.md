@@ -179,10 +179,17 @@
 ## 📈 Velocity Tracking
 
 **Sprint 01 Target:** 43 story points (P0)  
-**Completed:** 43 points (Stories 12, 13, 14, 15)  
+**Completed:** 53 points (Stories 12, 13, 14, 15, 16, 17)  
+**Sprint 01 Actual:** 43 points delivered + 10 points retrofit/policy  
 **Remaining:** 0 points  
 
-🎉 **SPRINT 01 COMPLETE!**
+🎉 **SPRINT 01 COMPLETE** (with retroactive quality improvements)
+
+**Notes:**
+- Stories 16-17 added retroactively to correct Sprint 01 shortcuts
+- Story 16 (8pts): Retrofitted packs to BMB format (proper `.agent.yaml`)
+- Story 17 (2pts): Established BMB-first policy (CONTRIBUTING.md)
+- All packs now BMAD Core compliant
 
 **Estimated Sprint Capacity:** 40-50 points (1 developer, 996 mode, BMB-accelerated)
 
