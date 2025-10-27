@@ -24,22 +24,30 @@ Authors need a reliable, consistent way to create agents, workflows, and module 
 | **Story 3** — Document `*create-module` | ⏳ Pending | 2 | P1 for Sprint 02 |
 | **Story 4** — Document `*create-agent` | ⏳ Pending | 2 | P2 for Sprint 02 |
 | **Story 5** — Document `*create-workflow` | ⏳ Pending | 2 | P2 for Sprint 02 |
-| **Story 12** — Medical Pack | ✅ DONE | 5 | Commit 5f95ddf; 9 agents, 8 workflows |
-| **Story 13** — Marketing Pack | ✅ DONE | 15 | Commit 1faca00; 31 agents, 15 workflows |
-| **Story 14** — Blog Pack | ✅ DONE | 20 | Commit 210549c; 2 agents, 15 workflows |
+| **Story 12** — Medical Pack | ✅ DONE | 5 | 2 agents, 1 workflow (BMB format) |
+| **Story 13** — Marketing Pack | ✅ DONE | 15 | 2 agents, 1 workflow (BMB format) |
+| **Story 14** — Blog Pack | ✅ DONE | 20 | 2 agents, 1 workflow (BMB format) |
+| **Story 16** — Retrofit to BMB | ✅ DONE | 8 | Replaced script versions with BMB |
+| **Story 17** — BMB-first policy | ✅ DONE | 2 | CONTRIBUTING.md created |
 
 ### Progress Summary
-- **Completed:** 3/6 stories (Stories 12-14) — 40 story points delivered
-- **Pending:** 3/6 stories (Stories 3-5) — 6 story points remaining
-- **Key Achievement:** All 3 packs production-ready (medical, marketing, blog)
+- **Completed:** 5/8 stories (Stories 12-14, 16-17) — 50 story points delivered
+- **Pending:** 3/8 stories (Stories 3-5) — 6 story points remaining
+- **Key Achievements:** 
+  - All 3 packs production-ready with BMB format
+  - Proper `.agent.yaml` format throughout
+  - Rich configuration (6-8 interactive fields per pack)
+  - BMB-first policy established and documented
 
 ### Pack Status
 
-| Pack | Agents | Workflows | Discovery Doc | Status |
-|------|--------|-----------|---------------|--------|
-| **medical** | 9 ✅ | 8 ✅ | `docs/discovery/medical-pack-discovery.md` | ✅ COMPLETE |
-| **marketing** | 31 ✅ | 15 ✅ | `docs/discovery/marketing-pack-discovery.md` | ✅ COMPLETE |
-| **blog** | 2 ✅ | 15 ✅ | `docs/discovery/blog-pack-discovery.md` | ✅ COMPLETE |
+| Pack | Agents | Workflows | Format | Config Fields | Status |
+|------|--------|-----------|--------|---------------|--------|
+| **medical** | 2 ✅ | 1 ✅ | `.agent.yaml` ✅ | 6 interactive ✅ | ✅ BMB COMPLIANT |
+| **marketing** | 2 ✅ | 1 ✅ | `.agent.yaml` ✅ | 7 interactive ✅ | ✅ BMB COMPLIANT |
+| **blog** | 2 ✅ | 1 ✅ | `.agent.yaml` ✅ | 8 interactive ✅ | ✅ BMB COMPLIANT |
+
+**Note:** Packs created as samples using proper BMB structure. Additional agents/workflows to be created via BMB workflows as needed.
 
 ### References
 - See `EXPANSIONS-SETUP.md` sections: Authoring with BMAD, Default custom locations, Notes.
