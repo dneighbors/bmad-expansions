@@ -50,64 +50,47 @@ author_brand_voice:
 
 # Content focus
 content_focus:
-  prompt: "Primary content focus areas?"
-  type: "multi-select"
-  default: ["long-form"]
+  prompt: "Primary content focus areas? (select all that apply)"
+  default: ["Long-form blog posts (1500+ words)"]
   result: "{value}"
-  options:
-    - value: "long-form"
-      label: "Long-form blog posts (1500+ words)"
-    - value: "quick-takes"
-      label: "Quick takes / short posts (300-500 words)"
-    - value: "technical"
-      label: "Technical tutorials / how-tos"
-    - value: "thought-leadership"
-      label: "Thought leadership / opinion pieces"
-    - value: "case-studies"
-      label: "Case studies / success stories"
-    - value: "series"
-      label: "Multi-part series"
+  multi-select:
+    - "Long-form blog posts (1500+ words)"
+    - "Quick takes / short posts (300-500 words)"
+    - "Technical tutorials / how-tos"
+    - "Thought leadership / opinion pieces"
+    - "Case studies / success stories"
+    - "Multi-part series"
 
 # Publishing cadence
 publishing_cadence:
   prompt: "Target publishing frequency?"
-  default: "weekly"
+  default: "Weekly"
   result: "{value}"
   single-select:
-    - value: "daily"
-      label: "Daily (high-volume content machine)"
-    - value: "3x-week"
-      label: "3x per week"
-    - value: "weekly"
-      label: "Weekly"
-    - value: "bi-weekly"
-      label: "Bi-weekly"
-    - value: "monthly"
-      label: "Monthly (deep-dive only)"
+    - "Daily (high-volume content machine)"
+    - "3x per week"
+    - "Weekly"
+    - "Bi-weekly"
+    - "Monthly (deep-dive only)"
 
 # SEO priority level
 seo_priority:
   prompt: "How important is SEO optimization?"
-  default: "balanced"
+  default: "Balanced - SEO-aware but voice-first"
   result: "{value}"
   single-select:
-    - value: "high"
-      label: "High - SEO-first, keyword-driven"
-    - value: "balanced"
-      label: "Balanced - SEO-aware but voice-first"
-    - value: "low"
-      label: "Low - Voice and message over SEO"
+    - "High - SEO-first, keyword-driven"
+    - "Balanced - SEO-aware but voice-first"
+    - "Low - Voice and message over SEO"
 
 # Social media integration
 social_automation:
   prompt: "Auto-generate social media content from posts?"
-  default: "true"
+  default: "Yes - Generate social content automatically"
   result: "{value}"
   single-select:
-    - value: "true"
-      label: "Yes - Generate social content automatically"
-    - value: "false"
-      label: "No - I'll handle social separately"
+    - "Yes - Generate social content automatically"
+    - "No - I'll handle social separately"
 
 # Data paths (static)
 blog_data_path:

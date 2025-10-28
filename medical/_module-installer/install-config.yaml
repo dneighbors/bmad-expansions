@@ -32,58 +32,44 @@ clinical_output_path:
 # HIPAA compliance mode
 hipaa_compliance_mode:
   prompt: "Enable HIPAA compliance checks in all workflows?"
-  default: "enabled"
+  default: "Enabled - Include HIPAA validation in all workflows"
   result: "{value}"
   single-select:
-    - value: "enabled"
-      label: "Enabled - Include HIPAA validation in all workflows"
-    - value: "advisory"
-      label: "Advisory - Show HIPAA guidance but don't enforce"
-    - value: "disabled"
-      label: "Disabled - Skip HIPAA checks (not recommended)"
+    - "Enabled - Include HIPAA validation in all workflows"
+    - "Advisory - Show HIPAA guidance but don't enforce"
+    - "Disabled - Skip HIPAA checks (not recommended)"
 
 # Medical disclaimer mode
 include_medical_disclaimers:
   prompt: "Automatically include medical disclaimers in outputs?"
-  default: "true"
+  default: "Yes - Add disclaimers to all medical content"
   result: "{value}"
   single-select:
-    - value: "true"
-      label: "Yes - Add disclaimers to all medical content"
-    - value: "false"
-      label: "No - I'll add disclaimers manually"
+    - "Yes - Add disclaimers to all medical content"
+    - "No - I'll add disclaimers manually"
 
 # Clinical validation level
 clinical_validation_level:
   prompt: "How thorough should clinical validations be?"
-  default: "standard"
+  default: "Standard - Comprehensive clinical review"
   result: "{value}"
   single-select:
-    - value: "quick"
-      label: "Quick - Basic safety checks only"
-    - value: "standard"
-      label: "Standard - Comprehensive clinical review"
-    - value: "rigorous"
-      label: "Rigorous - Deep clinical validation with multiple specialists"
+    - "Quick - Basic safety checks only"
+    - "Standard - Comprehensive clinical review"
+    - "Rigorous - Deep clinical validation with multiple specialists"
 
 # EHR system type (for integration workflows)
 ehr_system:
   prompt: "What EHR system do you primarily integrate with?"
-  default: "none"
+  default: "No EHR integration needed"
   result: "{value}"
   single-select:
-    - value: "epic"
-      label: "Epic"
-    - value: "cerner"
-      label: "Cerner/Oracle Health"
-    - value: "meditech"
-      label: "Meditech"
-    - value: "allscripts"
-      label: "Allscripts"
-    - value: "custom"
-      label: "Custom/Proprietary EHR"
-    - value: "none"
-      label: "No EHR integration needed"
+    - "Epic"
+    - "Cerner/Oracle Health"
+    - "Meditech"
+    - "Allscripts"
+    - "Custom/Proprietary EHR"
+    - "No EHR integration needed"
 
 # Data paths (static)
 medical_data_path:

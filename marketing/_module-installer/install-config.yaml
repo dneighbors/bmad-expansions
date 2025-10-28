@@ -32,23 +32,16 @@ marketing_output_path:
 # Company industry/vertical
 company_industry:
   prompt: "What industry are you in?"
-  default: "saas"
+  default: "SaaS / Software"
   result: "{value}"
   single-select:
-    - value: "saas"
-      label: "SaaS / Software"
-    - value: "ecommerce"
-      label: "E-Commerce / Retail"
-    - value: "healthcare"
-      label: "Healthcare / MedTech"
-    - value: "fintech"
-      label: "FinTech / Financial Services"
-    - value: "education"
-      label: "Education / EdTech"
-    - value: "professional-services"
-      label: "Professional Services"
-    - value: "other"
-      label: "Other"
+    - "SaaS / Software"
+    - "E-Commerce / Retail"
+    - "Healthcare / MedTech"
+    - "FinTech / Financial Services"
+    - "Education / EdTech"
+    - "Professional Services"
+    - "Other"
 
 # Marketing focus areas
 marketing_focus:
@@ -67,43 +60,33 @@ marketing_focus:
 # Target audience
 target_audience:
   prompt: "Who is your primary target audience?"
-  default: "b2b"
+  default: "B2B - Business to Business"
   result: "{value}"
   single-select:
-    - value: "b2b"
-      label: "B2B - Business to Business"
-    - value: "b2c"
-      label: "B2C - Business to Consumer"
-    - value: "b2b2c"
-      label: "B2B2C - Business to Business to Consumer (Hybrid)"
-    - value: "d2c"
-      label: "D2C - Direct to Consumer"
+    - "B2B - Business to Business"
+    - "B2C - Business to Consumer"
+    - "B2B2C - Business to Business to Consumer (Hybrid)"
+    - "D2C - Direct to Consumer"
 
 # Marketing maturity level
 marketing_maturity:
   prompt: "What's your current marketing maturity level?"
-  default: "growing"
+  default: "Growing - Have basics, need to scale"
   result: "{value}"
   single-select:
-    - value: "startup"
-      label: "Startup - Building from scratch"
-    - value: "growing"
-      label: "Growing - Have basics, need to scale"
-    - value: "established"
-      label: "Established - Optimizing and scaling"
-    - value: "enterprise"
-      label: "Enterprise - Complex, multi-channel"
+    - "Startup - Building from scratch"
+    - "Growing - Have basics, need to scale"
+    - "Established - Optimizing and scaling"
+    - "Enterprise - Complex, multi-channel"
 
 # Marketing disclaimer mode
 include_marketing_disclaimers:
   prompt: "Include marketing best practice disclaimers?"
-  default: "true"
+  default: "Yes - Include disclaimers about review and compliance"
   result: "{value}"
   single-select:
-    - value: "true"
-      label: "Yes - Include disclaimers about review and compliance"
-    - value: "false"
-      label: "No - Skip disclaimers"
+    - "Yes - Include disclaimers about review and compliance"
+    - "No - Skip disclaimers"
 
 # Data paths (static)
 marketing_data_path:
