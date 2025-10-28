@@ -30,7 +30,7 @@ Stories progress through a six-state flow representing their journey from idea t
 | **drafted**       | Story file has been created via `create-story` workflow                            | SM Agent      | ready-for-dev |
 | **ready-for-dev** | Story has been drafted, approved, and context created via `story-context` workflow | SM Agent      | in-progress   |
 | **in-progress**   | Developer is actively implementing the story                                       | Dev Agent     | review        |
-| **review**        | Implementation complete, under SM review via `review-story` workflow               | Dev Agent     | done          |
+| **review**        | Implementation complete, under SM review via `code-review` workflow                | Dev Agent     | done          |
 | **done**          | Story has been reviewed and completed                                              | Dev Agent     | -             |
 
 **File Indicators:**
@@ -65,7 +65,7 @@ graph LR
     backlog --> drafted[drafted via create-story]
     drafted --> ready[ready-for-dev via story-context]
     ready --> progress[in-progress - dev starts]
-    progress --> review[review via review-story]
+    progress --> review[review via code-review]
     review --> done[done - dev completes]
 ```
 
@@ -110,7 +110,7 @@ development_status:
 | **create-story**      | Draft a story from epics/PRD                       | story: backlog → drafted            |
 | **story-context**     | Add implementation context to story                | story: drafted → ready-for-dev      |
 | **dev-story**         | Developer implements the story                     | story: ready-for-dev → in-progress  |
-| **review-story**      | SM reviews implementation                          | story: in-progress → review         |
+| **code-review**       | SM reviews implementation                          | story: in-progress → review         |
 | **retrospective**     | Conduct epic retrospective                         | retrospective: optional → completed |
 | **correct-course**    | Course correction when needed                      | Various status updates              |
 
@@ -150,7 +150,7 @@ Run this workflow:
 - Create epic contexts (`epic-tech-context`)
 - Draft stories (`create-story`)
 - Create story contexts (`story-context`)
-- Review completed work (`review-story`)
+- Review completed work (`code-review`)
 - Update status in sprint-status.yaml
 
 ### Developer Agent

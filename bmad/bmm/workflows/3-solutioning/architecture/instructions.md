@@ -18,21 +18,25 @@
 </invoke-workflow>
 
 <check if="status_exists == false">
-  <output>**⚠️ No Workflow Status File Found**
+  <output>**Note: No Workflow Status File Found**
 
-The Decision Architecture workflow requires a status file to understand your project context.
+The Decision Architecture workflow can run standalone or as part of the BMM workflow path.
 
-Please run `workflow-init` first to:
+**Recommended:** Run `workflow-init` first for:
 
-- Define your project type and level
-- Map out your workflow journey
-- Create the status file
+- Project context tracking
+- Workflow sequencing guidance
+- Progress monitoring across workflows
 
-Run: `workflow-init`
-
-After setup, return here to create your decision architecture.
+**Or continue standalone** without progress tracking.
 </output>
-<action>Exit workflow - cannot proceed without status file</action>
+<ask>Continue in standalone mode or exit to run workflow-init? (continue/exit)</ask>
+<check if="continue">
+<action>Set standalone_mode = true</action>
+</check>
+<check if="exit">
+<action>Exit workflow</action>
+</check>
 </check>
 
 <check if="status_exists == true">
@@ -668,10 +672,8 @@ Enforcement: "All agents MUST follow this pattern"
   <check if="success == true">
     <output>✅ Decision Architecture workflow complete!
 
-    Status updated. Next steps:
-    - Review the architecture.md document
-    - {{next_workflow_suggestion}} ({{next_agent}} agent)
-    </output>
+Status updated.
+</output>
 
   </check>
 
@@ -686,6 +688,13 @@ Enforcement: "All agents MUST follow this pattern"
   {{/if_starter_template}}
 
 The architecture is ready to guide AI agents through consistent implementation.
+
+**Next Steps:**
+
+- **Next required:** {{next_workflow}} ({{next_agent}} agent)
+- Review the architecture.md document before proceeding
+
+Check status anytime with: `workflow-status`
 </output>
 
 <template-output>completion_summary</template-output>

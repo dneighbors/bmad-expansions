@@ -1,6 +1,6 @@
 # Create Story - Workflow Instructions (Spec-compliant, non-interactive by default)
 
-```xml
+````xml
 <critical>The workflow execution engine is governed by: {project_root}/bmad/core/tasks/workflow.xml</critical>
 <critical>You MUST have already loaded and processed: {installed_path}/workflow.yaml</critical>
 <critical>Generate all documents in {document_output_language}</critical>
@@ -17,6 +17,74 @@
   </step>
 
   <step n="2" goal="Discover and load source documents">
+    <critical>PREVIOUS STORY CONTINUITY: Essential for maintaining context and learning from prior development</critical>
+
+    <action>Find the previous completed story to extract dev agent learnings and review findings:
+      1. Load {{output_folder}}/sprint-status.yaml COMPLETELY
+      2. Find current {{story_key}} in development_status section
+      3. Identify the story entry IMMEDIATELY ABOVE current story (previous row in file order)
+      4. If previous story exists:
+         - Extract {{previous_story_key}}
+         - Check previous story status (done, in-progress, review, etc.)
+         - If status is "done", "review", or "in-progress" (has some completion):
+           * Construct path: {{story_dir}}/{{previous_story_key}}.md
+           * Load the COMPLETE previous story file
+           * Parse ALL sections comprehensively:
+
+             A) Dev Agent Record → Completion Notes List:
+                - New patterns/services created (to reuse, not recreate)
+                - Architectural deviations or decisions made
+                - Technical debt deferred to future stories
+                - Warnings or recommendations for next story
+                - Interfaces/methods created for reuse
+
+             B) Dev Agent Record → Debug Log References:
+                - Issues encountered and solutions
+                - Gotchas or unexpected challenges
+                - Workarounds applied
+
+             C) Dev Agent Record → File List:
+                - Files created (NEW) - understand new capabilities
+                - Files modified (MODIFIED) - track evolving components
+                - Files deleted (DELETED) - removed functionality
+
+             D) Dev Notes:
+                - Any "future story" notes or TODOs
+                - Patterns established
+                - Constraints discovered
+
+             E) Senior Developer Review (AI) section (if present):
+                - Review outcome (Approve/Changes Requested/Blocked)
+                - Unresolved action items (unchecked [ ] items)
+                - Key findings that might affect this story
+                - Architectural concerns raised
+
+             F) Senior Developer Review → Action Items (if present):
+                - Check for unchecked [ ] items still pending
+                - Note any systemic issues that apply to multiple stories
+
+             G) Review Follow-ups (AI) tasks (if present):
+                - Check for unchecked [ ] review tasks still pending
+                - Determine if they're epic-wide concerns
+
+             H) Story Status:
+                - If "review" or "in-progress" - incomplete, note what's pending
+                - If "done" - confirmed complete
+           * Store ALL findings as {{previous_story_learnings}} with structure:
+             - new_files: [list]
+             - modified_files: [list]
+             - new_services: [list with descriptions]
+             - architectural_decisions: [list]
+             - technical_debt: [list]
+             - warnings_for_next: [list]
+             - review_findings: [list if review exists]
+             - pending_items: [list of unchecked action items]
+         - If status is "backlog" or "drafted":
+           * Set {{previous_story_learnings}} = "Previous story not yet implemented"
+      5. If no previous story exists (first story in epic):
+         - Set {{previous_story_learnings}} = "First story in epic - no predecessor context"
+    </action>
+
     <action>If {{tech_spec_file}} empty: derive from {{tech_spec_glob_template}} with {{epic_num}} and search {{tech_spec_search_dir}} recursively. If multiple, pick most recent by modified time.</action>
     <action>Build a prioritized document set for this epic:
       1) tech_spec_file (epic-scoped)
@@ -28,15 +96,19 @@
     <action>READ COMPLETE FILES for all items found in the prioritized set. Store content and paths for citation.</action>
   </step>
 
-  <step n="3" goal="Determine target story from sprint status">
-    <action>Query sprint-status for next backlog story:</action>
+  <step n="3" goal="Find next backlog story to draft" tag="sprint-status">
+    <critical>MUST read COMPLETE sprint-status.yaml file from start to end to preserve order</critical>
+    <action>Load the FULL file: {{output_folder}}/sprint-status.yaml</action>
+    <action>Read ALL lines from beginning to end - do not skip any content</action>
+    <action>Parse the development_status section completely to understand story order</action>
 
-    <invoke-workflow path="{project-root}/bmad/bmm/workflows/helpers/sprint-status">
-      <param>action: get_next_story</param>
-      <param>filter_status: backlog</param>
-    </invoke-workflow>
+    <action>Find the FIRST story (by reading in order from top to bottom) where:
+      - Key matches pattern: number-number-name (e.g., "1-2-user-auth")
+      - NOT an epic key (epic-X) or retrospective (epic-X-retrospective)
+      - Status value equals "backlog"
+    </action>
 
-    <check if="{{result_found}} == false">
+    <check if="no backlog story found">
       <output>📋 No backlog stories found in sprint-status.yaml
 
 All stories are either already drafted or completed.
@@ -49,13 +121,16 @@ All stories are either already drafted or completed.
       <action>HALT</action>
     </check>
 
-    <action>Parse {{result_story_key}} to extract epic_num, story_num, and story_title
-      Example: "1-2-user-authentication" → epic_num=1, story_num=2, title="user-authentication"
+    <action>Extract from found story key (e.g., "1-2-user-authentication"):
+      - epic_num: first number before dash (e.g., "1")
+      - story_num: second number after first dash (e.g., "2")
+      - story_title: remainder after second dash (e.g., "user-authentication")
     </action>
     <action>Set {{story_id}} = "{{epic_num}}.{{story_num}}"</action>
+    <action>Store story_key for later use (e.g., "1-2-user-authentication")</action>
 
     <action>Verify story is enumerated in {{epics_file}}. If not found, HALT with message:</action>
-    <action>"Story {{result_story_key}} not found in epics.md. Please load PM agent and run correct-course to sync epics, then rerun create-story."</action>
+    <action>"Story {{story_key}} not found in epics.md. Please load PM agent and run correct-course to sync epics, then rerun create-story."</action>
 
     <action>Check if story file already exists at expected path in {{story_dir}}</action>
     <check if="story file exists">
@@ -75,8 +150,20 @@ Will update existing story file rather than creating new one.
   </step>
 
   <step n="5" goal="Project structure alignment and lessons learned">
-    <action>If a previous story exists, scan its "Dev Agent Record" for completion notes and known deviations; summarize any carry-overs relevant to this story.</action>
+    <action>Review {{previous_story_learnings}} and extract actionable intelligence:
+      - New patterns/services created → Note for reuse (DO NOT recreate)
+      - Architectural deviations → Understand and maintain consistency
+      - Technical debt items → Assess if this story should address them
+      - Files modified → Understand current state of evolving components
+      - Warnings/recommendations → Apply to this story's approach
+      - Review findings → Learn from issues found in previous story
+      - Pending action items → Determine if epic-wide concerns affect this story
+    </action>
+
     <action>If unified-project-structure.md present: align expected file paths, module names, and component locations; note any potential conflicts.</action>
+
+    <action>Cross-reference {{previous_story_learnings}}.new_files with project structure to understand where new capabilities are located.</action>
+
     <template-output file="{default_output_file}">structure_alignment_summary</template-output>
   </step>
 
@@ -94,44 +181,72 @@ Will update existing story file rather than creating new one.
     <template-output file="{default_output_file}">story_header</template-output>
     <template-output file="{default_output_file}">story_body</template-output>
     <template-output file="{default_output_file}">dev_notes_with_citations</template-output>
+
+    <action>If {{previous_story_learnings}} contains actionable items (not "First story" or "not yet implemented"):
+      - Add "Learnings from Previous Story" subsection to Dev Notes
+      - Include relevant completion notes, new files/patterns, deviations
+      - Cite previous story file as reference [Source: stories/{{previous_story_key}}.md]
+      - Highlight interfaces/services to REUSE (not recreate)
+      - Note any technical debt to address in this story
+      - List pending review items that affect this story (if any)
+      - Reference specific files created: "Use {{file_path}} for {{purpose}}"
+      - Format example:
+        ```
+        ### Learnings from Previous Story
+
+        **From Story {{previous_story_key}} (Status: {{previous_status}})**
+
+        - **New Service Created**: `AuthService` base class available at `src/services/AuthService.js` - use `AuthService.register()` method
+        - **Architectural Change**: Switched from session-based to JWT authentication
+        - **Schema Changes**: User model now includes `passwordHash` field, migration applied
+        - **Technical Debt**: Email verification skipped, should be included in this or subsequent story
+        - **Testing Setup**: Auth test suite initialized at `tests/integration/auth.test.js` - follow patterns established there
+        - **Pending Review Items**: Rate limiting mentioned in review - consider for this story
+
+        [Source: stories/{{previous_story_key}}.md#Dev-Agent-Record]
+        ```
+    </action>
+
     <template-output file="{default_output_file}">change_log</template-output>
   </step>
 
-  <step n="8" goal="Validate, save, and optionally generate context">
+  <step n="8" goal="Validate, save, and mark story drafted" tag="sprint-status">
     <invoke-task>Validate against checklist at {installed_path}/checklist.md using bmad/core/tasks/validate-workflow.xml</invoke-task>
     <action>Save document unconditionally (non-interactive default). In interactive mode, allow user confirmation.</action>
 
-    <invoke-workflow path="{project-root}/bmad/bmm/workflows/helpers/sprint-status">
-      <param>action: update_story_status</param>
-      <param>story_key: {{result_story_key}}</param>
-      <param>new_status: drafted</param>
-      <param>validate: true</param>
-    </invoke-workflow>
+    <!-- Mark story as drafted in sprint status -->
+    <action>Update {{output_folder}}/sprint-status.yaml</action>
+    <action>Load the FULL file and read all development_status entries</action>
+    <action>Find development_status key matching {{story_key}}</action>
+    <action>Verify current status is "backlog" (expected previous state)</action>
+    <action>Update development_status[{{story_key}}] = "drafted"</action>
+    <action>Save file, preserving ALL comments and structure including STATUS DEFINITIONS</action>
 
-    <check if="{{result_success}} == false">
-      <output>⚠️ Could not update story status: {{result_error}}
+    <check if="story key not found in file">
+      <output>⚠️ Could not update story status: {{story_key}} not found in sprint-status.yaml
 
 Story file was created successfully, but sprint-status.yaml was not updated.
-You may need to run sprint-planning to refresh tracking.
+You may need to run sprint-planning to refresh tracking, or manually set the story row status to `drafted`.
       </output>
     </check>
 
-    <check>If {{auto_run_context}} == true → <invoke-workflow path="{project-root}/bmad/bmm/workflows/4-implementation/story-context/workflow.yaml">Pass {{story_path}} = {default_output_file}</invoke-workflow></check>
     <action>Report created/updated story path</action>
     <output>**✅ Story Created Successfully, {user_name}!**
 
 **Story Details:**
 - Story ID: {{story_id}}
-- Story Key: {{result_story_key}}
+- Story Key: {{story_key}}
 - File: {{story_file}}
-- Status: {{result_new_status}} (was {{result_old_status}})
+- Status: drafted (was backlog)
+
+**⚠️ Important:** The following workflows are context-intensive. It's recommended to clear context and restart the SM agent before running the next command.
 
 **Next Steps:**
 1. Review the drafted story in {{story_file}}
-2. When satisfied, run `story-ready` to approve for development
-3. Or edit the story file and re-run `create-story` to update
+2. **[RECOMMENDED]** Run `story-context` to generate technical context XML and mark story ready for development (combines context + ready in one step)
+3. Or run `story-ready` to manually mark the story ready without generating technical context
     </output>
   </step>
 
 </workflow>
-```
+````

@@ -1,12 +1,12 @@
 ---
 description: BMAD Method - Master Index
-globs: 
+globs:
 alwaysApply: true
 ---
 
 # BMAD Method - Cursor Rules Index
 
-This is the master index for all BMAD agents and tasks available in your project.
+This is the master index for all BMAD agents, tasks, tools, and workflows available in your project.
 
 ## Installation Complete!
 
@@ -18,6 +18,8 @@ BMAD rules have been installed to: `.cursor/rules/bmad/`
 
 - Reference specific agents: @bmad/{module}/agents/{agent-name}
 - Reference specific tasks: @bmad/{module}/tasks/{task-name}
+- Reference specific tools: @bmad/{module}/tools/{tool-name}
+- Reference specific workflows: @bmad/{module}/workflows/{workflow-name}
 - Reference entire modules: @bmad/{module}
 - Reference this index: @bmad/index
 
@@ -28,10 +30,32 @@ BMAD rules have been installed to: `.cursor/rules/bmad/`
 **Agents:**
 - @bmad/core/agents/bmad-master - bmad-master
 
+**Tasks:**
+- @bmad/core/tasks/index-docs - index-docs
+
+**Tools:**
+- @bmad/core/tools/shard-doc - shard-doc
+
+**Workflows:**
+- @bmad/core/workflows/brainstorming - brainstorming
+- @bmad/core/workflows/party-mode - party-mode
+
 ### BMB
 
 **Agents:**
 - @bmad/bmb/agents/bmad-builder - bmad-builder
+
+**Workflows:**
+- @bmad/bmb/workflows/audit-workflow - audit-workflow
+- @bmad/bmb/workflows/convert-legacy - convert-legacy
+- @bmad/bmb/workflows/create-agent - create-agent
+- @bmad/bmb/workflows/create-module - create-module
+- @bmad/bmb/workflows/create-workflow - create-workflow
+- @bmad/bmb/workflows/edit-agent - edit-agent
+- @bmad/bmb/workflows/edit-module - edit-module
+- @bmad/bmb/workflows/edit-workflow - edit-workflow
+- @bmad/bmb/workflows/module-brief - module-brief
+- @bmad/bmb/workflows/redoc - redoc
 
 ### BMM
 
@@ -39,13 +63,34 @@ BMAD rules have been installed to: `.cursor/rules/bmad/`
 - @bmad/bmm/agents/analyst - analyst
 - @bmad/bmm/agents/architect - architect
 - @bmad/bmm/agents/dev - dev
-- @bmad/bmm/agents/game-architect - game-architect
-- @bmad/bmm/agents/game-designer - game-designer
-- @bmad/bmm/agents/game-dev - game-dev
 - @bmad/bmm/agents/pm - pm
 - @bmad/bmm/agents/sm - sm
 - @bmad/bmm/agents/tea - tea
 - @bmad/bmm/agents/ux-designer - ux-designer
+
+**Workflows:**
+- @bmad/bmm/workflows/brainstorm-project - brainstorm-project
+- @bmad/bmm/workflows/document-project - document-project
+- @bmad/bmm/workflows/product-brief - product-brief
+- @bmad/bmm/workflows/research - research
+- @bmad/bmm/workflows/create-ux-design - create-ux-design
+- @bmad/bmm/workflows/narrative - narrative
+- @bmad/bmm/workflows/prd - prd
+- @bmad/bmm/workflows/tech-spec-sm - tech-spec-sm
+- @bmad/bmm/workflows/architecture - architecture
+- @bmad/bmm/workflows/solutioning-gate-check - solutioning-gate-check
+- @bmad/bmm/workflows/code-review - code-review
+- @bmad/bmm/workflows/correct-course - correct-course
+- @bmad/bmm/workflows/create-story - create-story
+- @bmad/bmm/workflows/dev-story - dev-story
+- @bmad/bmm/workflows/tech-spec - tech-spec
+- @bmad/bmm/workflows/retrospective - retrospective
+- @bmad/bmm/workflows/sprint-planning - sprint-planning
+- @bmad/bmm/workflows/story-context - story-context
+- @bmad/bmm/workflows/story-done - story-done
+- @bmad/bmm/workflows/story-ready - story-ready
+- @bmad/bmm/workflows/workflow-init - workflow-init
+- @bmad/bmm/workflows/workflow-status - workflow-status
 
 ### CIS
 
@@ -57,16 +102,59 @@ BMAD rules have been installed to: `.cursor/rules/bmad/`
 - @bmad/cis/agents/innovation-strategist - innovation-strategist
 - @bmad/cis/agents/storyteller - storyteller
 
+**Workflows:**
+- @bmad/cis/workflows/design-thinking - design-thinking
+- @bmad/cis/workflows/innovation-strategy - innovation-strategy
+- @bmad/cis/workflows/problem-solving - problem-solving
+- @bmad/cis/workflows/storytelling - storytelling
+
+### MARKETING
+
+**Agents:**
+- @bmad/marketing/agents/alex-social-strategist - alex-social-strategist
+- @bmad/marketing/agents/amanda-press-pr - amanda-press-pr
+- @bmad/marketing/agents/brian-partners-comarketing - brian-partners-comarketing
+- @bmad/marketing/agents/carlos-events-specialist - carlos-events-specialist
+- @bmad/marketing/agents/chris-convert-cro - chris-convert-cro
+- @bmad/marketing/agents/daniel-insights-analyst - daniel-insights-analyst
+- @bmad/marketing/agents/david-facebook-specialist - david-facebook-specialist
+- @bmad/marketing/agents/emma-words-copywriter - emma-words-copywriter
+- @bmad/marketing/agents/james-edit-content-editor - james-edit-content-editor
+- @bmad/marketing/agents/jessica-youtube-specialist - jessica-youtube-specialist
+- @bmad/marketing/agents/jordan-influence-specialist - jordan-influence-specialist
+- @bmad/marketing/agents/kevin-martech-automation - kevin-martech-automation
+- @bmad/marketing/agents/laura-email-specialist - laura-email-specialist
+- @bmad/marketing/agents/leo-growth-hacker - leo-growth-hacker
+- @bmad/marketing/agents/marcus-brand-strategist - marcus-brand-strategist
+- @bmad/marketing/agents/maya-visuals-designer - maya-visuals-designer
+- @bmad/marketing/agents/michael-linkedin-specialist - michael-linkedin-specialist
+- @bmad/marketing/agents/natalie-product-marketing - natalie-product-marketing
+- @bmad/marketing/agents/nina-affiliate-expert - nina-affiliate-expert
+- @bmad/marketing/agents/olivia-search-seo - olivia-search-seo
+- @bmad/marketing/agents/priya-analytics-expert - priya-analytics-expert
+- @bmad/marketing/agents/rachel-ads-ppc - rachel-ads-ppc
+- @bmad/marketing/agents/riley-street-guerrilla - riley-street-guerrilla
+- @bmad/marketing/agents/ryan-video-creator - ryan-video-creator
+- @bmad/marketing/agents/samantha-demand-gen - samantha-demand-gen
+- @bmad/marketing/agents/sarah-editorial-content-strategist - sarah-editorial-content-strategist
+- @bmad/marketing/agents/sophia-instagram-specialist - sophia-instagram-specialist
+- @bmad/marketing/agents/taylor-community-manager - taylor-community-manager
+- @bmad/marketing/agents/tyler-x-specialist - tyler-x-specialist
+- @bmad/marketing/agents/victoria-chen-cmo - victoria-chen-cmo
+- @bmad/marketing/agents/zoe-tiktok-specialist - zoe-tiktok-specialist
+
 
 ## Quick Reference
 
 - All BMAD rules are Manual type - reference them explicitly when needed
 - Agents provide persona-based assistance with specific expertise
 - Tasks are reusable workflows for common operations
+- Tools provide specialized functionality
+- Workflows orchestrate multi-step processes
 - Each agent includes an activation block for proper initialization
 
 ## Configuration
 
 BMAD rules are configured as Manual rules (alwaysApply: false) to give you control
 over when they're included in your context. Reference them explicitly when you need
-specific agent expertise or task workflows.
+specific agent expertise, task workflows, tools, or guided workflows.

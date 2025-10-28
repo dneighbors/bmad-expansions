@@ -99,7 +99,7 @@ development_status:
 #   - drafted: Story file created in stories folder
 #   - ready-for-dev: Draft approved and story context created
 #   - in-progress: Developer actively working on implementation
-#   - review: Under SM review (via review-story workflow)
+#   - review: Under SM review (via code-review workflow)
 #   - done: Story completed
 #
 # Retrospective Status:
@@ -193,7 +193,7 @@ backlog → drafted → ready-for-dev → in-progress → review → done
 - **drafted**: Story file created (e.g., `stories/1-3-plant-naming.md`)
 - **ready-for-dev**: Draft approved + story context created
 - **in-progress**: Developer actively working
-- **review**: Under SM review (via review-story workflow)
+- **review**: Under SM review (via code-review workflow)
 - **done**: Completed
 
 **Retrospective Status:**

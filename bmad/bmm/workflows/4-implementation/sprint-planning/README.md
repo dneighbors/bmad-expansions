@@ -136,7 +136,7 @@ This workflow is part of Phase 4 (Implementation) and integrates with:
 2. **create-story** - Drafts individual story files
 3. **story-context** - Adds implementation context to stories
 4. **dev-story** - Developer implements the story
-5. **review-story** - SM reviews implementation
+5. **code-review** - SM reviews implementation
 6. **retrospective** - Optional epic retrospective
 
 ## Benefits

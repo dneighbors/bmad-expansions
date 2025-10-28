@@ -28,3 +28,5 @@ sub_workflows:
   - create_agent: "{project-root}/bmad/bmb/workflows/create-agent/workflow.yaml"
   - create_workflow: "{project-root}/bmad/bmb/workflows/create-workflow/workflow.yaml"
   - create_module: "{project-root}/bmad/bmb/workflows/create-module/workflow.yaml"
+
+standalone: true

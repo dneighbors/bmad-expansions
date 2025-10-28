@@ -1,0 +1,111 @@
+# Social Campaign Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: social-campaign
+description: "Plan multi-platform social media campaign with platform-specific content and calendar"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing/workflows/social-campaign"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+output_file: "{output_folder}/social-campaign-{date}.md"
+
+# Team agents
+team:
+  strategist:
+    agent: "marketing/agents/alex-social-strategist"
+    role: "Platform mix strategy and coordination"
+  
+  tiktok:
+    agent: "marketing/agents/zoe-tiktok-specialist"
+    role: "TikTok content and trends"
+  
+  twitter:
+    agent: "marketing/agents/tyler-x-specialist"
+    role: "X/Twitter strategy and threads"
+  
+  linkedin:
+    agent: "marketing/agents/michael-linkedin-specialist"
+    role: "LinkedIn professional content"
+  
+  instagram:
+    agent: "marketing/agents/sophia-instagram-specialist"
+    role: "Instagram visuals and Reels"
+
+# Input variables
+variables:
+  campaign_objective:
+    prompt: "Campaign objective?"
+    type: "single-select"
+    required: true
+    options:
+      - "Brand Awareness"
+      - "Product Launch"
+      - "Lead Generation"
+      - "Community Building"
+      - "Event Promotion"
+      - "Content Distribution"
+  
+  campaign_duration:
+    prompt: "Campaign duration?"
+    type: "single-select"
+    default: "2-weeks"
+    options:
+      - "1-week"
+      - "2-weeks"
+      - "30-days"
+      - "90-days"
+      - "ongoing"
+  
+  target_platforms:
+    prompt: "Which platforms to activate?"
+    type: "multi-select"
+    required: true
+    options:
+      - "TikTok"
+      - "X / Twitter"
+      - "LinkedIn"
+      - "Instagram"
+      - "Facebook"
+      - "YouTube"
+  
+  content_theme:
+    prompt: "Campaign theme or message?"
+    type: "text"
+    required: true
+  
+  budget_range:
+    prompt: "Budget available? (for paid amplification)"
+    type: "single-select"
+    default: "organic-only"
+    options:
+      - "organic-only"
+      - "< $1,000"
+      - "$1,000 - $5,000"
+      - "$5,000 - $20,000"
+      - "$20,000+"
+  
+  hashtag_strategy:
+    prompt: "Campaign hashtags? (optional)"
+    type: "text"
+    required: false
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

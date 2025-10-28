@@ -1,0 +1,99 @@
+# Blog Post Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: blog-post
+description: "Create SEO-optimized blog post with meta, images, and CTAs ready for publication"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing/workflows/blog-post"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+output_file: "{output_folder}/blog-post-{date}.md"
+
+# Team agents
+team:
+  writer:
+    agent: "marketing/agents/emma-words-copywriter"
+    role: "Content writing and structure"
+  
+  seo:
+    agent: "marketing/agents/olivia-search-seo"
+    role: "SEO optimization and keywords"
+  
+  editor:
+    agent: "marketing/agents/james-edit-content-editor"
+    role: "Editing and quality control"
+  
+  designer:
+    agent: "marketing/agents/maya-visuals-designer"
+    role: "Featured image and visuals"
+
+# Input variables
+variables:
+  blog_topic:
+    prompt: "What is the blog post topic?"
+    type: "text"
+    required: true
+  
+  target_keyword:
+    prompt: "Primary target keyword?"
+    type: "text"
+    required: true
+  
+  word_count:
+    prompt: "Target word count?"
+    type: "single-select"
+    default: "1500-2000"
+    options:
+      - "800-1200"
+      - "1500-2000"
+      - "2500-3500"
+      - "4000+"
+  
+  content_angle:
+    prompt: "Content angle/type?"
+    type: "single-select"
+    default: "how-to"
+    options:
+      - "how-to"
+      - "listicle"
+      - "thought-leadership"
+      - "case-study"
+      - "industry-trends"
+      - "product-focused"
+  
+  cta_focus:
+    prompt: "Primary call-to-action?"
+    type: "single-select"
+    default: "newsletter"
+    options:
+      - "newsletter"
+      - "demo-request"
+      - "download-resource"
+      - "product-trial"
+      - "contact-sales"
+  
+  internal_links:
+    prompt: "Related content to link to? (optional)"
+    type: "text"
+    required: false
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

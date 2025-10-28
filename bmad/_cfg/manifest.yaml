@@ -1,11 +1,12 @@
 installation:
   version: 6.0.0-alpha.0
-  installDate: '2025-10-24T21:52:08.048Z'
-  lastUpdated: '2025-10-24T21:52:08.048Z'
+  installDate: '2025-10-28T21:43:15.952Z'
+  lastUpdated: '2025-10-28T21:43:15.952Z'
 modules:
   - core
   - bmb
   - bmm
   - cis
+  - marketing
 ides:
   - cursor

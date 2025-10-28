@@ -1,0 +1,106 @@
+# Growth Experiment Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: growth-experiment
+description: "Design and execute growth experiment with hypothesis, implementation, and tracking"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing/workflows/growth-experiment"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+output_file: "{output_folder}/growth-experiment-{date}.md"
+
+# Team agents
+team:
+  growth:
+    agent: "marketing/agents/leo-growth-hacker"
+    role: "Growth hypothesis and experiment design"
+  
+  cro:
+    agent: "marketing/agents/chris-convert-cro"
+    role: "Testing methodology and statistical rigor"
+  
+  analytics:
+    agent: "marketing/agents/priya-analytics-expert"
+    role: "Measurement and analysis"
+
+# Input variables
+variables:
+  experiment_hypothesis:
+    prompt: "What's your growth hypothesis?"
+    type: "text"
+    required: true
+    example: "Adding social proof to signup page will increase conversions by 15%"
+  
+  growth_lever:
+    prompt: "Which growth lever are you testing?"
+    type: "single-select"
+    required: true
+    options:
+      - "Acquisition"
+      - "Activation"
+      - "Retention"
+      - "Referral"
+      - "Revenue"
+  
+  experiment_type:
+    prompt: "Experiment type?"
+    type: "single-select"
+    default: "a-b-test"
+    options:
+      - "a-b-test"
+      - "multivariate-test"
+      - "feature-rollout"
+      - "channel-test"
+      - "pricing-test"
+      - "messaging-test"
+  
+  success_metric:
+    prompt: "Primary success metric?"
+    type: "text"
+    required: true
+    example: "Signup conversion rate"
+  
+  minimum_detectable_effect:
+    prompt: "Minimum improvement to declare success?"
+    type: "text"
+    example: "10% relative improvement"
+  
+  experiment_duration:
+    prompt: "Planned experiment duration?"
+    type: "single-select"
+    default: "2-weeks"
+    options:
+      - "1-week"
+      - "2-weeks"
+      - "30-days"
+      - "until-significance"
+  
+  implementation_complexity:
+    prompt: "Implementation complexity?"
+    type: "single-select"
+    default: "medium"
+    options:
+      - "low (no dev needed)"
+      - "medium (minor dev)"
+      - "high (significant dev)"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

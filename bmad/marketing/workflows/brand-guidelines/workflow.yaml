@@ -1,0 +1,80 @@
+# Brand Guidelines Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: brand-guidelines
+description: "Create comprehensive brand guidelines document covering voice, tone, visual identity, and usage rules"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing/workflows/brand-guidelines"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+output_file: "{output_folder}/brand-guidelines-{date}.md"
+
+# Team agents
+team:
+  lead:
+    agent: "marketing/agents/marcus-brand-strategist"
+    role: "Brand strategy and positioning lead"
+  
+  visual:
+    agent: "marketing/agents/maya-visuals-designer"
+    role: "Visual identity and design systems"
+
+# Input variables
+variables:
+  brand_personality:
+    prompt: "What personality traits should your brand embody?"
+    type: "text"
+    example: "Professional yet approachable, innovative, trustworthy"
+  
+  brand_values:
+    prompt: "What are your core brand values? (3-5 values)"
+    type: "text"
+    example: "Transparency, Innovation, Customer-First, Quality, Sustainability"
+  
+  brand_promise:
+    prompt: "What is your brand promise to customers?"
+    type: "text"
+    example: "We help SMBs compete with enterprise-level tools"
+  
+  tone_preferences:
+    prompt: "Preferred communication tone?"
+    type: "multi-select"
+    options:
+      - "Professional"
+      - "Friendly"
+      - "Technical"
+      - "Casual"
+      - "Authoritative"
+      - "Empathetic"
+  
+  visual_direction:
+    prompt: "Visual style direction?"
+    type: "single-select"
+    default: "modern-clean"
+    options:
+      - "modern-clean"
+      - "bold-vibrant"
+      - "minimalist"
+      - "traditional-trustworthy"
+      - "tech-forward"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

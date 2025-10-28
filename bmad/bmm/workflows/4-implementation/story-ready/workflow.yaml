@@ -21,3 +21,5 @@ variables:
 
 # Output configuration - no output file, just status updates
 default_output_file: ""
+
+standalone: true
