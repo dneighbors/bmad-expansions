@@ -4,7 +4,7 @@
 
 > 🚧 **Container Repository:** This repo currently serves as a personal staging and distribution mechanism for BMAD expansion packs. It demonstrates how to build, organize, and distribute custom BMAD modules until formal package distribution is established.
 > 
-> 💡 **Future Home:** The BMAD community is working toward [BMAD Foundry](https://github.com/bmad-code-org/BMAD-FOUNDRY) as the official distribution point for expansion packs.
+> 💡 **Future Home:** The BMAD community is working toward [BMAD Foundry](https://github.com/bmad-code-org/BMAD-FOUNDRY) as the official distribution point for expansion packs. (I think???)
 
 ---
 
@@ -372,7 +372,7 @@ bmad-expansions/
 
 ### Understanding BMAD Expansions
 - [What is BMAD?](https://github.com/bmadcode/BMAD-METHOD) — Base framework for AI-powered development
-- [BMAD Foundry](https://github.com/bmad-code-org/BMAD-FOUNDRY) — Future official home for expansion packs
+- [BMAD Foundry](https://github.com/bmad-code-org/BMAD-FOUNDRY) — Future official home for expansion packs (I think???)
 - [BMAD Builder (BMB)](docs/epics/02-authoring-with-bmb.md) — Tool for creating agents and workflows
 - [Epic 05: Context-Aware Adaptation](docs/epics/05-context-aware-adaptation.md) — Future roadmap for intelligent configuration
 
