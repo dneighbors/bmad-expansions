@@ -193,39 +193,40 @@ for pack in "${PACKS[@]}"; do
 done
 echo ""
 
-# Update .gitignore in BMAD-METHOD
-echo -e "${BLUE}📝 Updating .gitignore...${NC}"
-if [[ ! -f "${GITIGNORE_FILE}" ]]; then
+# Update local git exclude (avoids .gitignore conflicts)
+GIT_EXCLUDE_FILE="${TARGET_DIR}/.git/info/exclude"
+echo -e "${BLUE}📝 Updating local git excludes...${NC}"
+
+if [[ ! -f "${GIT_EXCLUDE_FILE}" ]]; then
     if [[ "${DRY_RUN}" == true ]]; then
-        echo -e "${YELLOW}[DRY-RUN]${NC} Would create: ${GITIGNORE_FILE}"
+        echo -e "${YELLOW}[DRY-RUN]${NC} Would create: ${GIT_EXCLUDE_FILE}"
     else
-        echo -e "${GREEN}✓${NC} Creating ${GITIGNORE_FILE}"
-        touch "${GITIGNORE_FILE}"
+        mkdir -p "$(dirname "${GIT_EXCLUDE_FILE}")"
+        touch "${GIT_EXCLUDE_FILE}"
     fi
 fi
 
-GITIGNORE_UPDATED=false
+EXCLUDES_UPDATED=false
 for pack in "${PACKS[@]}"; do
     ignore_entry="src/modules/${pack}"
     
-    if grep -qF "${ignore_entry}" "${GITIGNORE_FILE}" 2>/dev/null; then
-        echo "  • ${pack} already in .gitignore"
+    if grep -qF "${ignore_entry}" "${GIT_EXCLUDE_FILE}" 2>/dev/null; then
+        echo "  • ${pack} already excluded"
     else
         if [[ "${DRY_RUN}" == true ]]; then
-            echo -e "${YELLOW}[DRY-RUN]${NC} Would add: ${ignore_entry}"
+            echo -e "${YELLOW}[DRY-RUN]${NC} Would exclude: ${ignore_entry}"
         else
-            echo -e "${GREEN}✓${NC} Adding: ${ignore_entry}"
-            echo "${ignore_entry}" >> "${GITIGNORE_FILE}"
-            GITIGNORE_UPDATED=true
+            echo -e "${GREEN}✓${NC} Excluding: ${ignore_entry}"
+            echo "${ignore_entry}" >> "${GIT_EXCLUDE_FILE}"
+            EXCLUDES_UPDATED=true
         fi
     fi
 done
 
-if [[ "${GITIGNORE_UPDATED}" == true ]]; then
+if [[ "${EXCLUDES_UPDATED}" == true ]]; then
     echo ""
-    echo -e "${YELLOW}Note:${NC} .gitignore was updated in BMAD-METHOD"
-    echo "      This is a local change - you don't need to commit it to BMAD-METHOD"
-    echo "      The expansion packs will be ignored by git in that repo"
+    echo -e "${GREEN}✓${NC} Expansion packs added to local git exclude"
+    echo "  (Using .git/info/exclude - won't conflict with git pull)"
 fi
 echo ""
 
