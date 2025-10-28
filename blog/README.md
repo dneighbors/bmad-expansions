@@ -119,6 +119,44 @@ Takeaways: Practical frameworks for authentic content at scale
 
 ---
 
+## Configuration
+
+### Installation Questions
+
+During installation, you'll answer questions about your blog identity:
+
+1. **Output Location** - Where to save blog posts and social content
+2. **Author Name** - Your name (customizes Derek Neighbors agent to your identity)
+3. **Content Focus** - Primary content pillars/themes (select multiple)
+4. **Publishing Cadence** - How often you publish (daily, 5x/week, 3x/week, etc.)
+5. **SEO Priority** - Balance between SEO optimization and authentic voice
+6. **Social Automation** - Which social platforms to generate content for
+
+### How Configuration Works (v1.0)
+
+**✅ Currently Active:**
+- Configuration values saved to `bmad/blog/config.yaml` in your project
+- Author agent persona can be customized to your name and voice
+- Workflows use `blog_output_path` to organize content
+- Content pillars guide topic selection and idea generation
+
+**⏳ Planned Enhancements (See Epic 05):**
+- Publishing cadence adjusts calendar planning recommendations
+- Content focus filters workflow suggestions and topic ideas
+- SEO priority slider adapts optimization aggressiveness
+- Social automation pre-selects platforms in distribution workflows
+- Author voice learns from your past content
+
+**Current Workaround:**  
+Reference your blog context explicitly:
+- *"Given my focus on leadership and agile development..."*
+- *"For my daily publishing schedule, suggest..."*
+- *"In my authentic conversational voice..."*
+
+See **[Epic 05: Context-Aware Adaptation](../docs/epics/05-context-aware-adaptation.md)** for planned adaptive behavior.
+
+---
+
 ## Module Structure (BMB Standard)
 
 ```

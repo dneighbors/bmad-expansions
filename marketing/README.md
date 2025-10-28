@@ -139,13 +139,52 @@ marketing/
 
 ---
 
-## Key BMB Features Demonstrated
+## Configuration
 
-1. **Rich Configuration:** 7 interactive installer fields
-2. **Agent Format:** `.agent.yaml` (proper BMAD Core format)
-3. **Conditional Team Assembly:** Agents join based on focus areas
-4. **Industry Customization:** Tailored to company industry and audience
-5. **Maturity-Aware:** Adapts to startup vs. enterprise needs
+### Installation Questions
+
+During installation, you'll answer 7 questions that capture your marketing context:
+
+1. **Output Location** - Where to save marketing strategies, campaigns, and content
+2. **Industry** - Your company's industry/vertical (SaaS, E-Commerce, Healthcare, FinTech, etc.)
+3. **Marketing Focus Areas** - Primary focus areas (select multiple):
+   - Brand Awareness
+   - Demand Generation / Lead Gen
+   - Content Marketing
+   - Social Media Growth
+   - Performance Marketing / Paid Ads
+   - Product Marketing
+   - Community Building
+4. **Target Audience** - B2B, B2C, B2B2C, or D2C
+5. **Marketing Maturity** - Current stage:
+   - Startup - Building from scratch
+   - Growing - Have basics, need to scale
+   - Established - Optimizing and scaling
+   - Enterprise - Complex, multi-channel
+6. **Disclaimer Mode** - Whether to include marketing best practice disclaimers
+
+### How Configuration Works (v1.0)
+
+**✅ Currently Active:**
+- Configuration values saved to `bmad/marketing/config.yaml` in your project
+- All agents load your industry, audience, and focus context during activation
+- Workflows use `marketing_output_path` to organize all generated content
+- You can reference context in prompts: *"Given my B2B SaaS focus, recommend..."*
+
+**⏳ Planned Enhancements (See Epic 05):**
+- Agents adapt language/examples to your industry automatically
+- Focus areas prioritize and filter agent recommendations
+- Maturity level adjusts complexity of recommendations
+- Target audience changes default channel/tactic suggestions
+- Disclaimers toggle on/off based on user preference
+- Agent personas reference your specific context
+
+**Current Workaround:**  
+In v1.0, agents have access to your configuration but don't yet automatically adapt. You can explicitly reference your context:
+- *"As a B2B SaaS company in growth stage, what demand gen tactics should I prioritize?"*
+- *"Given my focus on content marketing and social media, create a strategy..."*
+
+See **[Epic 05: Context-Aware Adaptation](../docs/epics/05-context-aware-adaptation.md)** for planned adaptive behavior.
 
 ---
 
@@ -161,9 +200,19 @@ marketing/
 
 ---
 
-## Sample Created (2 of 31 agents, 1 of 15 workflows)
+## Pack Status
 
-This sample demonstrates BMB structure. Full pack would include all 31 agents and 15 workflows created via `*create-agent` and `*create-workflow`.
+**✅ COMPLETE (v1.0):**
+- All 31 agents created in proper BMB `.agent.yaml` format
+- All 15 workflows created with complete `workflow.yaml` configuration
+- Rich 7-field installer configuration
+- Agents have access to user context (industry, focus, audience, maturity)
+
+**⏳ FUTURE (See Epic 05):**
+- Automatic agent adaptation based on configuration
+- Conditional disclaimer display
+- Industry-specific examples and frameworks
+- Maturity-based recommendation filtering
 
 ---
 

@@ -188,6 +188,43 @@ The workflow will prompt you for:
 
 ---
 
+## Configuration
+
+### Installation Questions
+
+During installation, you'll answer questions about your healthcare context:
+
+1. **Output Location** - Where to save clinical reviews, training content, and documentation
+2. **Specialty Focus** - Primary medical specialty or product focus
+3. **HIPAA Compliance Mode** - Level of HIPAA scrutiny needed
+4. **Medical Disclaimers** - Include disclaimers about professional review requirements
+5. **Clinical Validation Level** - Rigor of clinical validation (Basic, Standard, Comprehensive)
+6. **EHR System** - Target EHR vendor (Epic, Cerner, Athenahealth, etc.)
+
+### How Configuration Works (v1.0)
+
+**✅ Currently Active:**
+- Configuration values saved to `bmad/medical/config.yaml` in your project
+- All agents load specialty, compliance mode, and EHR context
+- Workflows use `medical_output_path` to organize content
+- HIPAA and medical disclaimers included in all agent responses
+
+**⏳ Planned Enhancements (See Epic 05):**
+- Specialty-specific clinical examples and terminology
+- Compliance mode adjusts audit depth and checklist rigor
+- EHR-specific integration guidance and FHIR resource recommendations
+- Optional disclaimer display based on user preference
+- Validation level adjusts review thoroughness
+
+**Current Workaround:**  
+Explicitly reference your context in prompts:
+- *"For an emergency department workflow with Epic integration..."*
+- *"Given our cardiology focus and comprehensive validation needs..."*
+
+See **[Epic 05: Context-Aware Adaptation](../docs/epics/05-context-aware-adaptation.md)** for planned adaptive behavior.
+
+---
+
 ## Module Structure
 
 ```
