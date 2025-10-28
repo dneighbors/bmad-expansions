@@ -30,7 +30,10 @@ echo -e "${BLUE}Source directory:${NC} ${SOURCE_DIR}"
 echo ""
 
 # Interactive prompt for target directory
-DEFAULT_TARGET_DIR="${SOURCE_DIR}/../BMAD-METHOD"
+DEFAULT_TARGET_DIR_RAW="${SOURCE_DIR}/../BMAD-METHOD"
+# Resolve to absolute path for cleaner display
+DEFAULT_TARGET_DIR="$(cd "${DEFAULT_TARGET_DIR_RAW}" 2>/dev/null && pwd || echo "${DEFAULT_TARGET_DIR_RAW}")"
+
 echo -e "${BLUE}Where is your BMAD-METHOD repository?${NC}"
 echo -e "${YELLOW}Default:${NC} ${DEFAULT_TARGET_DIR}"
 echo ""
@@ -41,10 +44,9 @@ if [[ -z "${USER_TARGET_DIR}" ]]; then
     TARGET_DIR="${DEFAULT_TARGET_DIR}"
 else
     TARGET_DIR="${USER_TARGET_DIR}"
+    # Expand ~ to home directory if present
+    TARGET_DIR="${TARGET_DIR/#\~/$HOME}"
 fi
-
-# Expand ~ to home directory if present
-TARGET_DIR="${TARGET_DIR/#\~/$HOME}"
 
 echo ""
 echo -e "${GREEN}✓${NC} Using target: ${TARGET_DIR}"
