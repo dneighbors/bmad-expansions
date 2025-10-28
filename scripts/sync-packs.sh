@@ -24,6 +24,54 @@ echo -e "${BLUE}🚀 BMAD Expansion Pack Sync Script${NC}"
 echo "=================================="
 echo ""
 
+# Check for required dependencies
+echo -e "${BLUE}Checking dependencies...${NC}"
+
+if ! command -v rsync &> /dev/null; then
+    echo -e "${RED}❌ ERROR: rsync is not installed${NC}"
+    echo ""
+    echo "rsync is required for syncing packs. Please install it:"
+    echo ""
+    
+    # Detect OS and provide specific instructions
+    if [[ -f /etc/os-release ]]; then
+        . /etc/os-release
+        case "$ID" in
+            ubuntu|debian|pop)
+                echo "  sudo apt update && sudo apt install -y rsync"
+                ;;
+            fedora)
+                echo "  sudo dnf install -y rsync"
+                ;;
+            arch|manjaro)
+                echo "  sudo pacman -S rsync"
+                ;;
+            opensuse*)
+                echo "  sudo zypper install rsync"
+                ;;
+            rhel|centos)
+                echo "  sudo yum install -y rsync"
+                ;;
+            *)
+                echo "  # For your system ($ID), please install rsync using your package manager"
+                echo "  # Common: apt, dnf, pacman, zypper, yum"
+                ;;
+        esac
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        echo "  # macOS (usually pre-installed, or use Homebrew):"
+        echo "  brew install rsync"
+    else
+        echo "  # Please install rsync using your system's package manager"
+    fi
+    
+    echo ""
+    echo "Then run this script again."
+    exit 1
+fi
+
+echo -e "${GREEN}✓${NC} rsync found"
+echo ""
+
 # Determine source directory (this repo)
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 echo -e "${BLUE}Source directory:${NC} ${SOURCE_DIR}"
