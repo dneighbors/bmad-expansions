@@ -1,8 +1,8 @@
 # BMAD Expansions
 
-**Curated expansion packs for the [BMAD Method](https://github.com/joshuacook/BMAD-METHOD)** — Pre-built AI agent teams and workflows for specialized domains.
+**Personal collection of expansion packs for the [BMAD Method](https://github.com/joshuacook/BMAD-METHOD)** — Pre-built AI agent teams and workflows for specialized domains.
 
-> 🚧 **Container Repository:** This repo currently serves as a staging and distribution mechanism for BMAD expansion packs until formal package distribution is implemented in BMAD Core. Think of it as the "npm registry" for BMAD modules.
+> 🚧 **Container Repository:** This repo currently serves as a personal staging and distribution mechanism for BMAD expansion packs. It demonstrates how to build, organize, and distribute custom BMAD modules until formal package distribution is implemented in BMAD Core.
 
 ---
 
