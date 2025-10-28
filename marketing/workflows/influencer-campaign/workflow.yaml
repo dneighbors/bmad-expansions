@@ -1,0 +1,107 @@
+# Influencer Campaign Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: influencer-campaign
+description: "Plan creator partnership campaign with influencer list, briefs, contracts, and tracking"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing/workflows/influencer-campaign"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+output_file: "{output_folder}/influencer-campaign-{date}.md"
+
+# Team agents
+team:
+  influencer:
+    agent: "marketing/agents/jordan-influence-specialist"
+    role: "Influencer strategy and vetting"
+  
+  social:
+    agent: "marketing/agents/alex-social-strategist"
+    role: "Platform strategy and content guidelines"
+  
+  analytics:
+    agent: "marketing/agents/priya-analytics-expert"
+    role: "Performance tracking and ROI measurement"
+
+# Input variables
+variables:
+  campaign_goal:
+    prompt: "Campaign goal?"
+    type: "single-select"
+    required: true
+    options:
+      - "Brand Awareness"
+      - "Product Launch"
+      - "Lead Generation"
+      - "Sales / Conversions"
+      - "User-Generated Content"
+      - "Event Promotion"
+  
+  target_platforms:
+    prompt: "Which platforms?"
+    type: "multi-select"
+    required: true
+    options:
+      - "TikTok"
+      - "Instagram"
+      - "YouTube"
+      - "Twitter / X"
+      - "LinkedIn"
+      - "Twitch"
+  
+  influencer_tier:
+    prompt: "Preferred influencer tier?"
+    type: "single-select"
+    default: "micro"
+    options:
+      - "nano (1K-10K)"
+      - "micro (10K-100K)"
+      - "macro (100K-1M)"
+      - "mega (1M+)"
+      - "mixed-tier"
+  
+  campaign_budget:
+    prompt: "Campaign budget?"
+    type: "single-select"
+    required: true
+    options:
+      - "< $5,000"
+      - "$5,000 - $20,000"
+      - "$20,000 - $50,000"
+      - "$50,000 - $100,000"
+      - "$100,000+"
+  
+  deliverables:
+    prompt: "Expected deliverables per creator?"
+    type: "text"
+    example: "2 feed posts, 3 stories, 1 Reel"
+  
+  creative_freedom:
+    prompt: "Creative freedom level?"
+    type: "single-select"
+    default: "guided"
+    options:
+      - "full-creative-control"
+      - "guided"
+      - "brand-prescribed"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

@@ -1,18 +1,53 @@
-name: content-refresh
-description: "Update and optimize existing high-performing posts"
-author: "Blog Pack Team"
+# Content Refresh Workflow Configuration
+# Created using BMB *create-workflow patterns
 
-config_source: "{project-root}/bmad/bmm/config.yaml"
-output_folder: "{config_source}:output_folder"
+name: content-refresh
+description: "Update and optimize existing high-performing posts with improved SEO and updated content"
+author: "Blog Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/blog/config.yaml"
+output_folder: "{config_source}:blog_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
 date: system-generated
 
 installed_path: "{project-root}/blog/workflows/content-refresh"
 instructions: "{installed_path}/instructions.md"
 validation: "{installed_path}/checklist.md"
-template: false
-
-dependencies:
-  - marketing  # Blog pack requires marketing pack agents
+output_file: "{output_folder}/refreshed-content-{date}.md"
 
 team:
-  - derek-neighbors-author\n  - olivia-search-seo (marketing pack)
+  author:
+    agent: "blog/agents/derek-neighbors-author"
+    role: "Content updating and optimization"
+
+variables:
+  post_url:
+    prompt: "Post URL to refresh?"
+    type: "text"
+    required: true
+  
+  current_metrics:
+    prompt: "Current performance metrics?"
+    type: "text"
+    example: "1000 views/month, 2% CTR, ranking #8 for 'agile leadership'"
+  
+  refresh_goals:
+    prompt: "Refresh goals?"
+    type: "multi-select"
+    required: true
+    options:
+      - "Improve SEO Rankings"
+      - "Update Outdated Information"
+      - "Add New Examples"
+      - "Improve Conversion"
+      - "Expand Content Depth"
+      - "Refresh Visuals"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

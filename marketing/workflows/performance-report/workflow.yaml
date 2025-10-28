@@ -1,0 +1,95 @@
+# Performance Report Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: performance-report
+description: "Generate executive marketing dashboard with insights and recommendations"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing/workflows/performance-report"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+output_file: "{output_folder}/performance-report-{date}.md"
+
+# Team agents
+team:
+  analyst:
+    agent: "marketing/agents/priya-analytics-expert"
+    role: "Data analysis and insights"
+  
+  cmo:
+    agent: "marketing/agents/victoria-chen-cmo"
+    role: "Strategic interpretation and recommendations"
+
+# Input variables
+variables:
+  reporting_period:
+    prompt: "Reporting period?"
+    type: "single-select"
+    required: true
+    default: "monthly"
+    options:
+      - "weekly"
+      - "monthly"
+      - "quarterly"
+      - "annual"
+      - "custom-range"
+  
+  report_audience:
+    prompt: "Who is this report for?"
+    type: "single-select"
+    default: "executive-team"
+    options:
+      - "executive-team"
+      - "marketing-team"
+      - "board-of-directors"
+      - "cross-functional"
+  
+  key_metrics:
+    prompt: "Priority metrics to track?"
+    type: "multi-select"
+    required: true
+    options:
+      - "Website Traffic"
+      - "Lead Generation"
+      - "Conversion Rates"
+      - "Pipeline / Revenue"
+      - "Social Engagement"
+      - "Email Performance"
+      - "SEO Rankings"
+      - "Ad Performance / ROAS"
+      - "Brand Awareness"
+  
+  comparison_period:
+    prompt: "Compare to?"
+    type: "single-select"
+    default: "previous-period"
+    options:
+      - "previous-period"
+      - "year-over-year"
+      - "plan-vs-actual"
+      - "no-comparison"
+  
+  goal_context:
+    prompt: "Marketing goals for this period?"
+    type: "text"
+    required: false
+    example: "Launch new product, grow email list 20%, improve conversion rate"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

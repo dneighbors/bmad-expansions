@@ -1,222 +1,238 @@
-# Blog Pack
+# Blog Pack (BMB Generated)
 
-**Your blog author as an AI agent — complete brand voice, content operations, and workflow automation.**
+**Version:** 1.0.0  
+**Author:** Derek Neighbors  
+**Created:** 2025-10-26  
+**Method:** BMB Workflows  
+**Pattern:** Author-as-Agent
 
-## Purpose
+---
 
-The Blog Pack revolutionizes content creation by embodying your unique blog voice, brand guidelines, and content operations as AI agents. Each blog author gets a custom agent that understands their philosophy, tone, visual brand, front matter requirements, and social media style—making consistent, on-brand content creation effortless.
+## Overview
 
-## Target Users
+Blog content operations system built on the **author-as-agent pattern**. Your unique voice and expertise become an AI agent that works with specialists (SEO, editing, social) to scale content production while maintaining authenticity.
 
-- **Individual Bloggers** — Solo content creators building personal brands
-- **Thought Leaders** — Authors and speakers maintaining consistent voice across platforms
-- **Content Entrepreneurs** — Building audience through regular blog publishing
-- **Technical Writers** — Developer blogs, engineering thought leadership
-- **Coaches & Consultants** — Sharing expertise through content marketing
+**Created using BMAD Builder (BMB) workflows** to demonstrate proper module structure and author-as-agent pattern.
 
-## Pain Points Solved
+---
 
-1. **Inconsistent Brand Voice** — Agent embodies YOUR voice, tone, and philosophy
-2. **Content Operations Chaos** — Systematic workflows from concept through publication
-3. **Social Media Overwhelm** — Auto-generate platform-specific content from blog posts
-4. **SEO & Formatting Burden** — Handle front matter, SEO, internal linking automatically
-5. **Lack of Marketing Expertise** — Access full marketing pack for tactical support
+## The Author-as-Agent Pattern
 
-## Architecture Innovation
+Traditional content AI replaces the author. This pack **amplifies** the author.
 
-### Blog Author as Agent
+**How It Works:**
+1. **Derek (Author Agent)** embodies your unique voice, perspective, and expertise
+2. **Orion (Orchestrator)** manages content operations and coordinates specialists
+3. **Marketing Specialists** provide tactical support (SEO, editing, social) without diluting voice
 
-Each blogger gets a **custom agent** that embodies:
-- ✅ **Brand Voice** — Tone, style, messaging framework
-- ✅ **Content Pillars** — Core themes and philosophical framework
-- ✅ **Visual Brand** — Colors, image style, typography standards
-- ✅ **Front Matter Template** — Custom Jekyll/Hugo/etc. formatting
-- ✅ **Social Media Style** — Platform-specific content formulas
-- ✅ **Product Integration** — Natural mention of your products/services
+**Result:** Scale content production while maintaining authentic, high-quality output.
 
-### Dependency: Marketing Pack
-
-The Blog Pack is **workflow-heavy and agent-light** by design:
-- **2 Blog Agents:** Your author persona + Orion workflow orchestrator
-- **31 Marketing Agents:** Full marketing department for tactical support
-- **15 Blog Workflows:** Content creation, SEO, social, analytics, optimization
-
-When workflows need copywriting, SEO, or social expertise, they invoke marketing pack agents—keeping blog pack focused on YOUR unique voice while leveraging proven marketing specialists.
-
-### Scalability
-
-**One Pack, Many Blogs:**
-1. Create new blog author agent (copy Derek Neighbors template)
-2. Customize brand voice, content pillars, front matter
-3. New blog persona ready with all 15 workflows
-
-## Agent Roster (2 Specialists)
-
-### Blog Orchestrator
-- **Orion** (`@orion-blog-orchestrator`) — Workflow Execution + Marketing Coordination
-  - Orchestrates all blog workflows from concept through publication
-  - Coordinates marketing pack specialists (SEO, copywriting, social)
-  - Ensures brand consistency and quality standards
-  - Systematic, efficient, quality-focused
-
-### Blog Author Persona (Example: Derek Neighbors)
-- **Derek Neighbors** (`@derek-neighbors-author`) — Author + Philosopher of Excellence
-  - **Brand Message:** "Becoming the best motherfucker you can be at what you do"
-  - **Voice:** Provocative, authentic, philosophical, practical (Marcus Aurelius style)
-  - **Content Pillars:** Philosophy of Excellence, Forge of Transformation, Mastery & Craft, Leadership Through Being
-  - **Visual Brand:** Deep charcoal, warm gold, sage green (ancient wisdom aesthetic)
-  - **Social Style:** DEPTH formula (LinkedIn), meditation threads (X/Twitter)
-  - **Front Matter:** Custom Jekyll with arete scoring, content pillars, related posts
-
-## Workflows (15)
-
-### 🔥 Priority Workflows
-
-#### `*daily-content-system` — Daily Blog Post Creation
-**Team:** Blog Author, Orion, Emma (Copywriter), Olivia (SEO), James (Editor)  
-**Use When:** Creating daily blog posts with full workflow  
-**Output:** Complete blog post with front matter, SEO, social content, cover image prompt
-
-```
-@derek-neighbors-author
-*daily-content-system
-```
-
-#### `*social-media-generation` — Multi-Platform Social Content
-**Team:** Blog Author, Orion, Alex (Social), Michael (LinkedIn), Tyler (X/Twitter)  
-**Use When:** Turning blog post into social content for all platforms  
-**Output:** LinkedIn (DEPTH formula), X threads, Facebook, Instagram captions
-
-```
-@orion-blog-orchestrator
-*social-media-generation
-```
-
-#### `*cover-image-prompt` — Visual Content Generation
-**Team:** Blog Author, Maya (Visual Designer)  
-**Use When:** Generating cover image prompts aligned with brand  
-**Output:** Midjourney/DALL-E prompt matching visual brand guidelines
-
-```
-@derek-neighbors-author
-*cover-image-prompt
-```
-
-### Additional Workflows
-
-**Daily Content Creation:**
-- `*blog-post-creation` — Single blog post from concept to publish
-- `*content-calendar-planning` — Plan 30-90 day editorial calendar
-- `*series-planning` — Plan multi-part content series
-- `*content-repurposing` — Turn blog post into multi-platform content
-
-**Social Media & Distribution:**
-- `*linkedin-response-formula` — Generate brand-aligned LinkedIn responses
-- `*utm-tracking-setup` — Generate UTM-tracked links for distribution
-
-**Content Quality & SEO:**
-- `*seo-optimization` — Optimize for search and AI discovery (SearchGPT, Perplexity, Claude)
-- `*content-review` — Quality check against brand voice and standards
-- `*internal-linking-strategy` — Add strategic internal links
-
-**Analytics & Optimization:**
-- `*content-performance-report` — Analyze blog and social metrics
-- `*content-refresh` — Update and optimize existing high-performing posts
-
-**Content Bank & Inspiration:**
-- `*idea-generation` — Generate content ideas from Content Hub
+---
 
 ## Installation
 
-### Prerequisites
-
-The Blog Pack **requires** the Marketing Pack for full functionality:
-- `bmm` — BMAD Method Modular (core workflows)
-- `bmb` — BMAD Builder (module authoring tools)
-- **`marketing`** — Marketing Pack (31 specialists for tactical support)
-
-### Install via BMAD Installer
-
 ```bash
-# From your project root
-bmad install blog  # Also installs marketing pack if not present
+bmad install blog
 ```
 
-## Usage Examples
+**Configuration:**
+- Blog output path
+- Author name (your name becomes the agent)
+- Brand voice style (practical, conversational, authoritative, provocative, educational)
+- Content focus areas (long-form, technical, thought leadership, case studies)
+- Publishing cadence (daily, weekly, monthly)
+- SEO priority level
+- Social automation toggle
 
-### Example 1: Daily Blog Post
+---
 
+## Agents (2 Total)
+
+### Orion - Blog Orchestrator 🎯 ✅
+**Role:** Content Operations Manager  
+**Function:** Orchestrates workflows, coordinates specialists, ensures quality  
+**Commands:** 15+ workflow triggers for full content lifecycle
+
+### Derek Neighbors - Author ✍️ ✅
+**Role:** Content Creator + Brand Voice  
+**Function:** Creates content in your authentic voice  
+**Customizable:** Your name, voice, expertise become the agent  
+**Commands:** 8+ workflows for ideation, writing, review
+
+---
+
+## Workflows (15 Total)
+
+### Daily Content System (5)
+1. **`*daily-content-system`** - Master workflow for daily posting
+2. **`*blog-post-creation`** ✅ Created - Single post creation
+3. `*content-calendar-planning` - Plan 30-90 day calendar
+4. `*series-planning` - Multi-part series planning
+5. `*content-repurposing` - Multi-platform repurposing
+
+### Social & Distribution (4)
+6. `*social-media-generation` - Auto-generate social content
+7. `*linkedin-response-formula` - Brand-aligned responses
+8. `*cover-image-prompt` - Visual prompt generation
+9. `*utm-tracking-setup` - UTM link generation
+
+### Content Quality & SEO (3)
+10. `*seo-optimization` - Search and AI discovery optimization
+11. `*content-review` - Quality check vs brand standards
+12. `*internal-linking-strategy` - Strategic internal links
+
+### Analytics & Optimization (2)
+13. `*content-performance-report` - Metrics analysis
+14. `*content-refresh` - Update high-performers
+
+### Content Bank (1)
+15. `*idea-generation` - Generate ideas from Content Hub
+
+---
+
+## Quick Start
+
+### As Author (Derek)
 ```
 @derek-neighbors-author
-*daily-content-system
+*blog-post-creation
 
-# Provide: Topic, content pillar, target date
-# Output: Complete blog post + front matter + social content + cover image prompt
+Topic: How to scale content without losing your voice
+Length: Long-form (1500-2500 words)
+Audience: Content creators and founders
+Takeaways: Practical frameworks for authentic content at scale
 ```
 
-### Example 2: Content Calendar
-
-```
-@derek-neighbors-author
-*content-calendar-planning
-
-# Provide: Month, content themes
-# Output: 30-90 day calendar with topics, keywords, publish dates
-```
-
-### Example 3: Social Content from Blog
-
+### As Orchestrator (Orion)
 ```
 @orion-blog-orchestrator
-*social-media-generation
+*daily-content-system
 
-# Provide: Published blog post URL or content
-# Output: LinkedIn DEPTH post + X thread + Instagram caption + Facebook post
+# Executes full content workflow:
+# 1. Idea selection
+# 2. Derek writes draft
+# 3. SEO optimization
+# 4. Editorial review
+# 5. Social generation
+# 6. Save publish-ready package
 ```
 
-## Creating Your Own Blog Author Agent
+---
 
-1. **Copy Template:** Duplicate `derek-neighbors-author.md`
-2. **Customize Brand Voice:**
-   - Brand message and philosophy
-   - Tone, style, communication approach
-   - Content pillars (your core themes)
-3. **Define Visual Brand:**
-   - Color palette
-   - Image style guidelines
-   - Typography standards
-4. **Configure Front Matter:**
-   - Jekyll/Hugo/static site format
-   - Required fields
-   - Custom metadata (arete scoring, content pillars, etc.)
-5. **Set Social Media Style:**
-   - Platform-specific formulas
-   - Voice across channels
-   - Product integration approach
+## Configuration
 
-## Dependencies
+### Installation Questions
 
-- **BMAD Core** — Required
-- **BMM** (BMAD Method Modular) — Required
-- **BMB** (BMAD Builder) — Required
-- **Marketing Pack** — **REQUIRED** (31 agents for tactical support)
+During installation, you'll answer questions about your blog identity:
 
-## Version
+1. **Output Location** - Where to save blog posts and social content
+2. **Author Name** - Your name (customizes Derek Neighbors agent to your identity)
+3. **Content Focus** - Primary content pillars/themes (select multiple)
+4. **Publishing Cadence** - How often you publish (daily, 5x/week, 3x/week, etc.)
+5. **SEO Priority** - Balance between SEO optimization and authentic voice
+6. **Social Automation** - Which social platforms to generate content for
 
-**0.1.0** — Initial release (Derek Neighbors blog template)
+### How Configuration Works (v1.0)
 
-## Discovery Documentation
+**✅ Currently Active:**
+- Configuration values saved to `bmad/blog/config.yaml` in your project
+- Author agent persona can be customized to your name and voice
+- Workflows use `blog_output_path` to organize content
+- Content pillars guide topic selection and idea generation
 
-For detailed information about pack design and "blog author as agent" architecture, see:
-- `docs/discovery/blog-pack-discovery.md` (in bmad-expansions repo)
+**⏳ Planned Enhancements (See Epic 05):**
+- Publishing cadence adjusts calendar planning recommendations
+- Content focus filters workflow suggestions and topic ideas
+- SEO priority slider adapts optimization aggressiveness
+- Social automation pre-selects platforms in distribution workflows
+- Author voice learns from your past content
 
-## Contributing
+**Current Workaround:**  
+Reference your blog context explicitly:
+- *"Given my focus on leadership and agile development..."*
+- *"For my daily publishing schedule, suggest..."*
+- *"In my authentic conversational voice..."*
 
-This pack was authored using BMAD Builder workflows. To contribute:
-1. Use `@bmad-builder` agent
-2. Run `*create-agent` or `*create-workflow` workflows
-3. Follow BMAD Core agent and workflow conventions
+See **[Epic 05: Context-Aware Adaptation](../docs/epics/05-context-aware-adaptation.md)** for planned adaptive behavior.
 
-## License
+---
 
-Part of the BMAD Method ecosystem. See main BMAD-METHOD repository for license details.
+## Module Structure (BMB Standard)
+
+```
+blog/
+├── agents/
+│   ├── orion-blog-orchestrator.agent.yaml   ✅
+│   └── derek-neighbors-author.agent.yaml    ✅ (Customizable)
+├── workflows/
+│   ├── blog-post-creation/                  ✅
+│   │   └── workflow.yaml
+│   └── [14 more workflows to be created]
+├── data/
+│   ├── content-bank/        # Ideas and inspiration
+│   ├── brand-voice.md       # Voice guide
+│   └── editorial-standards.md
+├── templates/
+│   └── social/              # Social post templates
+├── _module-installer/
+│   └── install-config.yaml  ✅
+└── README.md                ✅
+```
+
+---
+
+## Key BMB Features Demonstrated
+
+1. **Author-as-Agent Pattern:** Your identity becomes the agent
+2. **Configurable Persona:** Brand voice, focus, cadence all customizable
+3. **Cross-Module Dependencies:** Borrows marketing specialists
+4. **Conditional Workflows:** SEO/social based on preferences
+5. **Content Bank Integration:** Persistent idea storage
+
+---
+
+## Differences from Script-Generated Blog Pack
+
+| Aspect | Script | BMB |
+|--------|--------|-----|
+| **Config Fields** | 2 basic | 8 interactive |
+| **Agent Customization** | Fixed names | {author_name} variable |
+| **Brand Voice** | Generic | 5 voice options |
+| **Dependencies** | Implicit | Explicit marketing pack dependency |
+| **SEO Control** | Always on | Priority level configuration |
+
+---
+
+## Dependencies on Marketing Pack
+
+Blog pack **requires** marketing pack for specialist support:
+- Emma (Copywriter) - Headlines and hooks
+- Olivia (SEO) - Search optimization
+- James (Editor) - Editorial review
+- Alex (Social) - Social media generation
+- Maya (Designer) - Visual concepts
+
+**Workflow Integration:** Blog workflows automatically invoke marketing specialists when needed.
+
+---
+
+## Sample Created (2 of 2 agents, 1 of 15 workflows)
+
+This sample demonstrates the author-as-agent pattern with proper BMB structure.
+
+---
+
+## Customization Guide
+
+### Make It Your Own
+
+1. **Install:** `bmad install blog`
+2. **Configure:** Enter your name, voice style, content focus
+3. **Brand Voice:** Edit `bmad/blog/data/brand-voice.md` with your unique voice guidelines
+4. **Content Bank:** Populate `bmad/blog/data/content-bank/` with ideas
+5. **Test:** Create your first post with `@{your-name}-author *blog-post-creation`
+
+---
+
+**Content Disclaimer:** AI-generated content should be reviewed and edited to ensure it accurately represents your voice, expertise, and brand. The author-as-agent pattern provides a foundation—your review and refinement make it authentic.
+

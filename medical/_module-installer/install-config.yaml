@@ -1,10 +1,80 @@
+# Medical Pack Module Configuration
+# This file defines installation questions and module configuration values
+
 code: medical
 name: "Medical Pack"
-description: "Clinical expertise agents for healthcare SaaS teams — medical directors, nurses, pharmacists, HIPAA officers, and EHR specialists"
-version: "0.1.0"
 default_selected: false
-dependencies:
-  - bmm
-  - bmb
+description: "Healthcare domain expertise for SaaS product teams"
+version: "1.0.0"
+author: "Derek Neighbors"
 
+prompt:
+  - "Thank you for choosing Medical Pack!"
+  - "Provides clinical review, HIPAA compliance, and healthcare domain expertise."
+  - "Includes 9 medical professionals: Medical Director, Nurse, Paramedic, Pharmacist, Medical Writer, Medical Educator, Privacy Officer, EHR Specialist, and Billing Expert."
+
+# Core config values are automatically inherited:
+## user_name
+## communication_language
+## document_output_language
+## output_folder
+
+# ============================================================================
+# CONFIGURATION FIELDS
+# ============================================================================
+
+# Output location for clinical reviews and medical content
+clinical_output_path:
+  prompt: "Where should medical pack save clinical reviews and reports?"
+  default: "output/medical"
+  result: "{project-root}/{value}"
+
+# HIPAA compliance mode
+hipaa_compliance_mode:
+  prompt: "Enable HIPAA compliance checks in all workflows?"
+  default: "Enabled - Include HIPAA validation in all workflows"
+  result: "{value}"
+  single-select:
+    - "Enabled - Include HIPAA validation in all workflows"
+    - "Advisory - Show HIPAA guidance but don't enforce"
+    - "Disabled - Skip HIPAA checks (not recommended)"
+
+# Medical disclaimer mode
+include_medical_disclaimers:
+  prompt: "Automatically include medical disclaimers in outputs?"
+  default: "Yes - Add disclaimers to all medical content"
+  result: "{value}"
+  single-select:
+    - "Yes - Add disclaimers to all medical content"
+    - "No - I'll add disclaimers manually"
+
+# Clinical validation level
+clinical_validation_level:
+  prompt: "How thorough should clinical validations be?"
+  default: "Standard - Comprehensive clinical review"
+  result: "{value}"
+  single-select:
+    - "Quick - Basic safety checks only"
+    - "Standard - Comprehensive clinical review"
+    - "Rigorous - Deep clinical validation with multiple specialists"
+
+# EHR system type (for integration workflows)
+ehr_system:
+  prompt: "What EHR system do you primarily integrate with?"
+  default: "No EHR integration needed"
+  result: "{value}"
+  single-select:
+    - "Epic"
+    - "Cerner/Oracle Health"
+    - "Meditech"
+    - "Allscripts"
+    - "Custom/Proprietary EHR"
+    - "No EHR integration needed"
+
+# Data paths (static)
+medical_data_path:
+  result: "{project-root}/bmad/medical/data"
+
+templates_path:
+  result: "{project-root}/bmad/medical/templates"
 

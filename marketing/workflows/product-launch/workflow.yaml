@@ -1,0 +1,115 @@
+# Product Launch Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: product-launch
+description: "Plan go-to-market campaign with messaging, channels, timeline, and assets"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing/workflows/product-launch"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+output_file: "{output_folder}/product-launch-{date}.md"
+
+# Team agents
+team:
+  product_marketing:
+    agent: "marketing/agents/natalie-product-marketing"
+    role: "GTM strategy and positioning"
+  
+  cmo:
+    agent: "marketing/agents/victoria-chen-cmo"
+    role: "Strategic oversight and cross-functional coordination"
+  
+  content:
+    agent: "marketing/agents/sarah-editorial-content-strategist"
+    role: "Content planning and messaging"
+  
+  ads:
+    agent: "marketing/agents/rachel-ads-ppc"
+    role: "Paid acquisition strategy"
+  
+  pr:
+    agent: "marketing/agents/amanda-press-pr"
+    role: "PR and media strategy"
+
+# Input variables
+variables:
+  product_name:
+    prompt: "Product name?"
+    type: "text"
+    required: true
+  
+  launch_date:
+    prompt: "Target launch date?"
+    type: "text"
+    required: true
+    example: "2025-12-15"
+  
+  launch_scope:
+    prompt: "Launch scope?"
+    type: "single-select"
+    required: true
+    options:
+      - "New Product"
+      - "Major Feature"
+      - "Product Update"
+      - "New Market Entry"
+      - "Rebrand"
+  
+  target_segment:
+    prompt: "Primary target segment?"
+    type: "text"
+    required: true
+  
+  competitive_advantage:
+    prompt: "Key competitive advantage / differentiator?"
+    type: "text"
+    required: true
+  
+  launch_goals:
+    prompt: "Launch success metrics?"
+    type: "text"
+    example: "1000 signups in 30 days, $500K ARR, 50 media mentions"
+  
+  launch_budget:
+    prompt: "Marketing budget for launch?"
+    type: "single-select"
+    options:
+      - "< $10,000"
+      - "$10,000 - $50,000"
+      - "$50,000 - $100,000"
+      - "$100,000 - $500,000"
+      - "$500,000+"
+  
+  channel_priorities:
+    prompt: "Priority marketing channels?"
+    type: "multi-select"
+    options:
+      - "PR / Media"
+      - "Paid Ads"
+      - "Content Marketing"
+      - "Email Marketing"
+      - "Social Media"
+      - "Influencers / Partners"
+      - "Events"
+      - "Product Hunt"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

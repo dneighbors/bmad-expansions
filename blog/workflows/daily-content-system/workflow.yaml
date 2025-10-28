@@ -1,18 +1,59 @@
-name: daily-content-system
-description: "Master workflow for daily blog post creation"
-author: "Blog Pack Team"
+# Daily Content System Workflow Configuration
+# Created using BMB *create-workflow patterns
 
-config_source: "{project-root}/bmad/bmm/config.yaml"
-output_folder: "{config_source}:output_folder"
+name: daily-content-system
+description: "Master workflow for daily blog post creation with topic check, writing, editing, SEO, and social"
+author: "Blog Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/blog/config.yaml"
+output_folder: "{config_source}:blog_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
 date: system-generated
 
 installed_path: "{project-root}/blog/workflows/daily-content-system"
 instructions: "{installed_path}/instructions.md"
 validation: "{installed_path}/checklist.md"
-template: false
-
-dependencies:
-  - marketing  # Blog pack requires marketing pack agents
+output_file: "{output_folder}/daily-post-{date}.md"
 
 team:
-  - derek-neighbors-author\n  - orion-blog-orchestrator\n  - emma-words-copywriter (marketing pack)\n  - olivia-search-seo (marketing pack)\n  - james-edit-content-editor (marketing pack)
+  author:
+    agent: "blog/agents/derek-neighbors-author"
+    role: "Primary author and voice owner"
+  
+  orchestrator:
+    agent: "blog/agents/orion-blog-orchestrator"
+    role: "Workflow coordination and quality control"
+
+variables:
+  content_pillar:
+    prompt: "Content pillar for this post?"
+    type: "single-select"
+    required: true
+    options:
+      - "Leadership & Culture"
+      - "Agile & Product Development"
+      - "Technology & Innovation"
+      - "Personal Growth"
+  
+  topic:
+    prompt: "Blog post topic?"
+    type: "text"
+    required: true
+  
+  target_length:
+    prompt: "Target word count?"
+    type: "single-select"
+    default: "800-1200"
+    options:
+      - "500-800"
+      - "800-1200"
+      - "1200-1800"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

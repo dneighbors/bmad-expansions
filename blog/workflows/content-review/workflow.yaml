@@ -1,18 +1,47 @@
-name: content-review
-description: "Quality check against brand voice and standards"
-author: "Blog Pack Team"
+# Content Review Workflow Configuration
+# Created using BMB *create-workflow patterns
 
-config_source: "{project-root}/bmad/bmm/config.yaml"
-output_folder: "{config_source}:output_folder"
+name: content-review
+description: "Quality check blog post against brand voice and editorial standards"
+author: "Blog Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/blog/config.yaml"
+output_folder: "{config_source}:blog_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
 date: system-generated
 
 installed_path: "{project-root}/blog/workflows/content-review"
 instructions: "{installed_path}/instructions.md"
 validation: "{installed_path}/checklist.md"
-template: false
-
-dependencies:
-  - marketing  # Blog pack requires marketing pack agents
+output_file: "{output_folder}/content-review-{date}.md"
 
 team:
-  - derek-neighbors-author\n  - james-edit-content-editor (marketing pack)
+  author:
+    agent: "blog/agents/derek-neighbors-author"
+    role: "Editorial review and brand voice alignment"
+
+variables:
+  draft_post:
+    prompt: "Draft blog post to review?"
+    type: "text"
+    required: true
+  
+  review_focus:
+    prompt: "Review focus areas?"
+    type: "multi-select"
+    options:
+      - "Brand Voice Consistency"
+      - "Grammar & Clarity"
+      - "Argument Strength"
+      - "Story Flow"
+      - "Call-to-Action"
+      - "Length & Pacing"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

@@ -1,8 +1,8 @@
 # BMAD Expansions — Workflow Status
 
-**Last Updated:** 2025-10-26  
+**Last Updated:** 2025-10-28  
 **Sprint:** Sprint 01  
-**Current Phase:** ✅ Sprint 01 COMPLETE — Ready for Sprint 02
+**Current Phase:** ✅ Sprint 01 COMPLETE (with known gaps documented)
 
 ---
 
@@ -20,10 +20,11 @@
 
 ### Sprint 01 Status — ✅ COMPLETE
 
-**Target Stories:** 5 (Stories 11-15)  
-**Completed:** 5/5 (100%)  
-**Story Points Delivered:** 43 points  
-**Sprint Goal:** ✅ ACHIEVED — All 3 packs production-ready + sync script delivered
+**Target Stories:** 7 (Stories 11-17)  
+**Completed:** 7/7 (100%)  
+**Story Points Delivered:** 63 points  
+**Sprint Goal:** ✅ ACHIEVED — All 3 packs delivered with agents functional + sync script  
+**Known Gap:** Workflows incomplete (Story 28 for Sprint 02)
 
 ---
 
@@ -36,34 +37,48 @@
 
 ### ✅ Story 12 — Medical Pack
 - **Status:** ✅ COMPLETE
-- **Completed:** Sprint 01 (commit 5f95ddf)
-- **Scope:** 9 agents, 8 workflows
+- **Completed:** Sprint 01
+- **Scope:** 9 agents, 8 workflow configs
 - **Story Points:** 5
 - **Discovery:** `docs/discovery/medical-pack-discovery.md`
 - **Story Detail:** `docs/stories/story-12-medical-pack.md`
 
 ### ✅ Story 13 — Marketing Pack
 - **Status:** ✅ COMPLETE
-- **Completed:** Sprint 01 (commit 1faca00)
-- **Scope:** 31 agents, 15 workflows
+- **Completed:** Sprint 01
+- **Scope:** 31 agents, 15 workflow configs
 - **Story Points:** 15
 - **Discovery:** `docs/discovery/marketing-pack-discovery.md`
 - **Story Detail:** `docs/stories/story-13-marketing-pack.md`
 
 ### ✅ Story 14 — Blog Pack
 - **Status:** ✅ COMPLETE
-- **Completed:** Sprint 01 (commit 210549c)
-- **Scope:** 2 agents (Orion + Derek), 15 workflows, port content-ops system
+- **Completed:** Sprint 01
+- **Scope:** 2 agents (Orion + Derek), 15 workflow configs
 - **Story Points:** 20
 - **Discovery:** `docs/discovery/blog-pack-discovery.md`
 - **Story Detail:** `docs/stories/story-14-blog-pack.md`
 
 ### ✅ Story 15 — Sync Script
 - **Status:** ✅ COMPLETE
-- **Completed:** Sprint 01 (commit c79eabd)
-- **Deliverable:** `scripts/sync-packs.sh`
+- **Completed:** Sprint 01
+- **Deliverable:** `scripts/sync-packs.sh` (interactive, dependency checks)
 - **Story Points:** 3
 - **Story Detail:** `docs/stories/story-15-sync-script.md`
+
+### ✅ Story 16 — Retrofit Packs to BMB
+- **Status:** ✅ COMPLETE
+- **Completed:** Sprint 01 (retroactive)
+- **Scope:** Replaced script-generated packs with BMB format
+- **Story Points:** 8
+- **Story Detail:** `docs/stories/story-16-retrofit-packs-bmb.md`
+
+### ✅ Story 17 — BMB-First Policy
+- **Status:** ✅ COMPLETE
+- **Completed:** Sprint 01
+- **Deliverable:** `CONTRIBUTING.md` with BMB-first requirements
+- **Story Points:** 2
+- **Story Detail:** `docs/stories/story-17-bmb-first-policy.md`
 
 ---
 
@@ -84,11 +99,18 @@
 - [x] Blog pack — 2 agents, 15 workflows (commit 210549c)
 - [x] Sync script (`scripts/sync-packs.sh`, commit c79eabd)
 
-### ⏳ Pending (Sprint 02 Candidates)
+### 🔜 Sprint 02 Priorities
 
-- [ ] Documentation stories (Stories 2-5, 8-9) — P1/P2 priority
-- [ ] End-to-end validation in target project
-- [ ] Verification checklist (Story 10)
+**P0 - CRITICAL:**
+- [ ] **Story 28** — Complete workflow files (21 points) - Workflows missing instructions/checklists/READMEs
+
+**P1 - HIGH:**
+- [ ] Documentation stories (Stories 3-5) — BMB workflow documentation
+- [ ] End-to-end workflow testing (blocked by Story 28)
+
+**P2 - MEDIUM:**
+- [ ] Stories 2, 8-9 — Installer config template, install/update docs
+- [ ] Story 10 — Verification checklist
 
 ---
 
@@ -179,10 +201,17 @@
 ## 📈 Velocity Tracking
 
 **Sprint 01 Target:** 43 story points (P0)  
-**Completed:** 43 points (Stories 12, 13, 14, 15)  
+**Completed:** 53 points (Stories 12, 13, 14, 15, 16, 17)  
+**Sprint 01 Actual:** 43 points delivered + 10 points retrofit/policy  
 **Remaining:** 0 points  
 
-🎉 **SPRINT 01 COMPLETE!**
+🎉 **SPRINT 01 COMPLETE** (with retroactive quality improvements)
+
+**Notes:**
+- Stories 16-17 added retroactively to correct Sprint 01 shortcuts
+- Story 16 (8pts): Retrofitted packs to BMB format (proper `.agent.yaml`)
+- Story 17 (2pts): Established BMB-first policy (CONTRIBUTING.md)
+- All packs now BMAD Core compliant
 
 **Estimated Sprint Capacity:** 40-50 points (1 developer, 996 mode, BMB-accelerated)
 

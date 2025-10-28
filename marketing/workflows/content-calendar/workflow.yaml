@@ -1,21 +1,90 @@
-name: content-calendar
-description: "Plan editorial calendar"
-author: "Marketing Pack Team"
+# Content Calendar Workflow Configuration
+# Created using BMB *create-workflow patterns
 
-config_source: "{project-root}/bmad/bmm/config.yaml"
-output_folder: "{config_source}:output_folder"
+name: content-calendar
+description: "Plan 90-day editorial calendar with topics, keywords, channels, and publication dates"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
 user_name: "{config_source}:user_name"
 communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
 date: system-generated
 
+# Workflow paths
 installed_path: "{project-root}/marketing/workflows/content-calendar"
 instructions: "{installed_path}/instructions.md"
 validation: "{installed_path}/checklist.md"
-template: false
+
+# Output configuration
 output_file: "{output_folder}/content-calendar-{date}.md"
 
-variables:
-  brief: ""
-  
+# Team agents
 team:
-  - sarah-editorial-content-strategist\n  - olivia-search-seo\n  - emma-words-copywriter
+  strategist:
+    agent: "marketing/agents/sarah-editorial-content-strategist"
+    role: "Editorial strategy and calendar structure"
+  
+  seo:
+    agent: "marketing/agents/olivia-search-seo"
+    role: "Keyword research and SEO optimization"
+  
+  writer:
+    agent: "marketing/agents/emma-words-copywriter"
+    role: "Content ideation and titles"
+
+# Input variables
+variables:
+  calendar_duration:
+    prompt: "Calendar timeframe?"
+    type: "single-select"
+    default: "90-days"
+    options:
+      - "30-days"
+      - "90-days"
+      - "quarterly"
+      - "annual-roadmap"
+  
+  content_pillars:
+    prompt: "What are your main content themes/pillars?"
+    type: "text"
+    example: "Product Education, Industry Trends, Customer Success, How-Tos"
+  
+  publishing_frequency:
+    prompt: "How often do you want to publish?"
+    type: "single-select"
+    default: "2-per-week"
+    options:
+      - "daily"
+      - "3-per-week"
+      - "2-per-week"
+      - "weekly"
+      - "bi-weekly"
+  
+  content_formats:
+    prompt: "Which content formats?"
+    type: "multi-select"
+    options:
+      - "Blog Posts"
+      - "Video Content"
+      - "Podcasts"
+      - "Infographics"
+      - "Case Studies"
+      - "Whitepapers"
+      - "Social Posts"
+  
+  target_keywords:
+    prompt: "Priority keywords or topics? (optional)"
+    type: "text"
+    required: false
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

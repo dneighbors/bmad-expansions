@@ -1,21 +1,103 @@
-name: ppc-campaign
-description: "Launch paid advertising campaign"
-author: "Marketing Pack Team"
+# PPC Campaign Workflow Configuration
+# Created using BMB *create-workflow patterns
 
-config_source: "{project-root}/bmad/bmm/config.yaml"
-output_folder: "{config_source}:output_folder"
+name: ppc-campaign
+description: "Launch paid advertising campaign with ads, targeting, tracking, and optimization plan"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
 user_name: "{config_source}:user_name"
 communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
 date: system-generated
 
+# Workflow paths
 installed_path: "{project-root}/marketing/workflows/ppc-campaign"
 instructions: "{installed_path}/instructions.md"
 validation: "{installed_path}/checklist.md"
-template: false
+
+# Output configuration
 output_file: "{output_folder}/ppc-campaign-{date}.md"
 
-variables:
-  brief: ""
-  
+# Team agents
 team:
-  - rachel-ads-ppc\n  - chris-convert-cro\n  - priya-analytics-expert
+  ppc:
+    agent: "marketing/agents/rachel-ads-ppc"
+    role: "Campaign strategy and ad creation"
+  
+  cro:
+    agent: "marketing/agents/chris-convert-cro"
+    role: "Landing page optimization"
+  
+  analytics:
+    agent: "marketing/agents/priya-analytics-expert"
+    role: "Tracking and measurement setup"
+
+# Input variables
+variables:
+  campaign_objective:
+    prompt: "Campaign objective?"
+    type: "single-select"
+    required: true
+    options:
+      - "Lead Generation"
+      - "Product Sales"
+      - "Brand Awareness"
+      - "Event Registrations"
+      - "Content Downloads"
+      - "Trial Signups"
+  
+  ad_platforms:
+    prompt: "Which platforms?"
+    type: "multi-select"
+    required: true
+    options:
+      - "Google Ads (Search)"
+      - "Google Ads (Display)"
+      - "Facebook / Meta Ads"
+      - "LinkedIn Ads"
+      - "TikTok Ads"
+      - "YouTube Ads"
+      - "Twitter / X Ads"
+  
+  monthly_budget:
+    prompt: "Monthly budget?"
+    type: "single-select"
+    required: true
+    options:
+      - "< $1,000"
+      - "$1,000 - $5,000"
+      - "$5,000 - $20,000"
+      - "$20,000 - $50,000"
+      - "$50,000+"
+  
+  target_cpa:
+    prompt: "Target cost per acquisition? (optional)"
+    type: "text"
+    required: false
+  
+  campaign_duration:
+    prompt: "Campaign duration?"
+    type: "single-select"
+    default: "ongoing"
+    options:
+      - "2-weeks-test"
+      - "30-days"
+      - "90-days"
+      - "ongoing"
+  
+  targeting_criteria:
+    prompt: "Key targeting criteria?"
+    type: "text"
+    example: "Job titles, industries, interests, demographics"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+
