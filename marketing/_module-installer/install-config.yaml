@@ -53,24 +53,16 @@ company_industry:
 # Marketing focus areas
 marketing_focus:
   prompt: "What are your primary marketing focus areas? (select all that apply)"
-  type: "multi-select"
-  default: ["demand-gen"]
+  default: ["Demand Generation / Lead Gen"]
   result: "{value}"
-  options:
-    - value: "brand-awareness"
-      label: "Brand Awareness"
-    - value: "demand-gen"
-      label: "Demand Generation / Lead Gen"
-    - value: "content-marketing"
-      label: "Content Marketing"
-    - value: "social-media"
-      label: "Social Media Growth"
-    - value: "performance-marketing"
-      label: "Performance Marketing / Paid Ads"
-    - value: "product-marketing"
-      label: "Product Marketing"
-    - value: "community"
-      label: "Community Building"
+  multi-select:
+    - "Brand Awareness"
+    - "Demand Generation / Lead Gen"
+    - "Content Marketing"
+    - "Social Media Growth"
+    - "Performance Marketing / Paid Ads"
+    - "Product Marketing"
+    - "Community Building"
 
 # Target audience
 target_audience:
