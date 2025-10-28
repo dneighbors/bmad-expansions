@@ -53,9 +53,10 @@ company_industry:
 # Primary marketing focus
 marketing_focus:
   prompt: "What's your primary marketing focus?"
-  default: "demand-gen"
+  type: "multi-select"
+  default: ["demand-gen"]
   result: "{value}"
-  multi-select:
+  options:
     - value: "brand-awareness"
       label: "Brand Awareness"
     - value: "demand-gen"
