@@ -1,0 +1,64 @@
+# Billing Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: billing-workflow
+description: "Design billing and documentation workflow with coding templates"
+author: "Medical Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/medical/config.yaml"
+output_folder: "{config_source}:medical_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+specialty_focus: "{config_source}:specialty_focus"
+date: system-generated
+
+installed_path: "{project-root}/medical/workflows/billing-workflow"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+output_file: "{output_folder}/billing-workflow-{date}.md"
+
+team:
+  billing:
+    agent: "medical/agents/rachel-johnson-billing-expert"
+    role: "Billing workflow and coding design"
+
+variables:
+  workflow_type:
+    prompt: "Workflow type?"
+    type: "single-select"
+    required: true
+    options:
+      - "Charge Capture"
+      - "Documentation Template"
+      - "Claims Submission"
+      - "Denial Management"
+      - "Coding Workflow"
+  
+  specialty:
+    prompt: "Medical specialty?"
+    type: "text"
+    required: true
+  
+  service_types:
+    prompt: "What services are billed?"
+    type: "text"
+    required: true
+    example: "Office visits, procedures, telehealth"
+  
+  payer_mix:
+    prompt: "Primary payers?"
+    type: "multi-select"
+    options:
+      - "Medicare"
+      - "Medicaid"
+      - "Commercial Insurance"
+      - "Self-Pay"
+      - "Value-Based Contracts"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

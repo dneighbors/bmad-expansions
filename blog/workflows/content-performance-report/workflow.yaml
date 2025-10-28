@@ -1,0 +1,57 @@
+# Content Performance Report Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: content-performance-report
+description: "Analyze blog and social metrics with insights and recommendations"
+author: "Blog Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/blog/config.yaml"
+output_folder: "{config_source}:blog_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/blog/workflows/content-performance-report"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+output_file: "{output_folder}/performance-report-{date}.md"
+
+team:
+  author:
+    agent: "blog/agents/derek-neighbors-author"
+    role: "Performance analysis and content insights"
+
+variables:
+  date_range:
+    prompt: "Analysis date range?"
+    type: "single-select"
+    default: "last-30-days"
+    options:
+      - "last-7-days"
+      - "last-30-days"
+      - "last-90-days"
+      - "custom-range"
+  
+  metrics_focus:
+    prompt: "Metrics to analyze?"
+    type: "multi-select"
+    options:
+      - "Page Views / Traffic"
+      - "Engagement Rate"
+      - "Social Shares"
+      - "SEO Rankings"
+      - "Conversion / CTA Clicks"
+      - "Time on Page"
+  
+  specific_posts:
+    prompt: "Specific posts to analyze? (URLs, comma-separated)"
+    type: "text"
+    required: false
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

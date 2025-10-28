@@ -1,0 +1,54 @@
+# LinkedIn Response Formula Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: linkedin-response-formula
+description: "Generate brand-aligned LinkedIn responses using DEPTH formula"
+author: "Blog Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/blog/config.yaml"
+output_folder: "{config_source}:blog_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/blog/workflows/linkedin-response-formula"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+output_file: "{output_folder}/linkedin-response-{date}.md"
+
+team:
+  author:
+    agent: "blog/agents/derek-neighbors-author"
+    role: "Response crafting with personal voice"
+
+variables:
+  original_post:
+    prompt: "Original post or comment to respond to?"
+    type: "text"
+    required: true
+  
+  response_type:
+    prompt: "Response type?"
+    type: "single-select"
+    options:
+      - "Agreement + Amplification"
+      - "Respectful Disagreement"
+      - "Additional Perspective"
+      - "Question + Insight"
+  
+  character_limit:
+    prompt: "Character limit?"
+    type: "single-select"
+    default: "1200"
+    options:
+      - "600"
+      - "1200"
+      - "1800"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

@@ -1,0 +1,68 @@
+# Drug Safety Check Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: drug-safety-check
+description: "Review medication features for safety, interactions, dosing, and contraindications"
+author: "Medical Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/medical/config.yaml"
+output_folder: "{config_source}:medical_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/medical/workflows/drug-safety-check"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+output_file: "{output_folder}/drug-safety-check-{date}.md"
+
+team:
+  pharmacist:
+    agent: "medical/agents/dr-alex-kim-pharmacist"
+    role: "Medication safety analysis"
+  
+  medical_director:
+    agent: "medical/agents/dr-michael-johnson"
+    role: "Clinical oversight and approval"
+
+variables:
+  feature_type:
+    prompt: "What type of medication feature?"
+    type: "single-select"
+    required: true
+    options:
+      - "Drug Database"
+      - "Medication Ordering"
+      - "Drug Interaction Checker"
+      - "Dosing Calculator"
+      - "Medication Administration"
+      - "Formulary Management"
+  
+  scope:
+    prompt: "Feature description or spec?"
+    type: "text"
+    required: true
+  
+  drug_classes:
+    prompt: "Which drug classes involved?"
+    type: "text"
+    example: "Antibiotics, anticoagulants, opioids"
+  
+  safety_priority:
+    prompt: "Safety priority areas?"
+    type: "multi-select"
+    options:
+      - "Drug-Drug Interactions"
+      - "Dosing Accuracy"
+      - "Contraindications"
+      - "Allergy Checking"
+      - "Renal/Hepatic Adjustments"
+      - "Pediatric Dosing"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

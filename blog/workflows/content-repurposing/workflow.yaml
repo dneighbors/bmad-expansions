@@ -1,0 +1,48 @@
+# Content Repurposing Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: content-repurposing
+description: "Turn blog post into multi-platform content adaptations"
+author: "Blog Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/blog/config.yaml"
+output_folder: "{config_source}:blog_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/blog/workflows/content-repurposing"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+output_file: "{output_folder}/repurposed-content-{date}.md"
+
+team:
+  author:
+    agent: "blog/agents/derek-neighbors-author"
+    role: "Voice consistency and brand alignment"
+
+variables:
+  blog_post_url:
+    prompt: "Published blog post URL?"
+    type: "text"
+    required: true
+  
+  target_platforms:
+    prompt: "Which platforms?"
+    type: "multi-select"
+    required: true
+    options:
+      - "LinkedIn"
+      - "X / Twitter"
+      - "TikTok"
+      - "Instagram"
+      - "YouTube"
+      - "Newsletter"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

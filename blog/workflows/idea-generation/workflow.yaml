@@ -1,0 +1,62 @@
+# Idea Generation Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: idea-generation
+description: "Generate blog post ideas and content bank snippets"
+author: "Blog Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/blog/config.yaml"
+output_folder: "{config_source}:blog_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/blog/workflows/idea-generation"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+output_file: "{output_folder}/content-ideas-{date}.md"
+
+team:
+  author:
+    agent: "blog/agents/derek-neighbors-author"
+    role: "Idea generation and content strategy"
+  
+  orchestrator:
+    agent: "blog/agents/orion-blog-orchestrator"
+    role: "Topic validation and content calendar fit"
+
+variables:
+  content_pillar:
+    prompt: "Content pillar focus?"
+    type: "single-select"
+    required: true
+    options:
+      - "Leadership & Culture"
+      - "Agile & Product Development"
+      - "Technology & Innovation"
+      - "Personal Growth"
+      - "All Pillars"
+  
+  idea_count:
+    prompt: "How many ideas to generate?"
+    type: "single-select"
+    default: "10"
+    options:
+      - "5"
+      - "10"
+      - "20"
+      - "30"
+  
+  inspiration_source:
+    prompt: "Inspiration source (optional)?"
+    type: "text"
+    required: false
+    example: "Recent article URL, trending topic, personal experience"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

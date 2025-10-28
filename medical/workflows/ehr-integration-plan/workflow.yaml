@@ -1,0 +1,68 @@
+# EHR Integration Plan Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: ehr-integration-plan
+description: "Design EHR integration with data models, workflow mapping, and FHIR specs"
+author: "Medical Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/medical/config.yaml"
+output_folder: "{config_source}:medical_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+ehr_system: "{config_source}:ehr_system"
+date: system-generated
+
+installed_path: "{project-root}/medical/workflows/ehr-integration-plan"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+output_file: "{output_folder}/ehr-integration-plan-{date}.md"
+
+team:
+  integration:
+    agent: "medical/agents/marcus-thompson-ehr-specialist"
+    role: "EHR integration architecture and FHIR design"
+
+variables:
+  integration_type:
+    prompt: "Integration type?"
+    type: "single-select"
+    required: true
+    options:
+      - "Bi-directional (Read/Write)"
+      - "Read-Only (Data Import)"
+      - "Write-Only (Data Export)"
+      - "Event-Based (Real-time)"
+  
+  data_requirements:
+    prompt: "What data needs to be exchanged?"
+    type: "text"
+    required: true
+    example: "Patient demographics, medications, lab results"
+  
+  ehr_vendor:
+    prompt: "Target EHR vendor?"
+    type: "single-select"
+    options:
+      - "Epic"
+      - "Cerner/Oracle Health"
+      - "Athenahealth"
+      - "eClinicalWorks"
+      - "MEDITECH"
+      - "Other/Multiple"
+  
+  standards:
+    prompt: "Integration standards?"
+    type: "multi-select"
+    options:
+      - "FHIR R4"
+      - "HL7 v2"
+      - "CDA"
+      - "Direct Messaging"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

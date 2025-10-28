@@ -1,0 +1,55 @@
+# Series Planning Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: series-planning
+description: "Plan multi-part content series with outlines and internal linking strategy"
+author: "Blog Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/blog/config.yaml"
+output_folder: "{config_source}:blog_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/blog/workflows/series-planning"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+output_file: "{output_folder}/series-plan-{date}.md"
+
+team:
+  author:
+    agent: "blog/agents/derek-neighbors-author"
+    role: "Series concept and structure"
+
+variables:
+  series_theme:
+    prompt: "Series theme or topic?"
+    type: "text"
+    required: true
+  
+  post_count:
+    prompt: "Number of posts in series?"
+    type: "single-select"
+    options:
+      - "2-3 posts"
+      - "4-5 posts"
+      - "6-8 posts"
+      - "8+ posts"
+  
+  content_depth:
+    prompt: "Content depth?"
+    type: "single-select"
+    default: "intermediate"
+    options:
+      - "introductory"
+      - "intermediate"
+      - "advanced"
+      - "comprehensive"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

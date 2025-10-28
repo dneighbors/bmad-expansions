@@ -1,0 +1,51 @@
+# Social Media Generation Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: social-media-generation
+description: "Create all social content from blog post with UTM tracking"
+author: "Blog Pack Team"
+workflow_type: "document"
+
+config_source: "{project-root}/bmad/blog/config.yaml"
+output_folder: "{config_source}:blog_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+date: system-generated
+
+installed_path: "{project-root}/blog/workflows/social-media-generation"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+output_file: "{output_folder}/social-content-{date}.md"
+
+team:
+  author:
+    agent: "blog/agents/derek-neighbors-author"
+    role: "Content adaptation and voice consistency"
+
+variables:
+  blog_post_url:
+    prompt: "Blog post URL?"
+    type: "text"
+    required: true
+  
+  utm_campaign:
+    prompt: "UTM campaign name?"
+    type: "text"
+    required: true
+  
+  include_linkedin:
+    prompt: "Generate LinkedIn posts (2-3)?"
+    type: "boolean"
+    default: true
+  
+  include_twitter:
+    prompt: "Generate X/Twitter posts?"
+    type: "boolean"
+    default: true
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+
