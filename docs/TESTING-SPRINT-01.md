@@ -42,8 +42,8 @@ Validate that the BMB-retrofitted expansion packs (medical, marketing, blog) pro
 No environment variables needed! The sync script is interactive with sensible defaults.
 
 ### Required Tools
-- ✅ `bmad-cli` installed and in PATH
-- ✅ BMAD-METHOD repo cloned (preferably as sibling to bmad-expansions)
+- ✅ BMAD-METHOD repo cloned and `npm install` run
+- ✅ `npm run install:bmad` available in BMAD-METHOD
 - ✅ Git access to both repos
 - ✅ Cursor IDE installed (for artifact verification)
 
