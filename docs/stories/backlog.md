@@ -93,3 +93,13 @@
     - **Epic:** E2 (Authoring with BMB)
     - **Sprint:** Sprint 01 (policy establishment)
 
+28. (E2) Complete workflow files for all packs
+    - As a user installing expansion packs, I want all workflows to be fully functional with complete instructions, checklists, and READMEs so that I can actually execute workflows from Cursor.
+    - Acceptance: All 38 workflows have instructions.md, checklist.md, README.md (114 new files); workflows appear in Cursor after install; 3 priority workflows tested end-to-end.
+    - **Status:** 🆕 NEW (21 points) - CRITICAL for Sprint 02
+    - **Details:** See `docs/stories/story-28-complete-workflow-files.md`
+    - **Epic:** E2 (Authoring with BMB)
+    - **Sprint:** Sprint 02 (highest priority)
+    - **Issue:** Only workflow.yaml created in Sprint 01; missing user-facing files
+    - **Impact:** Workflows non-functional, don't appear in Cursor
+

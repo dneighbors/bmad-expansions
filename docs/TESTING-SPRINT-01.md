@@ -12,13 +12,28 @@ Validate that the BMB-retrofitted expansion packs (medical, marketing, blog) pro
 3. ✅ Interactive configuration prompts work (6-8 fields per pack)
 4. ✅ Agents compile from `.agent.yaml` to `.md` format
 5. ✅ Cursor artifacts generate correctly in `.cursor/rules/`
-6. ✅ Workflows install with proper structure
+6. ⚠️ Workflows install with proper structure (PARTIAL - see known issues)
 7. ✅ Agent activation and menu commands work
 
+### ⚠️ KNOWN ISSUES (Sprint 01)
+
+**CRITICAL: Workflows Missing Required Files**
+- **Issue:** Only `workflow.yaml` files created; missing `instructions.md`, `checklist.md`, `README.md`
+- **Impact:** Workflows install but **do not appear in Cursor** and **cannot be executed**
+- **Scope:** 38 workflows across all 3 packs (114 missing files)
+- **Workaround:** Use agents directly; workflows non-functional in v1.0
+- **Resolution:** Story 28 scheduled for Sprint 02 (21 points)
+- **Details:** See `docs/stories/story-28-complete-workflow-files.md`
+
+**Current State:**
+- ✅ Agents: Fully functional (42 agents across 3 packs)
+- ⚠️ Workflows: Structural foundation only (38 workflow.yaml files)
+- ❌ Workflow Execution: Not possible until Story 28 complete
+
 ### What We're NOT Testing (Sprint 02)
-- ⏳ End-to-end workflow execution
-- ⏳ Agent persona quality
-- ⏳ Workflow instruction completeness
+- ⏳ End-to-end workflow execution (blocked by Story 28)
+- ⏳ Agent persona quality refinement
+- ⏳ Workflow instruction completeness (Story 28 scope)
 - ⏳ Multi-pack installation scenarios
 
 ## 🔧 Test Environment Setup
