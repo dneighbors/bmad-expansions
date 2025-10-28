@@ -204,6 +204,7 @@ if [[ ! -f "${GITIGNORE_FILE}" ]]; then
     fi
 fi
 
+GITIGNORE_UPDATED=false
 for pack in "${PACKS[@]}"; do
     ignore_entry="src/modules/${pack}"
     
@@ -215,9 +216,17 @@ for pack in "${PACKS[@]}"; do
         else
             echo -e "${GREEN}✓${NC} Adding: ${ignore_entry}"
             echo "${ignore_entry}" >> "${GITIGNORE_FILE}"
+            GITIGNORE_UPDATED=true
         fi
     fi
 done
+
+if [[ "${GITIGNORE_UPDATED}" == true ]]; then
+    echo ""
+    echo -e "${YELLOW}Note:${NC} .gitignore was updated in BMAD-METHOD"
+    echo "      This is a local change - you don't need to commit it to BMAD-METHOD"
+    echo "      The expansion packs will be ignored by git in that repo"
+fi
 echo ""
 
 # Summary
