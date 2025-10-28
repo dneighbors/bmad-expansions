@@ -238,9 +238,13 @@ else
     done
     echo ""
     echo -e "${BLUE}Next steps:${NC}"
-    echo "  1. Navigate to your target project"
-    echo "  2. Run: bmad-cli install"
-    echo "  3. Select from: $(IFS=, ; echo "${PACKS[*]}")"
+    echo "  1. Navigate to BMAD-METHOD: cd ${TARGET_DIR}"
+    echo "  2. Build/update BMAD: npm install (or npm run build if needed)"
+    echo "  3. Navigate to your target project"
+    echo "  4. Install packs: bmad-cli install"
+    echo "  5. Select from: $(IFS=, ; echo "${PACKS[*]}")"
+    echo ""
+    echo -e "${YELLOW}Note:${NC} BMAD needs to rebuild to discover the new/updated modules"
 fi
 echo "=================================="
 
