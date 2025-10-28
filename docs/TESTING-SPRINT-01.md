@@ -24,21 +24,22 @@ Validate that the BMB-retrofitted expansion packs (medical, marketing, blog) pro
 ## 🔧 Test Environment Setup
 
 ### Prerequisites
-```bash
-# 1. BMAD-METHOD repo location
-export BMAD_REPO="/path/to/BMAD-METHOD"
-
-# 2. Target test project (any Cursor project)
-export TEST_PROJECT="/path/to/test-project"
-
-# 3. This repo (bmad-expansions)
-export EXPANSIONS_REPO="/home/dneighbors/Public/bmad-expansions"
-```
+No environment variables needed! The sync script is interactive with sensible defaults.
 
 ### Required Tools
 - ✅ `bmad-cli` installed and in PATH
+- ✅ BMAD-METHOD repo cloned (preferably as sibling to bmad-expansions)
 - ✅ Git access to both repos
 - ✅ Cursor IDE installed (for artifact verification)
+
+### Recommended Directory Structure
+```
+/path/to/repos/
+├── bmad-expansions/     (this repo)
+└── BMAD-METHOD/         (sibling - default location)
+```
+
+**Note:** If BMAD-METHOD is elsewhere, the sync script will prompt you for the path.
 
 ## 📝 Test Procedure
 
@@ -48,27 +49,50 @@ export EXPANSIONS_REPO="/home/dneighbors/Public/bmad-expansions"
 
 ```bash
 # Step 1: Navigate to expansions repo
-cd $EXPANSIONS_REPO
+cd /home/dneighbors/Public/bmad-expansions
 
 # Step 2: Checkout the validation branch
 git checkout sprint-01-validation
 
-# Step 3: Run sync script
+# Step 3: Run sync script (interactive)
 ./scripts/sync-packs.sh
 
-# Expected output:
-# ✅ Syncing medical pack...
-# ✅ Syncing marketing pack...
-# ✅ Syncing blog pack...
-# ✅ All packs synced to BMAD-METHOD
+# You'll be prompted:
+# 🚀 BMAD Expansion Pack Sync Script
+# ==================================
+# 
+# Source directory: /home/dneighbors/Public/bmad-expansions
+# 
+# Where is your BMAD-METHOD repository?
+# Default: /home/dneighbors/Public/BMAD-METHOD
+# 
+# BMAD-METHOD path [press Enter for default]: 
+# (press Enter to use default, or type custom path)
+#
+# ✓ Using target: /home/dneighbors/Public/BMAD-METHOD
+# 
+# 🔍 Discovering expansion packs...
+# ✓ Found 3 expansion pack(s):
+#   • medical
+#   • marketing
+#   • blog
+# 
+# Ready to sync 3 pack(s) to BMAD-METHOD?
+#   Source: /home/dneighbors/Public/bmad-expansions
+#   Target: /home/dneighbors/Public/BMAD-METHOD/src/modules
+# 
+# Continue? [Y/n]: Y
 ```
 
 **Verification:**
 ```bash
-# Check files exist in BMAD repo
-ls -la $BMAD_REPO/src/modules/medical/
-ls -la $BMAD_REPO/src/modules/marketing/
-ls -la $BMAD_REPO/src/modules/blog/
+# Navigate to BMAD-METHOD (use the path you confirmed)
+cd /home/dneighbors/Public/BMAD-METHOD
+
+# Check files exist
+ls -la src/modules/medical/
+ls -la src/modules/marketing/
+ls -la src/modules/blog/
 
 # Verify structure (each should have):
 # - _module-installer/install-config.yaml
@@ -78,10 +102,13 @@ ls -la $BMAD_REPO/src/modules/blog/
 ```
 
 **Expected Results:**
-- ✅ All 3 packs present in `$BMAD_REPO/src/modules/`
+- ✅ Script prompts for BMAD-METHOD path with sensible default
+- ✅ Script shows confirmation before syncing
+- ✅ All 3 packs present in `BMAD-METHOD/src/modules/`
 - ✅ `.agent.yaml` files present (not `.md`)
 - ✅ `install-config.yaml` contains 6-8 questions
 - ✅ No `-bmad` suffixes in any paths or IDs
+- ✅ Packs added to BMAD-METHOD's `.gitignore`
 
 ---
 
@@ -90,14 +117,15 @@ ls -la $BMAD_REPO/src/modules/blog/
 **Story Coverage:** Story 12 (Medical pack), Story 8 (Install command docs)
 
 ```bash
-# Step 1: Navigate to test project
-cd $TEST_PROJECT
+# Step 1: Navigate to test project (any Cursor project)
+cd /path/to/your/test-project
 
 # Step 2: Run BMAD installer
 bmad-cli install
 
 # Step 3: Select "medical" pack when prompted
-# Answer configuration questions:
+# You'll see the pack in the module list
+# Answer the 6 configuration questions:
 # - Organization name: "Test Clinic"
 # - Specialty focus: "Primary Care"
 # - HIPAA compliance: "yes"
@@ -285,15 +313,17 @@ cat .cursor/rules/bmad/config.yaml
 
 ```bash
 # Step 1: Make a small change to a pack (in expansions repo)
-cd $EXPANSIONS_REPO
+cd /home/dneighbors/Public/bmad-expansions
 echo "# Updated $(date)" >> blog/README.md
 git commit -am "test: update blog pack for update testing"
 
-# Step 2: Re-sync
+# Step 2: Re-sync (interactive)
 ./scripts/sync-packs.sh
+# Press Enter for default path
+# Confirm with Y
 
 # Step 3: Re-install in test project
-cd $TEST_PROJECT
+cd /path/to/your/test-project
 bmad-cli install --update blog
 
 # Expected: Blog pack updates without re-prompting for config
@@ -310,10 +340,10 @@ bmad-cli install --update blog
 ## 🐛 Known Issues / Expected Failures
 
 ### May Encounter
-1. **Sync script path issues** - Verify `BMAD_REPO` path is correct
-2. **Agent compilation errors** - Check `.agent.yaml` syntax
+1. **Sync script path issues** - Script will prompt for correct BMAD-METHOD path
+2. **Agent compilation errors** - Check `.agent.yaml` syntax if installer fails
 3. **Configuration prompt issues** - Verify `install-config.yaml` format
-4. **Cursor autocomplete delay** - May need to restart Cursor
+4. **Cursor autocomplete delay** - May need to restart Cursor after installation
 
 ### Should NOT Encounter
 - ❌ `-bmad` suffixes anywhere
