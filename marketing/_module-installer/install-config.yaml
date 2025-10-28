@@ -50,9 +50,9 @@ company_industry:
     - value: "other"
       label: "Other"
 
-# Primary marketing focus
+# Marketing focus areas
 marketing_focus:
-  prompt: "What's your primary marketing focus?"
+  prompt: "What are your primary marketing focus areas? (select all that apply)"
   type: "multi-select"
   default: ["demand-gen"]
   result: "{value}"
@@ -79,13 +79,13 @@ target_audience:
   result: "{value}"
   single-select:
     - value: "b2b"
-      label: "B2B (Business to Business)"
+      label: "B2B - Business to Business"
     - value: "b2c"
-      label: "B2C (Business to Consumer)"
+      label: "B2C - Business to Consumer"
     - value: "b2b2c"
-      label: "B2B2C (Hybrid)"
+      label: "B2B2C - Business to Business to Consumer (Hybrid)"
     - value: "d2c"
-      label: "D2C (Direct to Consumer)"
+      label: "D2C - Direct to Consumer"
 
 # Marketing maturity level
 marketing_maturity:
