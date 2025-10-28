@@ -24,21 +24,85 @@ Expansion packs extend BMAD with **ready-to-use AI agent teams and workflows** f
 ### Marketing Pack (v1.0)
 **31 AI marketing specialists** across strategy, content, performance, social media, PR, and analytics.
 
-**Agents:**
-- Strategic Layer: Victoria Chen (CMO), Marcus Brand, Sarah Editorial, Alex Social
-- Content Creation: Emma Words, James Edit, Olivia Search, Ryan Video, Maya Visuals
-- Platform Specialists: Zoe TikTok, Tyler X, Jessica YouTube, David Facebook, Sophia Instagram, Michael LinkedIn
-- Performance: Rachel Ads, Chris Convert, Nina Affiliate, Jordan Influence
-- Growth & Analytics: Leo Growth, Priya Analytics, Daniel Insights, Laura Email, Kevin Martech
-- PR & Partnerships: Amanda Press, Brian Partners, Natalie Product
-- Field & Community: Carlos Events, Riley Street, Taylor Community, Samantha Demand
+<details>
+<summary><b>📋 View All 31 Agents</b></summary>
 
-**Workflows:** 15 workflows (configs only - instructions coming in Sprint 02)
-- Strategic: marketing-strategy, brand-guidelines, competitive-analysis
-- Content: content-calendar, blog-post, social-campaign, video-script
-- Performance: ppc-campaign, conversion-audit, influencer-campaign, email-campaign
-- Analytics: performance-report, attribution-analysis
-- Launch: product-launch, growth-experiment
+#### Strategic Layer (4 agents)
+- 👩‍💼 **Victoria Chen** — Chief Marketing Officer
+- 🎨 **Marcus Brand** — Brand Strategist  
+- 📋 **Sarah Editorial** — Content Strategist
+- 📱 **Alex Social** — Social Media Strategist
+
+#### Content Creation (5 agents)
+- ✍️ **Emma Words** — Copywriter
+- 🔍 **James Edit** — Content Editor
+- 🔎 **Olivia Search** — SEO Specialist
+- 🎥 **Ryan Video** — Video Creator
+- 🎨 **Maya Visuals** — Visual Designer
+
+#### Platform Specialists (6 agents)
+- 🎵 **Zoe TikTok** — TikTok Specialist
+- 🐦 **Tyler X** — X/Twitter Specialist
+- 📺 **Jessica YouTube** — YouTube Specialist
+- 📘 **David Facebook** — Facebook Specialist
+- 📸 **Sophia Instagram** — Instagram Specialist
+- 💼 **Michael LinkedIn** — LinkedIn Specialist
+
+#### Performance Marketing (4 agents)
+- 💰 **Rachel Ads** — PPC/Ads Specialist
+- 📊 **Chris Convert** — Conversion/CRO Specialist
+- 🤝 **Nina Affiliate** — Affiliate Marketing Expert
+- 🌟 **Jordan Influence** — Influencer Marketing Specialist
+
+#### Growth & Analytics (5 agents)
+- 🚀 **Leo Growth** — Growth Hacker
+- 📈 **Priya Analytics** — Analytics Expert
+- 🔬 **Daniel Insights** — Insights Analyst
+- 📧 **Laura Email** — Email Marketing Specialist
+- ⚙️ **Kevin Martech** — MarTech/Automation Specialist
+
+#### PR & Partnerships (3 agents)
+- 📰 **Amanda Press** — PR Specialist
+- 🤝 **Brian Partners** — Co-Marketing/Partnerships
+- 📦 **Natalie Product** — Product Marketing
+
+#### Field & Community (4 agents)
+- 🎪 **Carlos Events** — Events Specialist
+- 🎨 **Riley Street** — Guerrilla Marketing
+- 👥 **Taylor Community** — Community Manager
+- 📈 **Samantha Demand** — Demand Generation
+
+</details>
+
+<details>
+<summary><b>🔄 View All 15 Workflows</b> (configs only - instructions coming in Sprint 02)</summary>
+
+#### Strategic (3 workflows)
+- `*marketing-strategy` — Develop annual/quarterly marketing strategy
+- `*brand-guidelines` — Create comprehensive brand guidelines
+- `*competitive-analysis` — Analyze market and competitors
+
+#### Content (4 workflows)
+- `*content-calendar` — Plan 90-day editorial calendar
+- `*blog-post` — Create SEO-optimized blog posts
+- `*social-campaign` — Plan multi-platform social campaigns
+- `*video-script` — Write YouTube/TikTok video scripts
+
+#### Performance (4 workflows)
+- `*ppc-campaign` — Launch paid advertising campaigns
+- `*conversion-audit` — Analyze conversion funnel and create CRO roadmap
+- `*influencer-campaign` — Plan creator partnership campaigns
+- `*email-campaign` — Design and execute email campaigns
+
+#### Analytics (2 workflows)
+- `*performance-report` — Generate executive marketing dashboard
+- `*attribution-analysis` — Perform multi-touch attribution modeling
+
+#### Launch & Growth (2 workflows)
+- `*product-launch` — Plan go-to-market campaign
+- `*growth-experiment` — Design and execute growth experiments
+
+</details>
 
 **Configuration:** 7 interactive fields (industry, focus areas, audience, maturity, disclaimers)
 
@@ -49,14 +113,39 @@ Expansion packs extend BMAD with **ready-to-use AI agent teams and workflows** f
 ### Medical Pack (v1.0)
 **9 healthcare AI specialists** for clinical validation, compliance, training, and health IT.
 
-**Agents:**
-- Clinical Staff: Dr. Michael Johnson (Medical Director), Nurse Brittany Hinsley, Ashley Rutledge (Paramedic)
-- Specialists: Dr. Alex Kim (Pharmacist), Maya Patel (Medical Writer), Dr. James Carter (Educator)
-- Compliance & IT: Lisa Chang (Privacy Officer), Marcus Thompson (EHR Specialist), Rachel Johnson (Billing Expert)
+<details>
+<summary><b>📋 View All 9 Agents</b></summary>
 
-**Workflows:** 8 workflows (configs only - instructions coming in Sprint 02)
-- clinical-review, patient-content, ehr-integration-plan, drug-safety-check
-- hipaa-audit, provider-training, billing-workflow, marketing-collab
+#### Clinical Staff (3 agents)
+- 👨‍⚕️ **Dr. Michael Johnson** — Medical Director
+- 👩‍⚕️ **Nurse Brittany Hinsley** — Patient Care Specialist
+- 🚑 **Ashley Rutledge** — Paramedic Specialist
+
+#### Medical Specialists (3 agents)
+- 💊 **Dr. Alex Kim** — Pharmacist (Medication Safety)
+- 📝 **Maya Patel** — Medical Writer (Patient Education)
+- 🎓 **Dr. James Carter** — Medical Educator (Training & Curriculum)
+
+#### Compliance & Health IT (3 agents)
+- 🔒 **Lisa Chang** — Privacy & Security Officer (HIPAA Compliance)
+- 🏥 **Marcus Thompson** — EHR Integration Specialist (Health IT)
+- 💰 **Rachel Johnson** — Medical Billing Expert (Revenue Cycle)
+
+</details>
+
+<details>
+<summary><b>🔄 View All 8 Workflows</b> (configs only - instructions coming in Sprint 02)</summary>
+
+- `*clinical-review` — Multi-agent clinical review for safety and accuracy
+- `*patient-content` — Create patient-facing education materials
+- `*ehr-integration-plan` — Design EHR integration architecture
+- `*drug-safety-check` — Review medication features for safety
+- `*hipaa-audit` — Conduct HIPAA compliance review
+- `*provider-training` — Create medical training curriculum
+- `*billing-workflow` — Design billing and documentation workflows
+- `*marketing-collab` — Create medically accurate marketing content
+
+</details>
 
 **Configuration:** 6 interactive fields (specialty, HIPAA mode, disclaimers, validation level, EHR system)
 
@@ -67,15 +156,41 @@ Expansion packs extend BMAD with **ready-to-use AI agent teams and workflows** f
 ### Blog Pack (v1.0)
 **2 AI content specialists** for daily blogging and content operations (Derek Neighbors' system).
 
-**Agents:**
-- Derek Neighbors (Author) — Customizable to your voice and brand
-- Orion (Blog Orchestrator) — Workflow coordination and quality control
+<details>
+<summary><b>📋 View Both Agents</b></summary>
 
-**Workflows:** 15 workflows (configs only - instructions coming in Sprint 02)
-- Daily content: daily-content-system, blog-post-creation, content-calendar-planning, series-planning
-- Social distribution: social-media-generation, linkedin-response-formula, cover-image-prompt, utm-tracking-setup
-- SEO & quality: seo-optimization, content-review, internal-linking-strategy
-- Analytics: content-performance-report, content-refresh, idea-generation
+- ✍️ **Derek Neighbors** — Blog Author (customizable to your voice and brand)
+- 🎯 **Orion** — Blog Orchestrator (workflow coordination and quality control)
+
+</details>
+
+<details>
+<summary><b>🔄 View All 15 Workflows</b> (configs only - instructions coming in Sprint 02)</summary>
+
+#### Daily Content (4 workflows)
+- `*daily-content-system` — Master workflow for daily blog post creation
+- `*blog-post-creation` — Single blog post from concept to publish-ready
+- `*content-calendar-planning` — Plan 30-90 day content calendar
+- `*series-planning` — Plan multi-part content series
+
+#### Social Distribution (4 workflows)
+- `*social-media-generation` — Create all social content from blog post
+- `*linkedin-response-formula` — Generate brand-aligned LinkedIn responses
+- `*cover-image-prompt` — Generate visual prompt for blog cover image
+- `*utm-tracking-setup` — Generate UTM-tracked links for distribution
+
+#### SEO & Quality (3 workflows)
+- `*seo-optimization` — Optimize blog post for search and AI discovery
+- `*content-review` — Quality check against brand voice and standards
+- `*internal-linking-strategy` — Add strategic internal links
+
+#### Analytics & Growth (4 workflows)
+- `*content-performance-report` — Analyze blog and social metrics
+- `*content-refresh` — Update and optimize existing posts
+- `*content-repurposing` — Turn blog post into multi-platform content
+- `*idea-generation` — Generate blog post ideas and content bank snippets
+
+</details>
 
 **Configuration:** 6 interactive fields (author name, content focus, cadence, SEO priority, social automation)
 
