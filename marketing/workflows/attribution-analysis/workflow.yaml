@@ -1,0 +1,101 @@
+# Attribution Analysis Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: attribution-analysis
+description: "Perform multi-touch attribution modeling to understand channel contribution"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing/workflows/attribution-analysis"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+output_file: "{output_folder}/attribution-analysis-{date}.md"
+
+# Team agents
+team:
+  analyst:
+    agent: "marketing/agents/priya-analytics-expert"
+    role: "Attribution modeling and analysis"
+  
+  ppc:
+    agent: "marketing/agents/rachel-ads-ppc"
+    role: "Paid channel insights"
+  
+  demand:
+    agent: "marketing/agents/samantha-demand-gen"
+    role: "Pipeline and funnel context"
+
+# Input variables
+variables:
+  attribution_model:
+    prompt: "Which attribution model?"
+    type: "single-select"
+    required: true
+    default: "linear"
+    options:
+      - "first-touch"
+      - "last-touch"
+      - "linear"
+      - "time-decay"
+      - "position-based"
+      - "data-driven"
+  
+  analysis_period:
+    prompt: "Analysis timeframe?"
+    type: "single-select"
+    default: "90-days"
+    options:
+      - "30-days"
+      - "90-days"
+      - "6-months"
+      - "12-months"
+  
+  conversion_event:
+    prompt: "What conversion event to attribute?"
+    type: "single-select"
+    required: true
+    options:
+      - "Lead / MQL"
+      - "Sales Qualified Lead"
+      - "Opportunity Created"
+      - "Closed-Won Revenue"
+      - "Trial Signup"
+      - "Purchase"
+  
+  channels_to_analyze:
+    prompt: "Which channels to include?"
+    type: "multi-select"
+    required: true
+    options:
+      - "Paid Search"
+      - "Paid Social"
+      - "Organic Search"
+      - "Organic Social"
+      - "Email Marketing"
+      - "Direct Traffic"
+      - "Referral"
+      - "Content Marketing"
+      - "Events / Webinars"
+  
+  analysis_goal:
+    prompt: "What's the key question to answer?"
+    type: "text"
+    example: "Should we increase paid social budget? Which channels assist most?"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

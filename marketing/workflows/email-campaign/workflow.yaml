@@ -1,0 +1,117 @@
+# Email Campaign Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: email-campaign
+description: "Design and execute email campaign with sequence, copy, design, and automation"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing/workflows/email-campaign"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+output_file: "{output_folder}/email-campaign-{date}.md"
+
+# Team agents
+team:
+  email:
+    agent: "marketing/agents/laura-email-specialist"
+    role: "Email strategy and deliverability"
+  
+  writer:
+    agent: "marketing/agents/emma-words-copywriter"
+    role: "Email copywriting"
+  
+  designer:
+    agent: "marketing/agents/maya-visuals-designer"
+    role: "Email design and templates"
+  
+  analytics:
+    agent: "marketing/agents/priya-analytics-expert"
+    role: "Performance tracking"
+
+# Input variables
+variables:
+  campaign_type:
+    prompt: "Campaign type?"
+    type: "single-select"
+    required: true
+    options:
+      - "Welcome Series"
+      - "Nurture Sequence"
+      - "Product Launch"
+      - "Promotional Campaign"
+      - "Newsletter"
+      - "Re-engagement"
+      - "Event Invitation"
+  
+  audience_segment:
+    prompt: "Target audience segment?"
+    type: "text"
+    example: "New subscribers, trial users, inactive customers"
+  
+  email_count:
+    prompt: "Number of emails in sequence?"
+    type: "single-select"
+    default: "3-5"
+    options:
+      - "single-email"
+      - "2-emails"
+      - "3-5 emails"
+      - "6-10 emails"
+      - "10+ emails"
+  
+  cadence:
+    prompt: "Email sending cadence?"
+    type: "single-select"
+    default: "every-3-days"
+    options:
+      - "immediate-sequence"
+      - "daily"
+      - "every-2-days"
+      - "every-3-days"
+      - "weekly"
+      - "bi-weekly"
+  
+  primary_goal:
+    prompt: "Primary campaign goal?"
+    type: "single-select"
+    required: true
+    options:
+      - "Conversion / Sales"
+      - "Engagement / Clicks"
+      - "Education / Awareness"
+      - "Event Registration"
+      - "Content Downloads"
+      - "Product Trial"
+  
+  esp_platform:
+    prompt: "Email platform?"
+    type: "single-select"
+    default: "not-specified"
+    options:
+      - "Mailchimp"
+      - "HubSpot"
+      - "ActiveCampaign"
+      - "ConvertKit"
+      - "Klaviyo"
+      - "Salesforce"
+      - "not-specified"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+

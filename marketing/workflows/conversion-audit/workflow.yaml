@@ -1,0 +1,91 @@
+# Conversion Audit Workflow Configuration
+# Created using BMB *create-workflow patterns
+
+name: conversion-audit
+description: "Analyze conversion funnel and create prioritized CRO test roadmap"
+author: "Marketing Pack Team"
+workflow_type: "document"
+
+# Configuration loading
+config_source: "{project-root}/bmad/marketing/config.yaml"
+output_folder: "{config_source}:marketing_output_path"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+company_industry: "{config_source}:company_industry"
+target_audience: "{config_source}:target_audience"
+date: system-generated
+
+# Workflow paths
+installed_path: "{project-root}/marketing/workflows/conversion-audit"
+instructions: "{installed_path}/instructions.md"
+validation: "{installed_path}/checklist.md"
+
+# Output configuration
+output_file: "{output_folder}/conversion-audit-{date}.md"
+
+# Team agents
+team:
+  cro:
+    agent: "marketing/agents/chris-convert-cro"
+    role: "CRO analysis and test planning"
+  
+  analytics:
+    agent: "marketing/agents/priya-analytics-expert"
+    role: "Data analysis and funnel metrics"
+
+# Input variables
+variables:
+  funnel_type:
+    prompt: "What type of funnel?"
+    type: "single-select"
+    required: true
+    options:
+      - "Lead Generation"
+      - "E-commerce Checkout"
+      - "SaaS Trial Signup"
+      - "Event Registration"
+      - "Content Downloads"
+  
+  landing_page_url:
+    prompt: "Primary landing page URL?"
+    type: "text"
+    required: true
+  
+  current_conversion_rate:
+    prompt: "Current conversion rate? (if known)"
+    type: "text"
+    required: false
+  
+  monthly_traffic:
+    prompt: "Monthly traffic volume?"
+    type: "single-select"
+    options:
+      - "< 1,000"
+      - "1,000 - 10,000"
+      - "10,000 - 50,000"
+      - "50,000 - 100,000"
+      - "100,000+"
+  
+  audit_focus:
+    prompt: "Specific areas to focus on?"
+    type: "multi-select"
+    options:
+      - "Above-the-fold messaging"
+      - "Call-to-action placement"
+      - "Form design"
+      - "Trust signals"
+      - "Mobile experience"
+      - "Page speed"
+      - "Value proposition"
+  
+  tools_available:
+    prompt: "What analytics/testing tools do you have?"
+    type: "text"
+    example: "Google Analytics, Hotjar, Optimizely"
+
+metadata:
+  created_by: "BMB *create-workflow"
+  created_date: "2025-10-28"
+  bmad_core_version: "6.0-alpha"
+  workflow_version: "1.0.0"
+
