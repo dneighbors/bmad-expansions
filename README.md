@@ -1,6 +1,6 @@
 # BMAD Expansions
 
-**Personal collection of expansion packs for the [BMAD Method](https://github.com/joshuacook/BMAD-METHOD)** — Pre-built AI agent teams and workflows for specialized domains.
+**Personal collection of expansion packs for the [BMAD Method](https://github.com/bmadcode/BMAD-METHOD)** — Pre-built AI agent teams and workflows for specialized domains.
 
 > 🚧 **Container Repository:** This repo currently serves as a personal staging and distribution mechanism for BMAD expansion packs. It demonstrates how to build, organize, and distribute custom BMAD modules until formal package distribution is implemented in BMAD Core.
 
@@ -369,7 +369,7 @@ bmad-expansions/
 ## 🎓 Learning Resources
 
 ### Understanding BMAD Expansions
-- [What is BMAD?](https://github.com/joshuacook/BMAD-METHOD) — Base framework for AI-powered development
+- [What is BMAD?](https://github.com/bmadcode/BMAD-METHOD) — Base framework for AI-powered development
 - [BMAD Builder (BMB)](docs/epics/02-authoring-with-bmb.md) — Tool for creating agents and workflows
 - [Epic 05: Context-Aware Adaptation](docs/epics/05-context-aware-adaptation.md) — Future roadmap for intelligent configuration
 
@@ -405,7 +405,7 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ## 🙏 Acknowledgments
 
-- **BMAD Method** by [Joshua Cook](https://github.com/joshuacook) — The foundation making this all possible
+- **BMAD Method** by [BMad (Brian)](https://github.com/bmadcode) — The foundation making this all possible
 - **BMAD Builder (BMB)** — Authoring workflows that ensure quality and consistency
 - **Contributors** — Everyone helping expand BMAD's capabilities
 
